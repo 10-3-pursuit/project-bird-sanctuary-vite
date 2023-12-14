@@ -1,10 +1,11 @@
-import birdData from "../data/birds";
 
 
-const Cards = () => {
+
+const Cards = ({birds}) => {
+
   return (
     <div className="birds">
-      {birdData.map((bird)=>(
+      {birds.map((bird)=>(
         <div className="card" key={bird.id}>
         <h1>{bird.name}</h1>
         <p>{bird.name}</p>

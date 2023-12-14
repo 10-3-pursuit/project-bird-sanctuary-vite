@@ -1,21 +1,22 @@
 // import { useState } from "react";
-// import birdData from "./data/birds";
+import birdData from "./data/birds";
 // import bonusItems from "./data/bonusItems"
 import Header from "./components/Header.jsx";
 import Cards from "./components/Cards.jsx";
+import Cart from "./components/Cart.jsx";
 
 function App() {
 
-  // const [birds, setbirds] = useState(...birdData)
+
 
   return (
     <div>
       <Header />
       <main>
         <aside>
-        <Cards />
+          <Cart />
         </aside>
-
+        <Cards birds={birdData}/>
       </main>
     </div>
   );
