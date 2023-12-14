@@ -1,8 +1,14 @@
+import birdData from "../data/birds";
+
+
 const Cards = () => {
   return (
     <div className="birds">
       <div className="cards">
-        <h1>Card Component</h1>
+        {birdData.map((bird) => <li className="card">
+          <div>{bird.name}</div>
+          <div>{bird.amount}</div>
+          <div ><img src ={bird.img}/></div></li>)}
       </div>
     </div>
   );
