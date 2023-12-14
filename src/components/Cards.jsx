@@ -8,7 +8,7 @@ const Cards = ({ birds, handleAddToCart }) => {
     <div className="birds">
       {birds.map((bird)=>(
         <div className="card" key={bird.id}>
-        <h3>{bird.name}</h3>
+        <h5>{bird.name}</h5>
         {/* <p>{bird.name}</p> */}
         <img src={bird.img} alt={bird.name} />
         <p>${bird.amount}</p>

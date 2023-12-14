@@ -8,6 +8,7 @@ import Cart from "./components/Cart.jsx";
 function App() {
 
 const [cart, setCart] = useState([])
+const [total, setTotal] = useState(0)
 
 function handleAddToCart(bird){
   const duplicateBird = cart.find((cartItem) => bird.id === cartItem.id)
@@ -20,6 +21,7 @@ function handleAddToCart(bird){
       amount: bird.amount
     }
     setCart([...cart, newCartItem])
+    setTotal((prevTotal) => prevTotal + newCartItem.amount)
   }
 }
 
@@ -33,9 +35,16 @@ function handleRemoveBird(name){
       <Header />
       <main>
         <aside>
-          <Cart cart={cart} handleRemoveBird={handleRemoveBird}/>
+          <Cart 
+          cart={cart}  
+          total={total}
+          handleRemoveBird={handleRemoveBird}
+          />
         </aside>
-        <Cards birds={birdData} handleAddToCart={handleAddToCart}/>
+        <Cards 
+        birds={birdData} 
+        handleAddToCart={handleAddToCart}
+        />
       </main>
     </div>
   );

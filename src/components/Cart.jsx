@@ -1,7 +1,9 @@
-const Cart = ({cart, handleRemoveBird }) => {
+const Cart = ({cart, total, handleRemoveBird }) => {
   return (
     <div className="cart">
-      <h2>Cart Component</h2>
+      <h2>Cart</h2>
+      <h4>Total: {total}$</h4>
+      <h5>Discount: </h5>
       <ol>
         {cart.map((bird) => (
           <li key={bird.id}>
