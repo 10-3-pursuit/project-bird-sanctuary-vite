@@ -1,9 +1,9 @@
 import {useState} from "react";
-import birdData from "./data/birds";
+import birdsData from "./data/birds";
 import bonusItems from "./data/bonusItems"
 import { Header } from "./components/Header";
 function App() {
-
+const [birds, setBirds] = useState(birdsData);
 
   return (
     <div>
