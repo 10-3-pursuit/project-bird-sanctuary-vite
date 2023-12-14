@@ -1,3 +1,7 @@
+import birdData from "../data/birds";
+
+
+
 const Cart = () => {
   return (
     <div className="cart">

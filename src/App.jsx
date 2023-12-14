@@ -28,7 +28,9 @@ const [bonusItem, setBonusItem] = useState([]);
         <h2>Donate to adopt a bird</h2>
       </header>
       <main>
-        <aside></aside>
+        <aside>
+          <Cart>Checkout Cart</Cart>
+        </aside>
         <Cards/>
       </main>
     </div>
