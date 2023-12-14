@@ -8,7 +8,7 @@ const Cart = ({cart, total, handleRemoveBird }) => {
         {cart.map((bird) => (
           <li key={bird.id}>
             <p>{bird.name} - ${bird.amount}</p>
-            <button onClick={()=>handleRemoveBird(bird.name)}>Delete</button>
+            <button onClick={()=>handleRemoveBird(bird)}>Delete</button>
           </li>
         ))}
       </ol>

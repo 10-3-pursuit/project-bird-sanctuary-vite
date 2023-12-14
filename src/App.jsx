@@ -25,9 +25,11 @@ function handleAddToCart(bird){
   }
 }
 
-function handleRemoveBird(name){
-  const updatedCart = cart.filter((bird)=>name !== bird.name)
+function handleRemoveBird(bird){
+  const updatedCart = cart.filter((item)=>bird.name !== item.name)
   setCart(updatedCart)
+  setTotal((prevTotal) => prevTotal - bird.amount)
+
 }
 
   return (
