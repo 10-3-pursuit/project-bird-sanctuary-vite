@@ -29,7 +29,6 @@ function handleRemoveBird(bird){
   const updatedCart = cart.filter((item)=>bird.name !== item.name)
   setCart(updatedCart)
   setTotal((prevTotal) => prevTotal - bird.amount)
-
 }
 
   return (
