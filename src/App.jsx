@@ -7,12 +7,11 @@ import Cart from "./components/Cart.jsx";
 
 function App() {
 
-const [birds, setBirds] = useState(birdData)
+// const [birds, setBirds] = useState(birdData)
 const [cart, setCart] = useState([])
 
 function handleAddToCart(bird){
   const duplicateBird = cart.find((cartItem) => bird.id === cartItem.id)
-
   if(duplicateBird){
     window.alert("Bird Already Chosen")
   } else {
@@ -25,6 +24,11 @@ function handleAddToCart(bird){
   }
 }
 
+function handleRemoveBird(name){
+  const updatedCart = cart.filter((bird)=>name !== bird.name)
+  setCart(updatedCart)
+}
+
 // function addtoCart(){
   
 // }
@@ -34,9 +38,9 @@ function handleAddToCart(bird){
       <Header />
       <main>
         <aside>
-          <Cart cart={cart}/>
+          <Cart cart={cart} handleRemoveBird={handleRemoveBird}/>
         </aside>
-        <Cards birds={birds} handleAddToCart={handleAddToCart}/>
+        <Cards birds={birdData} handleAddToCart={handleAddToCart}/>
       </main>
     </div>
   );
