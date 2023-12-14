@@ -7,7 +7,6 @@ import Cart from "./components/Cart.jsx";
 
 function App() {
 
-// const [birds, setBirds] = useState(birdData)
 const [cart, setCart] = useState([])
 
 function handleAddToCart(bird){
@@ -18,7 +17,7 @@ function handleAddToCart(bird){
     const newCartItem = {
       id: bird.id,
       name: bird.name,
-      price: bird.amount
+      amount: bird.amount
     }
     setCart([...cart, newCartItem])
   }
@@ -28,10 +27,6 @@ function handleRemoveBird(name){
   const updatedCart = cart.filter((bird)=>name !== bird.name)
   setCart(updatedCart)
 }
-
-// function addtoCart(){
-  
-// }
 
   return (
     <div>
