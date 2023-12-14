@@ -1,8 +1,13 @@
+import Card from "./Card";
+
 const Cards = () => {
+
+  // const birdInCart = ''               
+
   return (
     <div className="birds">
       <div className="cards">
-        <h1>Card Component</h1>
+          <Card />
       </div>
     </div>
   );

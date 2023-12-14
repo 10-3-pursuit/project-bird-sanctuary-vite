@@ -1,12 +1,25 @@
+import {useState} from 'react'
+// import birds from './data/birds'
+import Header from "./components/Header";
+import Cart from './components/Cart'
+import Checkout from './components/Checkout'
+import Cards from './components/Cards';
+
+
 function App() {
+
+
+
+
   return (
     <div>
-      <header>
-        <h1>Bird Sanctuary</h1>
-        <h2>Donate to adopt a bird</h2>
-      </header>
+      <Header />
       <main>
-        <aside></aside>
+        <aside>
+          <Cart />
+          <Checkout />
+        </aside>
+        <Cards />
       </main>
     </div>
   );
