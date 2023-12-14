@@ -1,10 +1,13 @@
+import {useState} from "react";
+import birdData from "./data/birds";
+import bonusItems from "./data/bonusItems"
+import { Header } from "./components/Header";
 function App() {
+
+
   return (
     <div>
-      <header>
-        <h1>Bird Sanctuary</h1>
-        <h2>Donate to adopt a bird</h2>
-      </header>
+      <Header/>
       <main>
         <aside></aside>
       </main>
