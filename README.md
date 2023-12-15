@@ -55,9 +55,9 @@ Implement the following features, each worth 1 point, for a total of 7 points.
 - [x] Show the total cost as an `<h4>` element within the cart.
 - [x] Update total and list when additional birds are added.
 - [x] Alert 'Bird Already Chosen' if the same bird is selected twice.
-- [ ] Apply a 10% discount for 3 or more birds in the cart.
-- [ ] Display discount as an `h5` tag. (e.g Discount: 0% or Discount: 10%)
-- [ ] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
+- [x] Apply a 10% discount for 3 or more birds in the cart.
+- [x] Display discount as an `h5` tag. (e.g Discount: 0% or Discount: 10%)
+- [] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
 
 #### Bonus Items in Cart
 
