@@ -27,9 +27,24 @@ function App() {
 
   function removeBird(birdId, birdAmount) {
     const filteredCart = cartContent.filter((bird) => birdId !== bird.id);
+    const discountedBird = birdAmount * 0.9;
     setCartContent(filteredCart);
-    setTotal(total - birdAmount)
+
+
+    if(filteredCart.length === 2) {
+      const newTotal = total / 0.9 - birdAmount;
+      setTotal(newTotal);
+    }
+    else if(filteredCart.length >= 3) {
+      const newTotal = total - (total * 0.10);
+      setTotal(newTotal);
+    }
+    else {
+      setTotal(total - birdAmount);
+    }
+
   }
+  // discount 10% off from the total not from each bird.
 
   function applyDiscount(birdAmount, updatedCartContent) {
     if(updatedCartContent.length === 3){
@@ -37,7 +52,7 @@ function App() {
       setTotal(discountTotal);
       setDiscount(10);
     }
-    else if(updatedCartContent.length > 3){
+    else if(updatedCartContent.length >= 3){
       const discountTotal = birdAmount * 0.9;
       setTotal(discountTotal + total);
     }
@@ -46,8 +61,6 @@ function App() {
       setDiscount(0);
     }
   }
-
-  
 
 
   return (
