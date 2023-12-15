@@ -18,14 +18,16 @@ aside {
   align-items: stretch;
   height: 100vh;
 }
+
 aside > div {
   min-height: 40vh;
 }
+
 .birds {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  width: 70%;
+  width: 80%;
   justify-content: space-between;
 }
 
@@ -66,3 +68,11 @@ h5 {
 p {
   font-size: 0.75em;
 }
+
+/* @media (max-width: 780px) {
+  
+}
+
+@media (max-width: 500px) {
+  
+} */
