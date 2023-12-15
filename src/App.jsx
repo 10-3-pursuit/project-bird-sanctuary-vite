@@ -3,6 +3,7 @@ import birdData from "./data/birds.js";
 import Header from "./components/Header.jsx";
 import Cards from "./components/Cards.jsx";
 import Cart from "./components/Cart.jsx";
+import Checkout from "./components/Checkout.jsx";
 
 function App() {
 
@@ -30,6 +31,11 @@ function handleRemoveBird(bird){
   setTotal((prevTotal) => prevTotal - bird.amount)
 }
 
+function resetCart(){
+  setCart([])
+  setTotal(0)
+}
+
   return (
     <div>
       <Header />
@@ -40,6 +46,7 @@ function handleRemoveBird(bird){
           total={total}
           handleRemoveBird={handleRemoveBird}
           />
+          <Checkout resetCart={resetCart}/>
         </aside>
         <Cards 
         birds={birdData} 

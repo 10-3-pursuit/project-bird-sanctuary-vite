@@ -71,11 +71,11 @@ Implement the following features, each worth 1 point, for a total of 7 points.
 
 ### Checkout Component
 
-- [ ] Has the class name `checkout`.
-- [ ] Handle form completion and submission.
-- [ ] Use `<label>` elements and proper attributes
-- [ ] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
-- [ ] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
+- [x] Has the class name `checkout`.
+- [x] Handle form completion and submission.
+- [x] Use `<label>` elements and proper attributes
+- [x] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
+- [x] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
 
 ## Additional Guidance
 
