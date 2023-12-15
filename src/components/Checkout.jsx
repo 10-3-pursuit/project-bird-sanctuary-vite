@@ -18,31 +18,50 @@ const Checkout = ({ clearCart }) => {
     })
   }
 
+  const handleTextChange = (e) => {
+    setUserDetails({
+      ...userDetails,
+      [e.target.id]: userDetails[e.target.value]
+    })
+  }
+
   const handleSubmit = () => {
     alert("You have successfully adopted birds. Thank you!");
-    reset();
     clearCart();
+    reset();
   }
 
   return (
     <div className="checkout">
       <h2>Checkout Component</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="first-name">
+        <label htmlFor="firstName">
           First Name:
-          <input type="text" name="first-name" id="first-name" />
+          <input
+          value={userDetails.firstName}
+          onChange={handleTextChange}
+          type="text" name="firstName" id="firstName" />
         </label>
-        <label htmlFor="last-name">
+        <label htmlFor="lastName">
           Last Name:
-          <input type="text" name="last-name" id="last-name" />
+          <input
+          value={userDetails.lastName}
+          onChange={handleTextChange}
+          type="text" name="lastName" id="lastName" />
         </label>
         <label htmlFor="email">
           Email:
-          <input type="email" name="email" id="email" />
+          <input
+          value={userDetails.email}
+          onChange={handleTextChange}
+          type="email" name="email" id="email" />
         </label>
         <label htmlFor="zip">
           Zip code:
-          <input type="number" name="zip" id="zip" />
+          <input
+          value={userDetails.zip}
+          onChange={handleTextChange}
+          type="number" name="zip" id="zip" />
         </label>
         <input type="submit" />
       </form>

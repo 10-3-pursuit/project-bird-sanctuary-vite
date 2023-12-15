@@ -1,7 +1,8 @@
 import { v1 as generateUniqueId } from "uuid";
 import bonusItems from "../data/bonusItems";
 
-const Cart = ({ cart, setCart, calculateCost, hasDiscount }) => {
+const Cart = ({ cart, setCart, calculateCost }) => {
+  const hasDiscount = cart.length > 2;
 
   const removeFromCart = (id) => {
     const newCart = cart.filter(bird => bird.id !== id);
