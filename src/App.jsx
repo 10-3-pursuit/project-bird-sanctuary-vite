@@ -11,7 +11,7 @@ const [birds, setBirds] = useState(birdsData);
 const [cartItems, setCartItems] = useState([]);
 
 const addToCart = (bird) => {
-  // Logic to check for duplicates and add bird to cart
+  // Will check for duplicates and add bird to cart
   // Update cartItems and totalCost accordingly
   setCartItems([...cartItems, bird]);
   console.log(`Added ${bird.name} to cart`);
