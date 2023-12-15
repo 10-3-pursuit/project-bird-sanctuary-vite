@@ -1,8 +1,18 @@
-const Cards = () => {
+// import Cart from "./Cart";
+
+const Cards = (props) => {
+
   return (
     <div className="birds">
       <div className="cards">
-        <h1>Card Component</h1>
+        {props.birds.map((bird) => (
+          <div key={bird.id} className="card">
+            <h2>{bird.name}</h2>
+            <img src={bird.img} alt={bird.name} />
+            <h3>Price: ${bird.amount}</h3>
+            <button onClick={()=>props.addToCart(bird.id, bird.amount)}>Adopt</button>
+          </div>
+        ))}
       </div>
     </div>
   );
