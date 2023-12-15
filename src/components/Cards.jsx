@@ -1,14 +1,6 @@
 import { useState } from "react";
-const Cards = ({birds}) => {
-  const [cart, setCart] = useState([])
-  function addtoCart(birdId){
-    const birdAdded = birds.find(bird=> bird.id === birdId)
-    if(cart.includes(birdAdded)){
-      alert("You've already adopted this bird")
-    }
-    setCart([...cart,birdAdded])
-    console.log(cart)
-  }
+import birdData from "../data/birds";
+const Cards = ({birds, addToCart}) => {
 
   return (
     <div className="birds">
@@ -18,7 +10,7 @@ const Cards = ({birds}) => {
             <h4>{bird.name}</h4>
             <span>Price: ${bird.amount}</span>
             <img src={bird.img} alt={bird.name}></img>
-            <button onClick={()=>addtoCart(bird.id)}>Adopt</button>
+            <button onClick={()=>addToCart(bird.id)}>Adopt</button>
           </div>
           )
         })}

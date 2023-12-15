@@ -66,3 +66,16 @@ h5 {
 p {
   font-size: 0.75em;
 }
+
+li span{
+  margin-right: 5px;
+}
+
+.cart p{
+  font-weight: bold;
+}
+
+.total,
+.discount{
+  font-size: 18px;
+}
