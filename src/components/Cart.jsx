@@ -10,6 +10,7 @@ const Cart = ({cartItems, setCartItems,addToCart,resetCart}) => {
   const removeFromCart = (birdId) => {
     const updatedCart = cartItems.filter((bird) => bird.id !== birdId);
     setCartItems(updatedCart);
+    console.log(updatedCart);
     calculateTotalCost();
   };
   const calculateTotalCost = () => {
@@ -20,11 +21,11 @@ const Cart = ({cartItems, setCartItems,addToCart,resetCart}) => {
       total += bird.amount;
     });
   
-    const discountApplied = total > 500 ? 50 : 0; // Apply discount based on total cost
-    const discountedTotal = total - discountApplied;
+    // const discountApplied = total > 500 ? 50 : 0; // Apply discount based on total cost
+    // const discountedTotal = total - discountApplied;
   
-    setDiscount(discountApplied);
-    setTotalCost(discountedTotal);
+    // setDiscount(discountApplied);
+    setTotalCost(total);
   };
 
   const displayBonusItems = () => {

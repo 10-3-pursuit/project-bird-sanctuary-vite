@@ -9,7 +9,7 @@ const Cards = ({birds, handleAdopt}) => {
       <div className="card" key={bird.id}>
         <img src= {bird.img} alt= {bird.name} />
         <h3>{bird.name}</h3>
-        <p>Price: ${bird.price}</p>
+        <p>Price: ${bird.amount}</p>
         <button onClick={()=>handleAdopt(bird)}>Adopt</button>
       </div>
     ))}
