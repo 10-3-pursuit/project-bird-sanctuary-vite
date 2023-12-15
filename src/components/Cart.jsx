@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
-const Cart = ({cartItems, setCartItems,addToCart,resetCart}) => {
+const Cart = ({cartItems, setCartItems,addToCart}) => {
 
   const [totalCost, setTotalCost] = useState(0);
   const [discount, setDiscount] = useState(0);
@@ -9,10 +9,15 @@ const Cart = ({cartItems, setCartItems,addToCart,resetCart}) => {
 
   const removeFromCart = (birdId) => {
     const updatedCart = cartItems.filter((bird) => bird.id !== birdId);
-    setCartItems(updatedCart);
+    setCartItems(updatedCart, () =>{
     console.log(updatedCart);
-    calculateTotalCost();
+    });
   };
+
+  useEffect(() => {
+    calculateTotalCost(); // Call the function that calculates the total cost
+  }, [cartItems]); 
+  
   const calculateTotalCost = () => {
     // it will calculate total cost and apply discounts based on cartItems
     //  it will update totalCost and discount accordingly
@@ -28,15 +33,14 @@ const Cart = ({cartItems, setCartItems,addToCart,resetCart}) => {
     setTotalCost(total);
   };
 
+
+  
+
   const displayBonusItems = () => {
     const bonus = totalCost > 1000 ? ['Bonus 1', 'Bonus 2'] : [];
     setBonusItems(bonus);
   };
-  const handleCheckout = () => {
-    // it will handle the checkout process
-    // Reset cartItems, totalCost, discount, and bonusItems
-    resetCart();
-  };
+
 
 
   return (
@@ -51,15 +55,13 @@ const Cart = ({cartItems, setCartItems,addToCart,resetCart}) => {
           </li>
         ))}
       </ol>
-      <h4>Total Cost: ${totalCost}</h4>
       <h5>Discount: {discount}%</h5>
+      <h4>Total Cost: ${totalCost}</h4>
       <ul>
         {bonusItems.map((bonus, index) => (
           <li key={index}>{bonus}</li>
         ))}
       </ul>
-      {/* Checkout button */}
-      <button onClick={handleCheckout}>Checkout</button>
     </div>
   );
 };

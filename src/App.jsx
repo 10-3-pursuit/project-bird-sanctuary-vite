@@ -15,10 +15,10 @@ const addToCart = (bird) => {
   const isDuplicate = cartItems.some((item) => item.id === bird.id);
   if (!isDuplicate) {
     // if Bird not a duplicate, add it to the cart
-    setCartItems([...cartItems, bird]);
+     const updatedCart = [...cartItems, bird];
+     setCartItems(updatedCart)
     console.log(`Added ${bird.name} to cart`);
     // Update cartItems and totalCost accordingly
-
 
   }else{
     console.log(`${bird.name} is already in the cart`);
@@ -31,10 +31,7 @@ const handleAdopt = (bird) => {
   console.log(`Adopted ${bird.name}`);
 };
 
-const resetCart = () => {
-  setCartItems([]);
-  // Reset other cart-related state if needed (total cost, discounts)
-};
+
 
   return (
     <div>
@@ -45,12 +42,12 @@ const resetCart = () => {
             cartItems={cartItems} 
             setCartItems = {setCartItems}
             addToCart = {addToCart}
-            resetCart = {resetCart}
           />
         </aside>
         <section>
           <Checkout 
-            resetCart={resetCart} 
+            setCartItems = {setCartItems}
+            cartItems = {cartItems}
           />
         </section>
         <aside>

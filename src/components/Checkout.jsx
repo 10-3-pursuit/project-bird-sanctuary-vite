@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Checkout = ({ resetCart }) => {
+const Checkout = ({ setCartItems, CartItems }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -30,7 +30,11 @@ const Checkout = ({ resetCart }) => {
     });
   };
 
-  
+  const resetCart = () => {
+    setCartItems([]);
+    // Reset other cart-related state if needed (total cost, discounts)
+  };
+
 
   return (
     <div className="checkout">
