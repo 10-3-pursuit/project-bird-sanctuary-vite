@@ -1,29 +1,14 @@
-import { useState } from "react";
+import { v1 as generateUniqueId } from "uuid";
 import bonusItems from "../data/bonusItems";
 
-const Cart = ({ cart, setCart }) => {
-  const [hasDiscount, setHasDiscount] = useState(false);
+const Cart = ({ cart, setCart, calculateCost, hasDiscount }) => {
 
   const removeFromCart = (id) => {
-    const oldLen = cart.length;
     const newCart = cart.filter(bird => bird.id !== id);
-    const newLen = newCart.length;
-    if (newLen === 2 && newLen < oldLen) {
-      setHasDiscount(false);
-    }
     setCart(newCart);
   }
 
-  const calculateCost = () => {
-    let cost = cart.reduce((acc, curr) => acc + curr.amount, 0);
-    if (hasDiscount) {
-      // apply discount
-      cost *= 0.90;
-    }
-    return cost;
-  }
-
-  const totalCost = calculateCost();
+  const totalCost = calculateCost(hasDiscount);
   
   const calculateBonuses = () => {
     if (totalCost > 1000) {
@@ -45,13 +30,13 @@ const Cart = ({ cart, setCart }) => {
       <h5>Discount: {hasDiscount ? 10 : 0}%</h5>
       <h4>Total Cost: ${totalCost}</h4>
       <ol>
-        {cart.map(item => <li>
+        {cart.map(item => <li key={item.id}>
           {item.name} ${item.amount} <button onClick={() => removeFromCart(item.id)}>Remove</button>
         </li>)}
       </ol>
       <h6>Your donations has qualified you for the following items:</h6>
       <ul>
-          {bonuses.map(bonus => <li>
+          {bonuses.map(bonus => <li key={generateUniqueId()}>
             {bonus}
           </li>)}
       </ul>

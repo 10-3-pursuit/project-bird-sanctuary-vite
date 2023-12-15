@@ -69,10 +69,14 @@ p {
   font-size: 0.75em;
 }
 
-/* @media (max-width: 780px) {
-  
+@media (max-width: 780px) {
+  .birds {
+    width: 60%;
+  }
 }
 
 @media (max-width: 500px) {
-  
-} */
+  .birds {
+    width: 50%;
+  }
+}

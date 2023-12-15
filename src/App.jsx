@@ -6,9 +6,19 @@ import "./App.css"
 
 function App() {
   const [cart, setCart] = useState([]);
+  const hasDiscount = cart.length > 2;
 
   const clearCart = () => {
     setCart([]);
+  }
+
+  const calculateCost = (hasDiscount) => {
+    let cost = cart.reduce((acc, curr) => acc + curr.amount, 0);
+    if (hasDiscount) {
+      // apply discount
+      cost *= 0.90;
+    }
+    return cost;
   }
 
   return (
@@ -19,10 +29,10 @@ function App() {
       </header>
       <main>
         <div className="container">
-          <Cart cart={cart} setCart={setCart} />
+          <Cart cart={cart} setCart={setCart} calculateCost={calculateCost} hasDiscount={hasDiscount} />
           <Checkout clearCart={clearCart} />
         </div>
-        <Cards setCart={setCart}/>
+        <Cards cart={cart} setCart={setCart}/>
       </main>
     </div>
   );
