@@ -6,7 +6,7 @@ const Cards = ({birds, handleAdopt}) => {
     <div className="birds">
       <h1>Card Component</h1>
       {birds.map((bird) => (
-      <div className="cards" key={bird.id}>
+      <div className="card" key={bird.id}>
         <img src= {bird.img} alt= {bird.name} />
         <h3>{bird.name}</h3>
         <p>Price: ${bird.price}</p>
