@@ -1,6 +1,5 @@
-import { useState } from "react";
-import birdData from "../data/birds";
 const Cards = ({birds, addToCart}) => {
+
 
   return (
     <div className="birds">
