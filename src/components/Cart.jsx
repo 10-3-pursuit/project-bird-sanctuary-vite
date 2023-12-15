@@ -30,16 +30,18 @@ const Cart = ({cart, total, handleRemoveBird }) => {
   return (
     <div className="cart">
       <h2>Cart</h2>
-      <h4>Total: {finalTotal}$</h4>
+      <h3>Total: {finalTotal}$</h3>
       <h5>Discount: {discount === 0 ? 0 : 10}% ( -${discount} )</h5>
       <ol>
         {cart.map((bird) => (
           <li key={bird.id}>
-            <p>{bird.name} - ${bird.amount}</p>
+            {bird.name} - ${bird.amount}
             <button onClick={()=>handleRemoveBird(bird)}>Delete</button>
           </li>
         ))}
       </ol>
+      {bonus.length > 0 && 
+        <p>Your donations have qualified you for the following items:</p>}
       <ul>
         {bonus.map((item, index)=> (
           <li key={index}>{item}</li>

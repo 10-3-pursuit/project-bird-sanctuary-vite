@@ -57,17 +57,17 @@ Implement the following features, each worth 1 point, for a total of 7 points.
 - [x] Alert 'Bird Already Chosen' if the same bird is selected twice.
 - [x] Apply a 10% discount for 3 or more birds in the cart.
 - [x] Display discount as an `h5` tag. (e.g Discount: 0% or Discount: 10%)
-- [] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
+- [x] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
 
 #### Bonus Items in Cart
 
-- [ ] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
+- [x] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
 
 - Bonus item thresholds:
-  - [ ] 1 bonus (first array item) for a total between $100 and $300.
-  - [ ] 2 bonuses (first and second array items) for a total between $300 and $500.
-  - [ ] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
-  - [ ] 4 bonuses (all array items) for a total over $1000.
+  - [x] 1 bonus (first array item) for a total between $100 and $300.
+  - [x] 2 bonuses (first and second array items) for a total between $300 and $500.
+  - [x] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
+  - [x] 4 bonuses (all array items) for a total over $1000.
 
 ### Checkout Component
 
