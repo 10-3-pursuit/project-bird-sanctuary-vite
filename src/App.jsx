@@ -1,49 +1,30 @@
-import birddata from "./data/birds.js"
 import { useState } from "react";
-
-//CARD COMPONENT SECTION//
-function Cards(props) {
-// USED DATA
-    const { birds } = props;
-// DISPLAYED NAME,IMAGE,PRICE
-    return (
-      <>
-        {birds.map((bird, index) => (
-          // ASSIGNED CLASS NAME "CARD"
-          <div key={index} className="card">
-            <h2>{bird.name}</h2>
-            <img src={bird.img} alt={bird.name} />
-            <p>Price: ${bird.amount}</p>
-            {/* ADDED ADOPT BUTTON */}
-            <button>Adopt</button>
-          </div>
-        ))}
-      </>
-    );
-  }
+import "./index.css"
+import Cards from "./components/Cards.jsx";
+import Cart from "./components/Cart.jsx";
+import birddata from "./data/birds.js"
 
 // CART COMPONENT SECTION //
-  function App(props) {
-    const { birds } = props
+  function App() {
+
     // CART ITEMS
     const [cartItems, setCartItems] =  useState([]);
     //TOTAL
     const [checkoutTotal, setCheckoutTotal] = useState(0);
     //DISCOUNTS
-    const [discountTotal, setdiscountTotal] = useState(0);
+    const [discountTotal, setDiscountTotal] = useState(0);
 
   //HANDLE TO ADD TO CART FUNCTION
   const handleAddToCart = (bird) => {
-    const birdChosen = cartItems.some((item) => item.name === bird.name);
-
-    if (birdChosen) {
+  
+    if (cartItems.find((item) => item.id === bird.id)) {
       alert('Bird Already Chosen');
     } else {
-      const updatedCart = [...cartItems, bird];
-      setCartItems(updatedCart);
-      updateTotalAndDiscount(updatedCart);
+      setCartItems([...cartItems, bird]);
+      updateTotalAndDiscount([...cartItems, bird]); // Pass the updatedCart directly
     }
   };
+  
   // HANDLE TO REMOVE FROM CART FUNCTION
 
   const handleRemoveFromCart = (bird) => {
@@ -51,17 +32,39 @@ function Cards(props) {
     setCartItems(updatedCart);
     updateTotalAndDiscount(updatedCart)
   }
-
+  // Apply a 10% discount for 3 or more birds in the cart.
+  // DISCOUNT FUNCTION
+  
+  const updateTotalAndDiscount = (updatedCart) => {
+    let checkoutTotal = 0;
+    updatedCart.forEach((item) => (checkoutTotal += item.amount));
+  
+    let discountTotal = 0;
+    if (updatedCart.length >= 3) {
+      discountTotal = 10;
+      const discountAmount = (checkoutTotal * discountTotal) / 100
+      checkoutTotal -= discountAmount;
+    }
+  
+    setCheckoutTotal(checkoutTotal);
+    setDiscountTotal(discountTotal);
+  };
+  
 
   return (
-    <div>
+    <div className="cart">
       <header>
         <h1>Bird Sanctuary</h1>
-      
         <h2>Donate to adopt a bird</h2>
       </header>
       <main>
-      <Cards birds={birddata} />
+        <Cart
+          cartItems={cartItems}
+          handleRemoveFromCart={handleRemoveFromCart}
+          checkoutTotal={checkoutTotal}
+          discountTotal={discountTotal}
+        />
+        <Cards birds={birddata} handleAddToCart={handleAddToCart} />
         <aside></aside>
       </main>
     </div>
