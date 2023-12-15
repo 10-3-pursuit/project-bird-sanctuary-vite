@@ -8,19 +8,35 @@ import Checkout from "./components/Checkout.jsx";
 
 function App() {
 
-  // const [menuOrder, setMenuOrder] = useState([]);
+
 const [cartContent, setCartContent] = useState([]);
 const [bonusItem, setBonusItem] = useState([]);
+const [birdAmount, setBirdAmount] = useState(0);
+const [birdPrice, setBirdPrice] = useState(0)
 
 const addBird = (bird) => {
   setCartContent([...cartContent, bird]);
-}
-// const addToOrder = (item) => {
-//   setMenuOrder([...menuOrder, item]);
-//   setMenuPrice(menuPrice + item.price);
-//   };
+  setBirdPrice(birdPrice + bird.amount);
+};
 
-// const newBird = (item) =>
+const birdDataList = birdData.map((bird) =>  (
+  <tbody>
+    <tr key={bird.id} onClick={() => addBird(bird)}>
+      <td>
+        {bird.image};
+      </td>
+      <td className="bird-name">
+        <span>
+          {bird.name};
+        </span>
+
+      </td>
+      <td>${bird.amount.toFixed(3)}</td>
+    </tr>
+
+  </tbody>
+));
+
 
 
   return (

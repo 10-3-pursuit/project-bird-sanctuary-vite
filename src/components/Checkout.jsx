@@ -1,7 +1,7 @@
 const Checkout = () => {
   return (
     <div className="checkout">
-      <h2>Checkout Component</h2>
+      <h2>Checkout</h2>
     </div>
   );
 };
