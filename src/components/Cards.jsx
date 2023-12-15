@@ -5,7 +5,7 @@ const Cards = ({addBird}) => {
   return (
     <div className="birds">
      
-        {birdData.map((bird) => <li className="card">
+        {birdData.map((bird) => <li className="card" key={bird.id}>
           <div>{bird.name}</div>
           <div>{bird.amount}</div>
           <img src ={bird.img}/>

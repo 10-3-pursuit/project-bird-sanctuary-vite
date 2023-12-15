@@ -23,7 +23,7 @@ const birdDataList = birdData.map((bird) =>  (
   <tbody>
     <tr key={bird.id} onClick={() => addBird(bird)}>
       <td>
-        {bird.image};
+        {bird.img};
       </td>
       <td className="bird-name">
         <span>
@@ -37,6 +37,10 @@ const birdDataList = birdData.map((bird) =>  (
   </tbody>
 ));
 
+const [newUser, setNewUser] = useState({
+  firstName:" ",
+  lastName:" ",
+})
 
 
   return (
@@ -47,7 +51,8 @@ const birdDataList = birdData.map((bird) =>  (
       </header>
       <main>
         <aside>
-          <Cart/>
+          <Cart cartContent= {cartContent}
+          birdPrice= {birdPrice}/>
           <Checkout/>
         </aside>
         <Cards addBird= {addBird}/>
