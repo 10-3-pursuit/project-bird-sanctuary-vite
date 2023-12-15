@@ -6,6 +6,23 @@ const Cart = () => {
   const [discount, setDiscount] = useState(0);
   const [bonusItems, setBonusItems] = useState([]);
 
+  const removeFromCart = (birdId) => {
+    // it will remove bird from cart
+    // Update cartItems and totalCost accordingly
+  };
+  const calculateTotalCost = () => {
+    // it will calculate total cost and apply discounts based on cartItems
+    //  it will update totalCost and discount accordingly
+  };
+
+  const displayBonusItems = () => {
+    // it will display bonus items based on total cost
+    // Update bonusItems accordingly
+  };
+  const handleCheckout = () => {
+    // it will handle the checkout process
+    // Reset cartItems, totalCost, discount, and bonusItems
+  };
 
 
   return (
