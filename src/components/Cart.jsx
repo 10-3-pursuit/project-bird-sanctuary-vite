@@ -37,14 +37,15 @@ const Cart = ({ cart, setCart }) => {
 
   return (
     <div className="cart">
+      <h2>Cart</h2>
       <h5>Discount: {hasDiscount ? 10 : 0}%</h5>
-      <h4>Total Cost: ${totalCost}</h4>
+      <h5>Total Cost: ${totalCost}</h5>
       <ol>
         {cart.map(item => <li key={item.id}>
-          {item.name} ${item.amount} <button onClick={() => removeFromCart(item.id)}>Remove</button>
+          {item.name}: ${item.amount} <button onClick={() => removeFromCart(item.id)}>Remove</button>
         </li>)}
       </ol>
-      <h6>Your donations has qualified you for the following items:</h6>
+      <h5>Your donations has qualified you for the following items:</h5>
       <ul>
           {bonuses.map(bonus => <li key={generateUniqueId()}>
             {bonus}

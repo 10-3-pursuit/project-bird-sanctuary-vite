@@ -3,6 +3,7 @@ header {
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  color: blue;
 }
 main {
   display: flex;
@@ -24,15 +25,13 @@ aside > div {
 }
 
 .birds {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
   width: 80%;
-  justify-content: space-between;
 }
 
 .card {
-  width: 20%;
   padding: 0.5em 3em;
   margin: 1em;
   border-radius: 4px;
@@ -69,14 +68,26 @@ p {
   font-size: 0.75em;
 }
 
+.cart li {
+  text-align: left;
+}
+
+.checkout label {
+  text-align: left;
+}
+
+.checkout input {
+  display: block;
+}
+
 @media (max-width: 780px) {
   .birds {
-    width: 60%;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
   .birds {
-    width: 50%;
+    grid-template-columns: 1fr;
   }
 }

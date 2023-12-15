@@ -33,7 +33,7 @@ const Checkout = ({ clearCart }) => {
 
   return (
     <div className="checkout">
-      <h2>Checkout Component</h2>
+      <h2>Checkout</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">
           First Name:
