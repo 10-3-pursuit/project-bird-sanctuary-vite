@@ -1,4 +1,3 @@
-import birdData from "../data/birds";
 
 
 

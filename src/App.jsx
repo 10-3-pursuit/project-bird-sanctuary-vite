@@ -9,10 +9,12 @@ import Checkout from "./components/Checkout.jsx";
 function App() {
 
   // const [menuOrder, setMenuOrder] = useState([]);
-const [birdInfo, setBirdInfo] = useState([]);
+const [cartContent, setCartContent] = useState([]);
 const [bonusItem, setBonusItem] = useState([]);
 
-
+const addBird = (bird) => {
+  setCartContent([...cartContent, bird]);
+}
 // const addToOrder = (item) => {
 //   setMenuOrder([...menuOrder, item]);
 //   setMenuPrice(menuPrice + item.price);
@@ -29,9 +31,11 @@ const [bonusItem, setBonusItem] = useState([]);
       </header>
       <main>
         <aside>
-          <Cart>Checkout Cart</Cart>
+          <Cart/>
+          <Checkout/>
         </aside>
-        <Cards/>
+        <Cards addBird= {addBird}/>
+
       </main>
     </div>
   );

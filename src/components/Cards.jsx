@@ -1,15 +1,16 @@
 import birdData from "../data/birds";
 
 
-const Cards = () => {
+const Cards = ({addBird}) => {
   return (
     <div className="birds">
-      <div className="cards">
+     
         {birdData.map((bird) => <li className="card">
           <div>{bird.name}</div>
           <div>{bird.amount}</div>
-          <div ><img src ={bird.img}/></div></li>)}
-      </div>
+          <img src ={bird.img}/>
+          <button onClick={() => addBird(bird)}>Adopt</button></li>)}
+     
     </div>
   );
 };
