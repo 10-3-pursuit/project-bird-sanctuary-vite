@@ -1,27 +1,40 @@
 import { useState } from "react";
 
-const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
+
+const Cart = ({cartItems, setCartItems,addToCart,resetCart}) => {
+
   const [totalCost, setTotalCost] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [bonusItems, setBonusItems] = useState([]);
 
   const removeFromCart = (birdId) => {
-    // it will remove bird from cart
-    // Update cartItems and totalCost accordingly
+    const updatedCart = cartItems.filter((bird) => bird.id !== birdId);
+    setCartItems(updatedCart);
+    calculateTotalCost();
   };
   const calculateTotalCost = () => {
     // it will calculate total cost and apply discounts based on cartItems
     //  it will update totalCost and discount accordingly
+    let total = 0;
+    cartItems.forEach((bird) => {
+      total += bird.amount;
+    });
+  
+    const discountApplied = total > 500 ? 50 : 0; // Apply discount based on total cost
+    const discountedTotal = total - discountApplied;
+  
+    setDiscount(discountApplied);
+    setTotalCost(discountedTotal);
   };
 
   const displayBonusItems = () => {
-    // it will display bonus items based on total cost
-    // Update bonusItems accordingly
+    const bonus = totalCost > 1000 ? ['Bonus 1', 'Bonus 2'] : [];
+    setBonusItems(bonus);
   };
   const handleCheckout = () => {
     // it will handle the checkout process
     // Reset cartItems, totalCost, discount, and bonusItems
+    resetCart();
   };
 
 
