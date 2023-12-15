@@ -1,3 +1,9 @@
+import { useState } from 'react';
+import birdData from './data/birds';
+
+// make function cart
+function Cards () {}
+
 function App() {
   return (
     <div>
