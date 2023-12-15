@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Checkout = ({ clearCart }) => {
+const Checkout = ({ clearCart, cartLength }) => {
   const [userDetails, setUserDetails] = useState({
     firstName:"",
     lastName:"",
@@ -21,14 +21,19 @@ const Checkout = ({ clearCart }) => {
   const handleTextChange = (e) => {
     setUserDetails({
       ...userDetails,
-      [e.target.id]: userDetails[e.target.value]
+      [e.target.id]: e.target.value
     })
   }
 
-  const handleSubmit = () => {
-    alert("You have successfully adopted birds. Thank you!");
-    clearCart();
-    reset();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (cartLength > 0) {
+      alert("You have successfully adopted birds. Thank you!");
+      clearCart();
+      reset();
+    } else {
+      alert("Please at least one bird to the cart!")
+    }
   }
 
   return (

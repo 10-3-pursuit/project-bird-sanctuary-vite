@@ -18,7 +18,7 @@ function App() {
       <main>
         <div className="container">
           <Cart cart={cart} setCart={setCart} />
-          <Checkout clearCart={clearCart} />
+          <Checkout cartLength={cart.length} clearCart={clearCart} />
         </div>
         <Cards cart={cart} setCart={setCart}/>
       </main>
