@@ -25,8 +25,8 @@ aside > div {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  width: 70%;
-  justify-content: space-between;
+  width: 80%;
+  justify-content:space-between;
 }
 
 .card {
