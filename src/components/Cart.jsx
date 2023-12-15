@@ -1,7 +1,7 @@
 import { v1 as generateUniqueId } from "uuid";
 import bonusItems from "../data/bonusItems";
 
-const Cart = ({ cart, setCart, calculateCost }) => {
+const Cart = ({ cart, setCart }) => {
   const hasDiscount = cart.length > 2;
 
   const removeFromCart = (id) => {
@@ -9,7 +9,16 @@ const Cart = ({ cart, setCart, calculateCost }) => {
     setCart(newCart);
   }
 
-  const totalCost = calculateCost(hasDiscount);
+  const calculateCost = () => {
+    let cost = cart.reduce((acc, curr) => acc + curr.amount, 0);
+    if (hasDiscount) {
+      // apply discount
+      cost *= 0.90;
+    }
+    return cost;
+  }
+
+  const totalCost = calculateCost();
   
   const calculateBonuses = () => {
     if (totalCost > 1000) {

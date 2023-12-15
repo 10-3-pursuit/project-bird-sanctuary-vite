@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./components/Header";
 import Checkout from "./components/Checkout";
 import Cart from "./components/Cart";
 import Cards from "./components/Cards";
@@ -11,24 +12,12 @@ function App() {
     setCart([]);
   }
 
-  const calculateCost = (hasDiscount) => {
-    let cost = cart.reduce((acc, curr) => acc + curr.amount, 0);
-    if (hasDiscount) {
-      // apply discount
-      cost *= 0.90;
-    }
-    return cost;
-  }
-
   return (
     <div>
-      <header>
-        <h1>Bird Sanctuary</h1>
-        <h2>Donate to adopt a bird</h2>
-      </header>
+      <Header />
       <main>
         <div className="container">
-          <Cart cart={cart} setCart={setCart} calculateCost={calculateCost} />
+          <Cart cart={cart} setCart={setCart} />
           <Checkout clearCart={clearCart} />
         </div>
         <Cards cart={cart} setCart={setCart}/>
