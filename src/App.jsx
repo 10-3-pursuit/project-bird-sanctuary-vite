@@ -6,7 +6,6 @@ import "./App.css"
 
 function App() {
   const [cart, setCart] = useState([]);
-  const hasDiscount = cart.length > 2;
 
   const clearCart = () => {
     setCart([]);
@@ -29,7 +28,7 @@ function App() {
       </header>
       <main>
         <div className="container">
-          <Cart cart={cart} setCart={setCart} calculateCost={calculateCost} hasDiscount={hasDiscount} />
+          <Cart cart={cart} setCart={setCart} calculateCost={calculateCost} />
           <Checkout clearCart={clearCart} />
         </div>
         <Cards cart={cart} setCart={setCart}/>
