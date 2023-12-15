@@ -1,5 +1,34 @@
 import { useState } from "react";
 
+const Checkout = ({ resetCart }) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    zipcode: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // to handle form submission
+    // Reset the cart when a successful submission
+    alert('You have successfully adopted birds. Thank you!');
+    resetCart(); 
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      zipcode: '',
+    });
+  };
 
   
 
