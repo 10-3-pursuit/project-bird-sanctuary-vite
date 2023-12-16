@@ -12,35 +12,48 @@ function App() {
 const [cartContent, setCartContent] = useState([]);
 const [bonusItem, setBonusItem] = useState([]);
 const [birdAmount, setBirdAmount] = useState(0);
-const [birdPrice, setBirdPrice] = useState(0)
+const [birdPrice, setBirdPrice] = useState(0);
+//const[removeBird, setRemoveBird] = useState(0);
 
 const addBird = (bird) => {
+if (cartContent.find(({id}) => id === bird.id) ){
+  alert(`Bird Already Chosen`);
+} else {
+  //taking cart contents spreading it out, and adding a bird
   setCartContent([...cartContent, bird]);
   setBirdPrice(birdPrice + bird.amount);
 };
+}
+
+const removeBird = (bird) => {
+ const newCartContent = cartContent.filter(({id}) => id === bird.id)
+  setCartContent(newCartContent); 
+
+  }
+
 
 const birdDataList = birdData.map((bird) =>  (
   <tbody>
     <tr key={bird.id} onClick={() => addBird(bird)}>
       <td>
-        {bird.img};
+        {bird.img}
       </td>
       <td className="bird-name">
         <span>
-          {bird.name};
+          {bird.name}
         </span>
 
       </td>
-      <td>${bird.amount.toFixed(3)}</td>
+      <td>${bird.amount.toFixed(2)}</td>
     </tr>
 
   </tbody>
 ));
 
-const [newUser, setNewUser] = useState({
-  firstName:" ",
-  lastName:" ",
-})
+// const [newUser, setNewUser] = useState({
+//   firstName:" ",
+//   lastName:" ",
+// })
 
 
   return (
@@ -60,6 +73,6 @@ const [newUser, setNewUser] = useState({
       </main>
     </div>
   );
-}
+  };
 
 export default App;
