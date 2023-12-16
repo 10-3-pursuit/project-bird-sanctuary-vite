@@ -1,18 +1,13 @@
 const Cart = (props) => {
-
   return (
     <div className="cart">
       <h2>Cart</h2>
-      <h3>Discount: {props.discount}</h3>
-      <h3>Total: ${props.total}</h3>
+      <h4>Discount: {props.cartContent.length >=3 ? "10%" : "0%"}</h4>
+      <h4>Total: ${props.cartContent.length < 3 ? props.total : props.total * 0.9} </h4>
       <ol>
-        
-        {props.cartContent.length > 0 && props.cartContent.map((bird) => (
-           <li key={bird.id}>{bird.name} <button onClick={()=>props.removeBird(bird.id, bird.amount)}>Remove</button></li>
+        {(props.cartContent.length > 0) && props.cartContent.map((bird) => (
+          <li key={bird.id}>{bird.name}</li>
         ))}
-        {/* map over the cart content return an li for each item */}
-        {/* conditional rendering to check if cart content has at least one item */}
-        {/*  */}
       </ol>
     </div>
   );

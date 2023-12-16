@@ -1,66 +1,33 @@
-import { useState } from "react";
 import birdData from "./data/birds";
 import Cards from "./components/Cards";
 import Cart from "./components/Cart";
+import { useState } from "react";
+
+const birds = birdData;
+
 
 function App() {
-
-  const birds = birdData;
 
   const [cartContent, setCartContent] = useState([]);
 
   const [total, setTotal] = useState(0);
 
-  const [discount, setDiscount] = useState(0);
+  const [discountedTotal, setDiscountedTotal] = useState();
 
-  function addToCart(birdId, birdAmount) {
-    const addBird = birds.find((bird)=> bird.id === birdId);
-    if(addBird && !cartContent.some((bird) => bird.id === addBird.id)){
-      const updatedCartContent = [...cartContent, addBird];
+  function addToCart(birdId){
+    const selectedBird = birds.find((bird) => bird.id === birdId);
+    if(selectedBird && !cartContent.some((bird) => bird.id === selectedBird.id)){
+      const updatedCartContent = [...cartContent, selectedBird];
       setCartContent(updatedCartContent);
-      applyDiscount(birdAmount, updatedCartContent);
+      const updatedTotal = total + selectedBird.amount;
+      setTotal(updatedTotal);
     }
     else {
-      alert('Bird Already Chosen. Try selecting a different bird!');
+      alert('Bird Already Chosen. Try a Different Bird!')
     }
   }
 
-  function removeBird(birdId, birdAmount) {
-    const filteredCart = cartContent.filter((bird) => birdId !== bird.id);
-    const discountedBird = birdAmount * 0.9;
-    setCartContent(filteredCart);
 
-
-    if(filteredCart.length === 2) {
-      const newTotal = total / 0.9 - birdAmount;
-      setTotal(newTotal);
-    }
-    else if(filteredCart.length >= 3) {
-      const newTotal = total - (total * 0.10);
-      setTotal(newTotal);
-    }
-    else {
-      setTotal(total - birdAmount);
-    }
-
-  }
-  // discount 10% off from the total not from each bird.
-
-  function applyDiscount(birdAmount, updatedCartContent) {
-    if(updatedCartContent.length === 3){
-      const discountTotal = (total + birdAmount) * 0.9;
-      setTotal(discountTotal);
-      setDiscount(10);
-    }
-    else if(updatedCartContent.length >= 3){
-      const discountTotal = birdAmount * 0.9;
-      setTotal(discountTotal + total);
-    }
-    else {
-      setTotal(total + birdAmount);
-      setDiscount(0);
-    }
-  }
 
 
   return (
@@ -71,9 +38,9 @@ function App() {
       </header>
       <main>
         <aside>
-          <Cart birds = {birds} cartContent = {cartContent} removeBird = {removeBird} addToCart = {addToCart} total = {total} discount = {discount} applyDiscount = {applyDiscount}/>
+          <Cart birds = {birds} cartContent = {cartContent} total = {total}/>
         </aside>
-        <Cards birds = {birds} addToCart = {addToCart}/>
+        < Cards birds = {birds} addToCart = {addToCart}/>
       </main>
     </div>
   );
