@@ -1,15 +1,16 @@
 import Card from "./Card";
+import birds from '../data/birds'
 
-const Cards = () => {
-
-  // const birdInCart = ''               
+const Cards = ({handleAddToCart}) => {              
 
   return (
     <div className="birds">
-      <div className="cards">
-          <Card />
+        {birds.map(bird=> {
+          return (
+              <Card  key={bird.id} bird={bird} handleAddToCart={handleAddToCart}/>
+            )}
+          )}
       </div>
-    </div>
   );
 };
 
