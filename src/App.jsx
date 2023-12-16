@@ -8,7 +8,8 @@ import bonusItems from "./data/bonusItems.js";
 
 // CART COMPONENT SECTION //
   function App() {
-
+    // Bonus items
+    const [bonusItemsToShow, setBonusItems] = useState([]);
     // CART ITEMS
     const [cartItems, setCartItems] =  useState([]);
     //TOTAL
@@ -50,7 +51,21 @@ import bonusItems from "./data/bonusItems.js";
 
     setCheckoutTotal(checkoutTotal);
     setDiscountTotal(discountTotal);
-  };
+       // Determine bonus items based on the updated total
+       const thresholds = [100, 300, 500, 1000];
+       const bonusCounts = thresholds.reduce((count, threshold) => {
+         return checkoutTotal >= threshold ? count + 1 : count;
+       }, 0);
+   
+       // Get the bonus items based on the determined count
+       const bonusItemsToShow = bonusItems.slice(0, bonusCounts);
+   
+       // Set state for bonus items
+       setBonusItems(bonusItemsToShow);
+     };
+  
+  
+
 
   const resetCart = () => {
     // Implement logic to clear the cart, discounts, and bonus items
@@ -72,6 +87,7 @@ import bonusItems from "./data/bonusItems.js";
           handleRemoveFromCart={handleRemoveFromCart}
           checkoutTotal={checkoutTotal}
           discountTotal={discountTotal}
+          bonusItems={bonusItemsToShow}
         />
         <Checkout clearCart={resetCart} cartlength={cartItems.length} />
         <Cards birds={birddata} handleAddToCart={handleAddToCart} />
