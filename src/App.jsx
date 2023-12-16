@@ -12,7 +12,7 @@ function App() {
   const [total, setTotal] = useState(0)
   const [bonus, setBonus] = useState([])
 
-  const addBonuses = () => {
+  const addBonuses = (total) => {
     switch (true) {
       case (total >= 1000):
         setBonus(
@@ -57,13 +57,14 @@ function App() {
       const copiedCart = [...cartItems, birdItem]
       setCartItems(copiedCart)
       const totalBeforeDiscount = copiedCart.reduce((acc, cur) => acc + cur.amount, 0)
+      let newTotal = totalBeforeDiscount
       if(copiedCart.length >= 3) {
         setDiscount(10)
-        setTotal(totalBeforeDiscount - (totalBeforeDiscount * 0.10))
+        setTotal(newTotal - (newTotal * 0.10))
       } else {
-        setTotal(totalBeforeDiscount)
+        setTotal(newTotal)
       }
-      addBonuses()
+      addBonuses(newTotal)
     }
   }
 
@@ -72,13 +73,14 @@ function App() {
     const filteredItems = copiedCart.filter(item=> item.id !== birdItem.id)
     setCartItems(filteredItems)
     const totalBeforeDiscount = filteredItems.reduce((acc, cur) => acc + cur.amount, 0)
-    if(filteredItems.length < 3) {
-      setDiscount(0)
-      setTotal(totalBeforeDiscount)
+    let newTotal = totalBeforeDiscount
+    if(filteredItems.length >= 3) {
+      setTotal(newTotal - (newTotal * 0.10))
     } else {
-      setTotal(totalBeforeDiscount - (totalBeforeDiscount * 0.10))
+      setDiscount(0)
+      setTotal(newTotal)
     }
-    addBonuses()
+    addBonuses(newTotal)
   }
 
   return (
