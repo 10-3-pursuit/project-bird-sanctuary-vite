@@ -8,7 +8,6 @@ import Checkout from "./components/Checkout.jsx";
 function App() {
 
 const [cart, setCart] = useState([])
-const [total, setTotal] = useState(0)
 
 function handleAddToCart(bird){
   const duplicateBird = cart.find((cartItem) => bird.id === cartItem.id)
@@ -21,19 +20,16 @@ function handleAddToCart(bird){
       amount: bird.amount
     }
     setCart([...cart, newCartItem])
-    setTotal((prevTotal) => prevTotal + newCartItem.amount)
   }
 }
 
 function handleRemoveBird(bird){
   const updatedCart = cart.filter((item)=>bird.name !== item.name)
   setCart(updatedCart)
-  setTotal((prevTotal) => prevTotal - bird.amount)
 }
 
 function resetCart(){
   setCart([])
-  setTotal(0)
 }
 
   return (
@@ -43,7 +39,6 @@ function resetCart(){
         <aside>
           <Cart 
           cart={cart}  
-          total={total}
           handleRemoveBird={handleRemoveBird}
           />
           <Checkout resetCart={resetCart}/>

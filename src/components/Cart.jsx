@@ -1,6 +1,8 @@
 import bonusItems from "../data/bonusItems.js"
 
-const Cart = ({cart, total, handleRemoveBird }) => {
+const Cart = ({cart, handleRemoveBird }) => {
+
+  const total = cart.reduce((acc, current) => acc + current.amount, 0)
 
   function calculateDiscount(){
     if(cart.length < 3){
@@ -9,6 +11,7 @@ const Cart = ({cart, total, handleRemoveBird }) => {
       return total * 0.1
     }
   }
+  
   const discount = calculateDiscount()
   const finalTotal = total - discount
 
@@ -30,12 +33,12 @@ const Cart = ({cart, total, handleRemoveBird }) => {
   return (
     <div className="cart">
       <h2>Cart</h2>
-      <h3>Total: {finalTotal}$</h3>
-      <h5>Discount: {discount === 0 ? 0 : 10}% ( -${discount} )</h5>
+      <h3>Total: ${finalTotal}</h3>
+      <h5>Discount: {discount === 0 ? 0 : 10}%</h5>
       <ol>
         {cart.map((bird) => (
           <li key={bird.id}>
-            {bird.name} - ${bird.amount}
+            {bird.name}: ${bird.amount}
             <button onClick={()=>handleRemoveBird(bird)}>Delete</button>
           </li>
         ))}
