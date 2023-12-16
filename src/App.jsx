@@ -1,56 +1,52 @@
 import { useState } from "react";
-import "./index.css"
 import Cards from "./components/Cards.jsx";
 import Cart from "./components/Cart.jsx";
 import Checkout from "./components/Checkout.jsx";
 import birddata from "./data/birds.js";
 import bonusItems from "./data/bonusItems.js";
+import "./index.css"
 
 // CART COMPONENT SECTION //
-  function App() {
-    // Bonus items
-    const [bonusItemsToShow, setBonusItems] = useState([]);
-    // CART ITEMS
-    const [cartItems, setCartItems] =  useState([]);
-    //TOTAL
-    const [checkoutTotal, setCheckoutTotal] = useState(0);
-    //DISCOUNTS
-    const [discountTotal, setDiscountTotal] = useState(0);
+function App() {
+  // Bonus items
+  const [bonusItemsToShow, setBonusItems] = useState([]);
+  // CART ITEMS
+  const [cartItems, setCartItems] =  useState([]);
+  //TOTAL
+  const [checkoutTotal, setCheckoutTotal] = useState(0);
+  //DISCOUNTS
+  const [discountTotal, setDiscountTotal] = useState(0);
 
-  //HANDLE TO ADD TO CART FUNCTION
-  const handleAddToCart = (bird) => {
-  
-    if (cartItems.find((item) => item.id === bird.id)) {
-      alert('Bird Already Chosen');
-    } else {
-      setCartItems([...cartItems, bird]);
-      updateTotalAndDiscount([...cartItems, bird]); // Pass the updatedCart directly
-    }
-  };
-  
-  // HANDLE TO REMOVE FROM CART FUNCTION
-
-  const handleRemoveFromCart = (bird) => {
-    const updatedCart = cartItems.filter((item) => item.name !== bird.name);
-    setCartItems(updatedCart);
-    updateTotalAndDiscount(updatedCart)
+//HANDLE TO ADD TO CART FUNCTION
+const handleAddToCart = (bird) => {
+  if (cartItems.find((item) => item.id === bird.id)) {
+    alert('Bird Already Chosen');
+  } else {
+    setCartItems([...cartItems, bird]);
+    updateTotalAndDiscount([...cartItems, bird]); // Pass the updatedCart directly
   }
-  // Apply a 10% discount for 3 or more birds in the cart.
-  // DISCOUNT FUNCTION
+};
+// HANDLE TO REMOVE FROM CART FUNCTION
+const handleRemoveFromCart = (bird) => {
+  const updatedCart = cartItems.filter((item) => item.name !== bird.name);
+  setCartItems(updatedCart);
+  updateTotalAndDiscount(updatedCart)
+}
+// Apply a 10% discount for 3 or more birds in the cart.
+// DISCOUNT FUNCTION
+const updateTotalAndDiscount = (updatedCart) => {
+
+  let checkoutTotal = 0;
+  updatedCart.forEach((item) => (checkoutTotal += item.amount));
   
-  const updateTotalAndDiscount = (updatedCart) => {
-    let checkoutTotal = 0;
-    updatedCart.forEach((item) => (checkoutTotal += item.amount));
-  
-    let discountTotal = 0;
+  let discountTotal = 0;
     if (updatedCart.length >= 3) {
       discountTotal = 10;
       const discountAmount = (checkoutTotal * discountTotal) / 100
       checkoutTotal -= discountAmount;
-    }
-
-    setCheckoutTotal(checkoutTotal);
-    setDiscountTotal(discountTotal);
+}
+  setCheckoutTotal(checkoutTotal);
+  setDiscountTotal(discountTotal);
        
 // Determine bonus items based on the updated total
 const prizes = [100, 300, 500, 1000];
@@ -68,23 +64,18 @@ if (checkoutTotal >= prizes[3]) {
 
 // Get the bonus items based on the determined count
 const bonusItemsToShow = bonusItems.slice(0, bonusCounts);
-
 // Set state for bonus items
 setBonusItems(bonusItemsToShow);
-  }
+}
   
-  
-
-
-  const resetCart = () => {
-    // Implement logic to clear the cart, discounts, and bonus items
+const resetCart = () => {
+// Implement logic to clear the cart, discounts, and bonus items
     setCartItems([]);
     setCheckoutTotal(0);
     setDiscountTotal(0);
-  };
+};
   
-
-  return (
+return (
     <div className="cart">
       <header>
         <h1>Bird Sanctuary</h1>

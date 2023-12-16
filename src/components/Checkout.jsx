@@ -7,14 +7,12 @@ const [userDetails, setUserDetails] = useState({
   email: "",
   zip: "",
 });
-
 const handleTextChange = (e) => {
   setUserDetails({
     ...userDetails,
     [e.target.name]: e.target.value,
   });
 };
-
 const handleSubmit = (e) => {
   e.preventDefault();
   alert("You have successfully adopted birds. Thank you!");
@@ -25,20 +23,19 @@ const handleSubmit = (e) => {
     zip: "",
   });
 };
-
 return (
-    <div className="checkout">
-      <h2>Checkout Component</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="firstName">
-          First Name:
-          <input
-            type="text"
-            id="first-name"
-            name="firstName"
-            value={userDetails.firstName}
-            onChange={handleTextChange}
-          />
+  <div className="checkout">
+    <h2>Checkout Component</h2>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="firstName">
+        First Name:
+        <input
+          type="text"
+          id="first-name"
+          name="firstName"
+          value={userDetails.firstName}
+          onChange={handleTextChange}
+        />
         </label>
         <label htmlFor="lastName">
           Last Name:
@@ -75,5 +72,4 @@ return (
     </div>
   );
 };
-
 export default Checkout;
