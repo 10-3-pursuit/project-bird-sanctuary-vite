@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./index.css"
 import Cards from "./components/Cards.jsx";
 import Cart from "./components/Cart.jsx";
-import birddata from "./data/birds.js"
 import Checkout from "./components/Checkout.jsx";
+import birddata from "./data/birds.js";
+import bonusItems from "./data/bonusItems.js";
 
 // CART COMPONENT SECTION //
   function App() {
@@ -46,7 +47,7 @@ import Checkout from "./components/Checkout.jsx";
       const discountAmount = (checkoutTotal * discountTotal) / 100
       checkoutTotal -= discountAmount;
     }
-  
+
     setCheckoutTotal(checkoutTotal);
     setDiscountTotal(discountTotal);
   };

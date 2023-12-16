@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const Checkout = () => {
-
 const [userDetails, setUserDetails] = useState({
   firstName: '',
   lastName: '',
