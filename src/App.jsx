@@ -51,18 +51,27 @@ import bonusItems from "./data/bonusItems.js";
 
     setCheckoutTotal(checkoutTotal);
     setDiscountTotal(discountTotal);
-       // Determine bonus items based on the updated total
-       const thresholds = [100, 300, 500, 1000];
-       const bonusCounts = thresholds.reduce((count, threshold) => {
-         return checkoutTotal >= threshold ? count + 1 : count;
-       }, 0);
-   
-       // Get the bonus items based on the determined count
-       const bonusItemsToShow = bonusItems.slice(0, bonusCounts);
-   
-       // Set state for bonus items
-       setBonusItems(bonusItemsToShow);
-     };
+       
+// Determine bonus items based on the updated total
+const prizes = [100, 300, 500, 1000];
+let bonusCounts = 0;
+
+if (checkoutTotal >= prizes[3]) {
+  bonusCounts = 4;
+} else if (checkoutTotal >= prizes[2]) {
+  bonusCounts = 3;
+} else if (checkoutTotal >= prizes[1]) {
+  bonusCounts = 2;
+} else if (checkoutTotal >= prizes[0]) {
+  bonusCounts = 1;
+}
+
+// Get the bonus items based on the determined count
+const bonusItemsToShow = bonusItems.slice(0, bonusCounts);
+
+// Set state for bonus items
+setBonusItems(bonusItemsToShow);
+  }
   
   
 
