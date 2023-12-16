@@ -15,6 +15,10 @@ const Checkout = ({reset}) => {
 
   function handleSubmit(e){
     e.preventDefault()
+    if(!adoptionUser.firstName || !adoptionUser.lastName || !adoptionUser.email || !adoptionUser.zip){
+      alert("Please fill in all form fields!")
+      return
+    }
     alert("You have successfully adopted birds. Thank you!")
     setAdoptionUser(userDefault)
     reset()
@@ -25,7 +29,7 @@ const Checkout = ({reset}) => {
       <form>
         <label htmlFor="firstName">
           <p>First Name</p>
-          <input onChange={handleChange} value={adoptionUser.firstName} type="text" name="firstName" id="firstName" />
+          <input onChange={handleChange} value={adoptionUser.firstName} type="text" name="firstName" id="firstName"  />
         </label>
         <label htmlFor="lastName">
           <p>Last Name</p>
@@ -33,11 +37,11 @@ const Checkout = ({reset}) => {
         </label>
         <label htmlFor="email">
           <p>Email</p>
-          <input onChange={handleChange} value={adoptionUser.email} type="text" name="email" id="email" />
+          <input onChange={handleChange} value={adoptionUser.email} type="text" name="email" id="email"/>
         </label>
         <label htmlFor="zip">
           <p>Zip</p>
-          <input onChange={handleChange} value={adoptionUser.zip} type="text" name="zip" id="zip" />
+          <input onChange={handleChange} value={adoptionUser.zip} type="text" name="zip" id="zip"  />
         </label>
         <div>
         <button onClick={handleSubmit}>Submit</button>
