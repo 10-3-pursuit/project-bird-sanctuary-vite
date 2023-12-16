@@ -3,6 +3,7 @@ import "./index.css"
 import Cards from "./components/Cards.jsx";
 import Cart from "./components/Cart.jsx";
 import birddata from "./data/birds.js"
+import Checkout from "./components/Checkout.jsx";
 
 // CART COMPONENT SECTION //
   function App() {
@@ -49,6 +50,13 @@ import birddata from "./data/birds.js"
     setCheckoutTotal(checkoutTotal);
     setDiscountTotal(discountTotal);
   };
+
+  const resetCart = () => {
+    // Implement logic to clear the cart, discounts, and bonus items
+    setCartItems([]);
+    setCheckoutTotal(0);
+    setDiscountTotal(0);
+  };
   
 
   return (
@@ -64,6 +72,7 @@ import birddata from "./data/birds.js"
           checkoutTotal={checkoutTotal}
           discountTotal={discountTotal}
         />
+        <Checkout clearCart={resetCart} cartlength={cartItems.length} />
         <Cards birds={birddata} handleAddToCart={handleAddToCart} />
         <aside></aside>
       </main>

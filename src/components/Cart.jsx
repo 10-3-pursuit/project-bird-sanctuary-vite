@@ -1,6 +1,6 @@
 const Cart = ({ cartItems, handleRemoveFromCart, checkoutTotal, discountTotal }) => {
   return (
-    <div class= "cart">
+    <div className="cart">
       <h3>Your Cart</h3>
       <ol>
         {cartItems.map((bird, index) => (
