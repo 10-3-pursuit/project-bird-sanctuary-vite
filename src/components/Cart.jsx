@@ -11,14 +11,14 @@ const Cart = ({cart, handleRemoveBird }) => {
       return total * 0.1
     }
   }
-  
+
   const discount = calculateDiscount()
   const finalTotal = total - discount
 
   const [item1, item2, item3, item4] = bonusItems
   let bonus = []
   function calculateBonus(){
-    if(finalTotal >= 1000){
+    if(finalTotal > 1000){
       bonus = [...bonusItems]
     } else if(finalTotal >= 500){
       bonus = [item1, item2, item3]
