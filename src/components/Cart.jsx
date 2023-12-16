@@ -1,16 +1,4 @@
-import Bonuses from "./Bonuses";
-
-const Cart = ({discount, total, cartItems, setCartItems}) => {
-
-
-  const handleRemove = (id) => {
-    const copiedCart = [...cartItems]
-    const filteredItems = copiedCart.filter(item=> {
-      if(item.id !== id) {
-        setCartItems(filteredItems)
-        setTotal(total - item.amount)}
-    })
-  }
+const Cart = ({discount, total, cartItems, bonus, handleRemove}) => {
 
   return (
     <div className="cart">
@@ -23,19 +11,17 @@ const Cart = ({discount, total, cartItems, setCartItems}) => {
           return (
             <li key={birdItem.id}>
               {birdItem.name}: ${birdItem.amount}
-              <button onClick={()=>handleRemove(birdItem.id)}>Remove</button>
+              <button onClick={()=>handleRemove(birdItem)}>Remove</button>
             </li>
             )
         })}
       </ol>
       <p>Your donations have qualified you for the following items:</p>
       <ul>
-        {
-          <Bonuses total={total} />
-        }
+      {bonus}
       </ul>
     </div>
   );
-};
+}
 
 export default Cart;
