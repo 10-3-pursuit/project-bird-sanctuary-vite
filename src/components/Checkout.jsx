@@ -1,33 +1,24 @@
 const Checkout = () => {
   return (
-    <div className="checkout">
+    <section className="checkout">
       <h2>Checkout</h2>
-      <form>
-        <label htmlFor="first-name">First Name
-        <input id="first-name" name="first-name" type= "text"></input>
-        </label>
+      <form onSubmit={Checkout}>
+        <label htmlFor="first-name">First Name</label>
+        <input  id="first-name" type="text"></input>
         <br></br>
-        
-        <label htmlFor="last-name">Last Name
-        <input id="last-name" name="last-name" type= "text"></input>
-        </label>
+        <label htmlFor="last-name">Last Name</label>
+        <input  id="last-name" type="text"></input>
         <br></br>
-
-        <label htmlFor="email">Email
-        <input id="email" name="email" type= "email"></input>
-        </label>
+        <label htmlFor="Email">Email</label>
+        <input  id="email" type="text"></input>
         <br></br>
 
-        <label htmlFor="zip-code">Zip Code
-        <input id="zip-code" name="zip-code" type= "number"></input>
-        </label>
+        <label htmlFor="zip-code">Zip Code</label>
+        <input  id="zip-code" type="text"></input>
         <br></br>
-        
-
-
-        
+        <button type="submit">Submit</button>
       </form>
-    </div>
+    </section>
   );
 };
 
