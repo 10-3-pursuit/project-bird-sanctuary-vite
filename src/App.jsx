@@ -7,7 +7,7 @@ import birdData from './data/birds'; // Import bird data
 // Step 3a: put Cards fx as prop in App function in <main> tag
 function Cards({ birdData, addToCartProp }) { // name of prop is addToCart
   return (
-    <div>
+    <section>
       {birdData.map((bird) => (
         <div key={bird.id} className="card">
           <h3>{bird.name}</h3>
@@ -16,7 +16,7 @@ function Cards({ birdData, addToCartProp }) { // name of prop is addToCart
           <button onClick={() => addToCartProp(bird)}>Adopt</button>
         </div>
       ))}
-    </div>
+    </section>
   );
 }
 
@@ -28,11 +28,13 @@ Step 5a: create variable to store totalCost and use as a (totalCostProp)
 Step 5b: create variable to store discount rate to use as data for totalCostProp
 Step 5c: create variable to store discountedTotal */
 
-function Cart({ cartItems, removeFromCartProp, totalCostProp, discountRate }) {
+function Cart({ cartItems, removeFromCartProp, totalCostProp, discountRateProp }) {
 // add removeBirdFromCart fx parameter, and parameters that are variables that hold totalCost and discountRate. All this variable stuff will be in App function and used inside this function
   return (
-    <div className="cart">
+    <section className="cart">
       <h2>Cart</h2>
+      <h5>Discount: {discountRateProp}%</h5>
+      <h4>Total Cost: ${totalCostProp.toFixed(2)}</h4>
       <ol>
         {cartItems.map((item, index) => (
           <li key={index}>
@@ -41,13 +43,11 @@ function Cart({ cartItems, removeFromCartProp, totalCostProp, discountRate }) {
           </li>
         ))}
       </ol>
-      <h4>Total Cost: ${totalCostProp.toFixed(2)}</h4>
-      <h5>Discount: {discountRate}%</h5>
-    </div>
+    </section>
   );
 }
-// Step 6: Create cart function
-// Step 6a: 
+// Step 6: Create Checkout function handlesubmit fx must be created inside this one so that we can then put Checkout fx on <form onSubmit={Checkout}> element in jsx return. resetCart(); callback must be added right before return so form clears upon submission
+// Step 6a: Usestates for this function must be created so input gets tracked
 function Checkout({resetCart}){ // prop is called resetCart (resetCart is gonna be fx that will reset the cart after clicking submit)
 // make callback that handles submit
 const handleSubmit = (event) => {
@@ -57,17 +57,23 @@ alert ('You have successfully adopted birds. Thank you!');
 resetCart(); // call back fx for resetting form
 }
 return (
-  <div className='cart'>
+  <section className='checkout'>
     <h2>Check Out</h2>
-  <form className='cart' onSubmit={Checkout}>
-    <label>
-      <input type="text">
-
-      </input>
-    </label>
+  <form onSubmit={handleSubmit}>
+      <label htmlFor="First-Name"/>
+      First Name
+      <input id="First-Name" type="text"/>
+      <label htmlFor="Last-Name"/>
+      Last Name
+      <input id="Last-Name" type="text"/>
+      <label htmlFor="Last-Name"/>
+      E-mail
+      <input id="Last-Name" type="email"/>
+      Zip Code
+      <input id="Last-Name" type="number"/>
     <button type='submit'>Submit</button>
   </form>
-  </div>
+  </section>
   )
 }
 
@@ -87,16 +93,16 @@ function App() {
   };
 
   const handleRemoveFromCart = (id) => {
-    setCartItems(...cartItems.filter(item => item.id !== id));
+    setCartItems(cartItems.filter(item => item.id !== id));
   };
 
   // Steps 5a - 5c to add to handleCart
   const totalCostProp = cartItems.reduce((acc, item) => acc + item.amount, 0);
-  const discountRate = cartItems.length >= 3 ? 10 : 0;
-  const discountedTotal = discountRate ? totalCostProp * (1 - discountRate / 100) : totalCostProp; // discountedTotal will be the "data" passed onto totalCostProp
+  const discountRateProp = cartItems.length >= 3 ? 10 : 0;
+  const discountedTotal = discountRateProp ? totalCostProp * (1 - discountRateProp / 100) : totalCostProp; // discountedTotal will be the "data" passed onto totalCostProp
 
   return (
-    <div>
+    <>
       <header>
         <h1>Bird Sanctuary</h1>
         <h2>Donate to adopt a bird</h2>
@@ -104,16 +110,16 @@ function App() {
       <main>
       <aside>
           <Cart
-            cartItems={cartItems}
             removeFromCartProp={handleRemoveFromCart}
             totalCostProp={discountedTotal}
-            discountRate={discountRate}
+            discountRateProp={discountRateProp}
+            cartItems={cartItems}
           />
-        </aside>
         <Checkout resetCart={resetCart} />
+        </aside>
         <Cards birdData={birdData} addToCartProp={handleAddToCart} />
       </main>
-    </div>
+    </>
   );
 }
 
