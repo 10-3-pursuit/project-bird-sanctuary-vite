@@ -13,7 +13,7 @@ const [cartContent, setCartContent] = useState([]);
 const [bonusItem, setBonusItem] = useState([]);
 const [birdAmount, setBirdAmount] = useState(0);
 const [birdPrice, setBirdPrice] = useState(0);
-//const[removeBird, setRemoveBird] = useState(0);
+// const[removeBird, setRemoveBird] = useState(0);
 
 const addBird = (bird) => {
 if (cartContent.find(({id}) => id === bird.id) ){

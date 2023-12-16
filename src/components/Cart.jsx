@@ -9,6 +9,7 @@ const Cart = ({cartContent, birdPrice}) => {
       <h4>Total: {birdPrice}</h4>
       <ol>{cartContent.length > 0 && cartContent.map(bird => <li key= {bird.id}>{bird.name} {bird.amount} <button onClick="">Delete</button></li>)}
      
+      {/* <span onClick={() => removeOrder(index, item.price) }></span> */}
 
       </ol>
     </div>
