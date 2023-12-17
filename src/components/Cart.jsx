@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import bonusItems from "../data/bonusItems";
 
 
-const Cart = ({cartItems, setCartItems,addToCart ,bonusItems}) => {
+const Cart = ({cartItems, setCartItems,addToCart}) => {
 
   const [totalCost, setTotalCost] = useState(0);
   const [discount, setDiscount] = useState(0);
-  const [bonusItemsState, setBonusItemsState] = useState([]);
+
 
 
   
@@ -14,16 +15,10 @@ const Cart = ({cartItems, setCartItems,addToCart ,bonusItems}) => {
     calculateTotalCost(); 
   }, [cartItems]); 
   
-  // // Display bonus items whenever total cost changes
-  // useEffect(() => {
-  //   displayBonusItems(); 
-  // }, [totalCost]);
   
   const removeFromCart = (birdId) => {
     const updatedCart = cartItems.filter((bird) => bird.id !== birdId);
-    setCartItems(updatedCart, () =>{
-    console.log(updatedCart);
-    });
+    setCartItems(updatedCart)
   };
 
   const calculateTotalCost = () => {
@@ -41,7 +36,7 @@ const Cart = ({cartItems, setCartItems,addToCart ,bonusItems}) => {
     setTotalCost(discountedTotal);
   };
 
-  const calculateDiscount = (totalCost) => {
+  const calculateDiscount = (cartItems) => {
     const minBirdsForDiscount = 3;
     const cartItemCount = cartItems.length;
   
@@ -52,7 +47,18 @@ const Cart = ({cartItems, setCartItems,addToCart ,bonusItems}) => {
   
 
   const displayBonusItems = () => {
-    
+    const thresholds = [100, 300, 500, 1000];
+    let bonuses = [];
+  
+    for (let i = 0; i < thresholds.length; i++) {
+      if (totalCost >= thresholds[i] && bonusItems[i] !== undefined) {
+        bonuses = bonusItems.slice(0, i + 1);
+      } else {
+        break;
+      }
+    }
+
+    return bonuses.map((bonus, index) => <li key={index}>{bonus}</li>);
   };
 
 
@@ -71,11 +77,8 @@ const Cart = ({cartItems, setCartItems,addToCart ,bonusItems}) => {
       </ol>
       <h5>Discount: {discount}%</h5>
       <h4>Total Cost: ${totalCost}</h4>
-      <ul>
-        {bonusItems && bonusItems.map((bonus, index) => (
-          <li key={index}>{bonus}</li>
-        ))}
-      </ul>
+      <h3>Bonus Items in Cart:</h3>
+      <ul>{displayBonusItems()}</ul>   
     </div>
   );
 };

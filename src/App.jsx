@@ -48,7 +48,6 @@ const handleAdopt = (bird) => {
           <Checkout 
             setCartItems = {setCartItems}
             cartItems = {cartItems}
-            bonusItems = {bonusItems}
           />
         </section>
         <aside>
