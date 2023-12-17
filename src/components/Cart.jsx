@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
 
 
-const Cart = ({cartItems, setCartItems,addToCart}) => {
+const Cart = ({cartItems, setCartItems,addToCart ,bonusItems}) => {
 
   const [totalCost, setTotalCost] = useState(0);
   const [discount, setDiscount] = useState(0);
-  const [bonusItems, setBonusItems] = useState([]);
+  const [bonusItemsState, setBonusItemsState] = useState([]);
 
+
+  
+  // Call the function that calculates the total cost
+  useEffect(() => {
+    calculateTotalCost(); 
+  }, [cartItems]); 
+  
+  // // Display bonus items whenever total cost changes
+  // useEffect(() => {
+  //   displayBonusItems(); 
+  // }, [totalCost]);
+  
   const removeFromCart = (birdId) => {
     const updatedCart = cartItems.filter((bird) => bird.id !== birdId);
     setCartItems(updatedCart, () =>{
@@ -14,10 +26,6 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
     });
   };
 
-  useEffect(() => {
-    calculateTotalCost(); // Call the function that calculates the total cost
-  }, [cartItems]); 
-  
   const calculateTotalCost = () => {
     // it will calculate total cost and apply discounts based on cartItems
     //  it will update totalCost and discount accordingly
@@ -25,20 +33,26 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
     cartItems.forEach((bird) => {
       total += bird.amount;
     });
+    const calculatedDiscount = calculateDiscount(cartItems);
+    const discountAmount = total * calculatedDiscount;
+    const discountedTotal = total - discountAmount;
+    
+    setDiscount(calculatedDiscount);
+    setTotalCost(discountedTotal);
+  };
+
+  const calculateDiscount = (totalCost) => {
+    const minBirdsForDiscount = 3;
+    const cartItemCount = cartItems.length;
   
-    // const discountApplied = total > 500 ? 50 : 0; // Apply discount based on total cost
-    // const discountedTotal = total - discountApplied;
-  
-    // setDiscount(discountApplied);
-    setTotalCost(total);
+    return cartItemCount >= minBirdsForDiscount ? 0.10 : 0;
   };
 
 
   
 
   const displayBonusItems = () => {
-    const bonus = totalCost > 1000 ? ['Bonus 1', 'Bonus 2'] : [];
-    setBonusItems(bonus);
+    
   };
 
 
@@ -58,7 +72,7 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
       <h5>Discount: {discount}%</h5>
       <h4>Total Cost: ${totalCost}</h4>
       <ul>
-        {bonusItems.map((bonus, index) => (
+        {bonusItems && bonusItems.map((bonus, index) => (
           <li key={index}>{bonus}</li>
         ))}
       </ul>
