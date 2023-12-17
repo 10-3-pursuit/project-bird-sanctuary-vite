@@ -1,5 +1,5 @@
 header {
-  background: rgb(195, 247, 235);
+  background: rgb(244, 112, 196);
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
@@ -29,8 +29,15 @@ aside > div {
   justify-content: space-between;
 }
 
+.bird-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .card {
   width: 20%;
+  height: 300px;
   padding: 0.5em 3em;
   margin: 1em;
   border-radius: 4px;
@@ -38,7 +45,7 @@ aside > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(229, 250, 245);
+  background: rgb(244, 112, 196);
 }
 
 .card img {
