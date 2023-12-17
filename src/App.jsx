@@ -21,7 +21,7 @@ const addToCart = (bird) => {
     // Update cartItems and totalCost accordingly
 
   }else{
-    console.log(`${bird.name} is already in the cart`);
+    alert(`${bird.name} is already in the cart`);
   }
 };
 
