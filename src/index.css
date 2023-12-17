@@ -1,37 +1,41 @@
-html{
-  background-color: antiquewhite;
+html {
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* background-color: antiquewhite; */
+  background: linear-gradient(45deg, rgb(218, 174, 118) 30%, rgba(211, 211, 211, 0.8) 70%);
   margin: 0px auto;
   text-align: center;
   max-width: 100%;
 }
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 header {
-  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
+  background: url(assets/dogwood.jpeg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   padding: 1em;
-  box-shadow: 1px 1px 6px gray;
+  box-shadow: 1px 1px 3px gray;
   margin-bottom: 0.75em;
 }
+
 header h1 {
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   color: antiquewhite;
   font-size: 300%;
 }
-/* h2,h3 {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: antiquewhite;
-  overflow: hidden;
-} */
+
 main {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 0px auto;
-  padding-left: 2%;
-  /* margin: auto;
-  align-content: center; */
+  margin: 0 auto;
+  padding-left: 3%;
 }
 
 aside {
@@ -41,30 +45,28 @@ aside {
   align-items: stretch;
   height: 100vh;
 }
+
 aside > div {
   min-height: 40vh;
 }
+
 .birds {
-  display: flex;
-  flex-wrap: wrap;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
   width: 70%;
-  /* justify-content: space-between; */
 }
 
 .card {
   width: 40%;
   padding: 0.5em 3em;
   margin: 1em;
-  /* border-radius: 4px; */
   border: 1px solid gray;
-  box-shadow: 3px 3px 8px dimgray;
+  box-shadow: 1px 1px 3px dimgray;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
+  background: url(assets/dogwood.jpeg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -73,29 +75,42 @@ aside > div {
 .card img {
   max-width: 100%;
   margin: auto;
-  box-shadow: 1px 1px 6px grey;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
-.cart,
-.checkout {
+.cart, .checkout {
   width: 100%;
   padding: 0.3em;
-  margin: 1em 0em;
+  margin: 1em 0;
   text-align: center;
   border: 1px solid gray;
-  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
-  background-size: contain;
+  background: url(assets/dogwood.jpeg);
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  box-shadow: 1px 1px 3px dimgray;
 }
 
-/* h4 {
-  font-size: 1.5em;
-}
-h5 {
-  font-size: 1em;
-} */
-
-p {
+p, ol,ul {
   font-size: 0.75em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
+}
+
+ul, ol {
+  text-align: center;
+  padding-right: 30px;
+}
+
+button {
+  background: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
+}
+
+button:hover {
+  background: url(assets/dogwood.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }

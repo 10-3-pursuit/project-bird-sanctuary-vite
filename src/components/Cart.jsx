@@ -27,7 +27,9 @@ function Cart ({ cartItems, removeFromCartProp, totalCostProp, discountRateProp,
             {cartItems.map((item, index) => (
               <li key={index}>
                 {item.name} - ${item.amount.toFixed(2)}
-                <button onClick={() => removeFromCartProp(item.id)}>Delete</button>
+                <br></br>
+                {/* delete button */}
+                <button onClick={() => removeFromCartProp(item.id)}>❌</button>
               </li>
             ))}
           </ol>
