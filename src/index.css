@@ -73,3 +73,13 @@ h5 {
 p {
   font-size: 0.75em;
 }
+
+button {
+  color: #3300ff;
+  background: lightpink;
+  border: none;
+  margin: 0 20px 20px 20px;
+  border-radius: 2px;
+  width: 80px;
+  height: 30px;
+}
