@@ -20,21 +20,25 @@ function App() {
     const newCart = [...shoppingCart, cartedBird]
       setShoppingCart(newCart)
     
-    
     if (singleBird) {
       setTotal((oldTotal) => oldTotal += cartedBird.amount)
     }
+    console.log(shoppingCart)
   }
 
   function removeFromCart(singleBirdId) {
-    const updatedCart = shoppingCart.filter((bird) => bird.id !== singleBirdId);
-    setShoppingCart(updatedCart);
+    const updatedCart = shoppingCart.filter((bird) => bird.id !== singleBirdId)
+    setShoppingCart(updatedCart)
     
-    const newTotal = updatedCart.reduce((total, bird) => total + bird.amount, 0);
-    setTotal(newTotal);
+    const newTotal = updatedCart.reduce((total, bird) => total + bird.amount, 0)
+    setTotal(newTotal)
   }
-  const discount = shoppingCart.length >= 3 ? total * 0.1 : 0;
-  const handleDiscount = total - discount;
+  const resetCart = () => {
+    setShoppingCart([])
+    setTotal(0)
+  }
+  const discount = shoppingCart.length >= 3 ? total * 0.1 : 0
+  const handleDiscount = total - discount
 
   return (
     <div>
@@ -45,7 +49,7 @@ function App() {
       <main>
         <aside>
           <Cart shoppingCart={shoppingCart} removeFromCart={removeFromCart} handleDiscount={handleDiscount} discount={discount}/>
-          <Checkout />
+          <Checkout resetCart={resetCart} />
         </aside>
         <Cards birds={birds} addToCart={addToCart}/>
       </main>
