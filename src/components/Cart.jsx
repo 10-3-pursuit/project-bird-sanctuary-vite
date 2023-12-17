@@ -57,7 +57,6 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
         break;
       }
     }
-
     return bonuses.map((bonus, index) => <li key={index}>{bonus}</li>);
   };
 

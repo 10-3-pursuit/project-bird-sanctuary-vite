@@ -43,19 +43,20 @@ const handleAdopt = (bird) => {
             setCartItems = {setCartItems}
             addToCart = {addToCart}
           />
-        </aside>
-        <section>
+        
           <Checkout 
             setCartItems = {setCartItems}
             cartItems = {cartItems}
-          />
-        </section>
-        <aside>
+            />
+        </aside>
+        
+        <section>
           <Cards 
             birds ={birds} 
             handleAdopt={handleAdopt} 
-          />
-        </aside>
+            />
+        </section>
+        
       </main>
     </div>
   );

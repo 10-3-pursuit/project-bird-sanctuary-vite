@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Checkout = ({ setCartItems, CartItems }) => {
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -10,10 +11,16 @@ const Checkout = ({ setCartItems, CartItems }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    console.log(`Field "${name}" changed to:`, value);
     setFormData({
       ...formData,
       [name]: value,
     });
+  };
+
+  const resetCart = () => {
+    setCartItems([]);
+    // Reset other cart-related state if needed (total cost, discounts)
   };
 
   const handleSubmit = (e) => {
@@ -30,10 +37,6 @@ const Checkout = ({ setCartItems, CartItems }) => {
     });
   };
 
-  const resetCart = () => {
-    setCartItems([]);
-    // Reset other cart-related state if needed (total cost, discounts)
-  };
 
 
   return (
