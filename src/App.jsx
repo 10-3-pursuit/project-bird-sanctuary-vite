@@ -63,8 +63,8 @@ function App() {
 export default App;
 
 /* ----- B U I L D I N G   T H I S   A P P -----
-Step 1: import useStates
-Step 2: import Data
+Step 1: import useStates / useEffect
+Step 2: import Data (look up axios for fetch calls)
 Step 3: make Cards function to get data and render the information on the page
 Step 3a: put Cards fx as prop in App function in <main> tag
 Step 4: Make Cart component
@@ -101,4 +101,8 @@ You can use seperate states for each input element as well but one single useSta
 added autocomplete attribute since webpage was giving a warning about how it's missing the autocomplete
 
 call back fx for resetting form must be at end of function so it can work properly (the fx should be with the useStates inside App component so it can read the data)
+
+React browser router - page re-renders w/o refreshing to navigate between different URLs
+
+useContext to get props in more efficient way
 */

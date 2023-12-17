@@ -61,3 +61,8 @@ function Checkout({resetCart}){ // prop is called resetCart (resetCart is gonna 
       )
     }
 export default Checkout;
+
+/* Best Practice: have the event handler / useState in component where it's going to be used and pass down as prop 
+
+One way: in APP.jsx define useState, create handler fx, and pass down from APP.jsx instead
+*/
