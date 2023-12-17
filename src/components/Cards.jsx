@@ -11,7 +11,12 @@ const Cards = ({ birdsData, addToCart }) => {
 
               <p>Price: ${bird.amount}</p>
               <img src={bird.img} alt={bird.name} />
-              <button onClick={() => addToCart(bird)}>ADOPT</button>
+              <button
+                className="rainbow-button"
+                onClick={() => addToCart(bird)}
+              >
+                ADOPT
+              </button>
             </li>
           ))}
         </ul>
