@@ -90,13 +90,14 @@ const handleSubmit = (event) => {
 // prevent default for submit button (stops from resetting page bc that's the default)
 event.preventDefault();
 alert ('You have successfully adopted birds. Thank you! Woot!');
+// Step 8b: created a reset for the form after creating useStates for the form inputs. This reset will trigger after clicking the submit form button.
 setFormData({
   firstName: '',
   lastName: '',
   email: '',
   zipCode: ''
 });
-resetCart(); // call back fx for resetting form
+resetCart(); // call back fx for resetting form must be at end of function so it can work properly (the fx should be with the useStates inside App component so it can read the data)
 }
 // Step 8: Create Use states for form since that needs to be tracked / updated
 /* ----- Notes: -----
@@ -109,25 +110,25 @@ const [formData, setFormData] = useState({
   zipCode: ''
 });
 
-
+// added autocomplete attribute since webpage was giving a warning about how it's missing the autocomplete
 return (
   <section className='checkout'>
     <h2>Check Out</h2>
-  <form onSubmit={handleSubmit}>
-      <label htmlFor="firstName"/>
-      First Name
-      <input onChange={handleInputChange} value= {formData.firstName} id="firstName" name="firstName" type="text"/>
-      <label  htmlFor="lastName"/>
-      Last Name
-      <input onChange={handleInputChange} value= {formData.lastName} id="lastName" name="lastName" type="text"/>
-      <label htmlFor="email"/>
-      E-mail
-      <input onChange={handleInputChange} value= {formData.email} id="email" name="email" type="email"/>
-      <label htmlFor="zipcode"/>
-      Zip Code
-      <input onChange={handleInputChange} value= {formData.zipCode} id="zipCode" name="zipCode" type="number"/>
-    <button type='submit'>Submit</button>
-  </form>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">First Name</label>
+        <input onChange={handleInputChange} value={formData.firstName} id="firstName" name="firstName" type="text" autoComplete="given-name"/>
+
+        <label htmlFor="lastName">Last Name</label>
+        <input onChange={handleInputChange} value={formData.lastName} id="lastName" name="lastName" type="text" autoComplete="family-name"/>
+
+        <label htmlFor="email">E-mail</label>
+        <input onChange={handleInputChange} value={formData.email} id="email" name="email" type="email" autoComplete="email"/>
+
+        <label htmlFor="zipCode">Zip Code</label>
+        <input onChange={handleInputChange} value={formData.zipCode} id="zipCode" name="zipCode" type="number" autoComplete="postal-code"/>
+
+        <button type='submit'>Submit</button>
+      </form>
   </section>
   )
 }
