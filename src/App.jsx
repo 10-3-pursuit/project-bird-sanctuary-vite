@@ -6,6 +6,28 @@ import birds from "./data/birds"
 
 
 function App() {
+
+  const [shoppingCart, setShoppingCart] = useState([])
+  const [total, setTotal] = useState(0)
+
+  function addToCart (singleBird) {
+    const cartedBird = birds.find((bird) => bird.id === singleBird)
+    const newCart = [...shoppingCart, cartedBird]
+      setShoppingCart(newCart)
+    
+    if (singleBird) {
+      setTotal((oldTotal) => oldTotal += cartedBird.amount)
+    }
+  }
+
+  function removeFromCart(singleBirdId) {
+    const updatedCart = shoppingCart.filter((bird) => bird.id !== singleBirdId);
+    setShoppingCart(updatedCart);
+    
+    const newTotal = updatedCart.reduce((total, bird) => total + bird.amount, 0);
+    setTotal(newTotal);
+  }
+  
   return (
     <div>
       <header>
@@ -14,9 +36,10 @@ function App() {
       </header>
       <main>
         <aside>
+          <Cart shoppingCart={shoppingCart} removeFromCart={removeFromCart} total={total}/>
           <Checkout />
         </aside>
-        <Cards birds={birds}/>
+        <Cards birds={birds} addToCart={addToCart}/>
       </main>
     </div>
   );

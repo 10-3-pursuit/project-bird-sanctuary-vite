@@ -6,8 +6,8 @@ const Checkout = () => {
         <label htmlFor="firstName">
           <h5>First Name</h5>
           <input 
-            onChange="{handleChange}"
-            value= "{state.firstName}"
+            // onChange={handleChange}
+            // value= {state.firstName}
             type="text" 
             name="firstName" 
             id="firstName"  
@@ -16,8 +16,8 @@ const Checkout = () => {
         <label htmlFor="lastName">
           <h5>Last Name</h5>
           <input 
-            onChange="{handleChange}"
-            value="{state.lastName}"
+            // onChange={handleChange}
+            // value={state.lastName}
             type="text" 
             name="lastName" 
             id="lastName" 
@@ -26,8 +26,8 @@ const Checkout = () => {
         <label htmlFor="email">
           <h5>Email</h5>
           <input
-            onChange="{handleChange}"
-            value="{state.email}"
+            // onChange={handleChange}
+            // value={state.email}
             type="text" 
             name="email" 
             id="email"
@@ -36,8 +36,8 @@ const Checkout = () => {
         <label htmlFor="zip">
           <h5>Zip</h5>
           <input 
-            onChange="{handleChange}"
-            value="{state.zip}"
+            // onChange={handleChange}
+            // value={state.zip}
             type="text" 
             name="zip" 
             id="zip"  

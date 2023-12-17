@@ -1,4 +1,4 @@
-const Cards = ({birds}) => {
+const Cards = ({birds, addToCart}) => {
   return (
     <div className="birds">
       <div className="cards">
@@ -7,7 +7,7 @@ const Cards = ({birds}) => {
             <h4>{bird.name}</h4>
             <h5>Price: ${bird.amount}</h5>
             <img src={bird.img} alt={bird.name}></img>
-            <button>Adopt</button>
+            <button onClick={() => addToCart(bird.id)}>Adopt</button>
           </div>
           )
         )}
