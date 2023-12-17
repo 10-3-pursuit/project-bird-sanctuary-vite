@@ -1,17 +1,18 @@
 import { useState } from "react";
-// CHECKOUT COMPONENT
+
+//CHECKOUT COMPONENT
 const Checkout = () => {
-  // STATE TO MANAGE USER DETAILS (name, email, zip)
+  // State to hold user details (first name, last name, email, zip code)
   const [userDetails, setUserDetails] = useState({
-    firstName: '',
-    lastName: '',
+    firstName: "",
+    lastName: "",
     email: "",
     zip: "",
   });
 
-  // FUNCTION TO HANDLE INPUTS
+  // Function to handle changes in input fields
   const handleTextChange = (event) => {
-    // UPDATE THE USER DETAILS WITH THE STATE.
+    // Update the corresponding field in the user details state using spread syntax
     setUserDetails({
       ...userDetails,
       [event.target.name]: event.target.value,
@@ -23,7 +24,7 @@ const Checkout = () => {
     // Prevent the default form submission behavior
     event.preventDefault();
 
-    // Display an alert to the user indicating successful bird adoption
+    // Display an alert indicating a successful adoption
     alert("You have successfully adopted birds. Thank you!");
 
     // Reset user details to empty values after submission
@@ -35,30 +36,62 @@ const Checkout = () => {
     });
   };
 
-  // RENDER COMPONENT
-  return (
-    <div className="checkout">
-      <h2>Checkout Component</h2>
-      {/* Form for user details with input fields */}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="firstName">
-          First Name:
+return (
+  <div className="checkout">
+    <h2>Checkout Component</h2>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="firstName">
+        <br />
+        First Name:
+        <br />
+        <input
+          type="text"
+          id="first-name"
+          name="firstName"
+          value={userDetails.firstName}
+          onChange={handleTextChange}
+        />
+        </label>
+        <br />
+        <label htmlFor="lastName">
+          Last Name:
+          <br />
           <input
             type="text"
-            id="first-name"
-            name="firstName"
-            value={userDetails.firstName}
+            id="last-name"
+            name="lastName"
+            value={userDetails.lastName}
             onChange={handleTextChange}
           />
         </label>
-        {/* Similar input fields for Last Name, Email, and Zip Code */}
-        {/* ... (omitted for brevity) */}
-        {/* Button to submit the form */}
+        <br />
+        <label htmlFor="email">
+          Email:
+          <br />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value={userDetails.email}
+            onChange={handleTextChange}
+          />
+        </label>
+        <br />
+        <label htmlFor="zip">
+          Zip code:
+          <br />
+          <input
+            type="number"
+            id="zip"
+            name="zip"
+            value={userDetails.zip}
+            onChange={handleTextChange}
+          />
+        </label>
+        <br />
         <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
-
-// Export the 'Checkout' component for use in other parts of the application
 export default Checkout;
