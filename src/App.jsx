@@ -10,7 +10,7 @@ function App() {
   const [total, setTotal] = useState(0)
   const [discount, setDiscount] = useState(false)
   const [bonus, setBonus] = useState([])
-
+  
   function handleBonusItems(total){
     const bonusList = [...bonusItems]
     if(total >= 100 && total <=300){
