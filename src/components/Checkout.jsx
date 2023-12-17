@@ -39,16 +39,16 @@ function Checkout({resetCart}){ // prop is called resetCart (resetCart is gonna 
         <h2>Check Out</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="firstName"/>
-            First Name<br></br>
-            <input onChange={handleInputChange} value={formData.firstName} id="firstName" name="firstName" type="text" autoComplete="given-name"/><br></br>
+            First Name:*<br></br>
+            <input onChange={handleInputChange} value={formData.firstName} id="firstName" name="firstName" type="text" autoComplete="given-name" required/><br></br>
             <label htmlFor="lastName"/>
-            Last Name<br></br>
+            Last Name:<br></br>
             <input onChange={handleInputChange} value={formData.lastName} id="lastName" name="lastName" type="text" autoComplete="family-name"/><br></br>
             <label htmlFor="email"/>
-            E-mail<br></br>
-            <input onChange={handleInputChange} value={formData.email} id="email" name="email" type="email" autoComplete="email"/><br></br>
+            E-mail:*<br></br>
+            <input onChange={handleInputChange} value={formData.email} id="email" name="email" type="email" autoComplete="email" required/><br></br>
             <label htmlFor="zipCode"/>
-            Zip Code<br></br>
+            Zip Code:<br></br>
             <input onChange={handleInputChange} value={formData.zipCode} id="zipCode" name="zipCode" type="number" autoComplete="postal-code"/><br></br>
             <button type='submit'>Submit</button>
           </form>
