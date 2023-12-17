@@ -1,8 +1,9 @@
-const Cards = ({ birdsData }) => {
+import { useState } from "react";
+
+const Cards = ({ birdsData, addToCart }) => {
   return (
     <div className="birds">
       <div>
-        <h1>Card Component</h1>
         <ul>
           {birdsData.map((bird) => (
             <li className="card" key={bird.id} style={{ listStyle: "none" }}>
@@ -10,7 +11,7 @@ const Cards = ({ birdsData }) => {
 
               <p>Price: ${bird.amount}</p>
               <img src={bird.img} alt={bird.name} />
-              <button>ADOPT</button>
+              <button onClick={() => addToCart(bird)}>ADOPT</button>
             </li>
           ))}
         </ul>
