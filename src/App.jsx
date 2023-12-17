@@ -1,3 +1,10 @@
+import { useState } from "react";
+import Cards from "./components/Cards";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout"
+import birds from "./data/birds"
+
+
 function App() {
   return (
     <div>
@@ -6,7 +13,10 @@ function App() {
         <h2>Donate to adopt a bird</h2>
       </header>
       <main>
-        <aside></aside>
+        <aside>
+          <Checkout />
+        </aside>
+        <Cards birds={birds}/>
       </main>
     </div>
   );
