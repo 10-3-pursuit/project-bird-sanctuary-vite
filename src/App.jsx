@@ -6,7 +6,7 @@ import bonusItems from './data/bonusItems';
 // Step 2: import Data
 // Step 3: make Cards function to get data and render the information on the page
 // Step 3a: put Cards fx as prop in App function in <main> tag
-function Cards({ birdData, addToCartProp }) { // name of prop is addToCart
+function Cards ({ birdData, addToCartProp }) { // name of prop is addToCart
   return (
     <section>
       {birdData.map((bird) => (
@@ -29,10 +29,12 @@ Step 5a: create variable to store totalCost and use as a (totalCostProp)
 Step 5b: create variable to store discount rate to use as data for totalCostProp
 Step 5c: create variable to store discountedTotal */
 
-function Cart({ cartItems, removeFromCartProp, totalCostProp, discountRateProp, bonusItems }) {
+function Cart ({ cartItems, removeFromCartProp, totalCostProp, discountRateProp, bonusItems }) {
 // add removeFromCartProp fx parameter, and parameters that are variables that hold totalCost and discountRate. All this variable stuff will be in App function and used inside this function
 // Step 7: Added bonusItems to be used as prop on App.jsx, but before using it as a prop create conditional (wrap it as a function)
+// Step 7a: create callback fx to generate bonus items 
 const getBonusItemsToDisplay = () => {
+  // making it a switch statement will probably make code longer bc gotta create statements that will be true for each case to put inside switch ()
   if (totalCostProp > 1000) {
     return bonusItems;
   } else if (totalCostProp >= 500) {
@@ -45,7 +47,7 @@ const getBonusItemsToDisplay = () => {
     return [];
   }
 };
-// Determine the bonus items to display
+// Determine the bonus items to display (created this variabe so output can be used to iterate through in .map fx in the return (to append and update on page))
 const displayedBonusItems = getBonusItemsToDisplay();
   return (
     <section className="cart">
@@ -74,34 +76,6 @@ const displayedBonusItems = getBonusItemsToDisplay();
   );
 }
 
-// function bonusItemsFx ({ bonusItems, totalCostProp }) { // Step 7: create callback fx to generate bonus items prob switch statement
-//     if (totalCostProp > 1000) {
-//       return bonusItems.slice();
-//     } else if (totalCostProp > 500 && totalCostProp <= 1000) {
-//       return bonusItems.slice(0,2);
-//     } else if (totalCostProp > 300 && totalCostProp <= 500) {
-//       return bonusItems.slice(0,1)
-//     } else if (totalCostProp > 100) {
-//       return bonusItems[0];
-//     }
-//   // switch (true) {
-//   //   case totalCostProp > 1000:
-//   //     bonusItems.slice();
-//   //     break;
-//   //   case totalCostProp > 500 && totalCostProp <= 1000:
-//   //     bonusItems.slice(0,2);
-//   //     break;
-//   //   case totalCostProp > 300 && totalCostProp <= 500:
-//   //     bonusItems.slice(0,1)
-//   //     break;
-//   //   case totalCostProp > 100:
-//   //     bonusItems[0];
-//   //     break;
-//   //   default:
-//   //     `No Prize fo' you!`
-//   //  }
-// }
-
 // Step 6: Create Checkout function handlesubmit fx must be created inside this one so that we can then put Checkout fx on <form onSubmit={Checkout}> element in jsx return. resetCart(); callback must be added right before return so form clears upon submission
 // Step 6a: Usestates for this function must be created so input gets tracked
 function Checkout({resetCart}){ // prop is called resetCart (resetCart is gonna be fx that will reset the cart after clicking submit)
@@ -111,6 +85,20 @@ const handleSubmit = (event) => {
 event.preventDefault();
 alert ('You have successfully adopted birds. Thank you!');
 resetCart(); // call back fx for resetting form
+}
+// Step 8: Create Use states for form since that needs to be tracked / updated
+/* ----- Notes: -----
+You can use seperate states for each input element as well but one sisngle usestate that is an object is cleaner*/
+// Step 8a: Create handle input change function to put as onChange in input
+const [formData, setFormData] = useState({
+  firstName: '',
+  lastName: '',
+  email: '',
+  zipCode: ''
+});
+// Step 8a: make an onChange handler fx for form inputs (to use for onChange value in the input element)
+const handleInputChange = (event) => {
+  setFormData ({...formData, [event.target.name]: event.target.value})
 }
 return (
   <section className='checkout'>
