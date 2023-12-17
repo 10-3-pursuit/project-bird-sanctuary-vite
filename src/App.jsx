@@ -13,40 +13,28 @@ function App() {
   const [bonus, setBonus] = useState([])
 
   const addBonuses = (total) => {
+    const [item1, item2, item3, item4] = bonusItems
     switch (true) {
       case (total >= 1000):
         setBonus(
-          <>
-            <li>{bonusItems[0]}</li>
-            <li>{bonusItems[1]}</li>
-            <li>{bonusItems[2]}</li>
-            <li>{bonusItems[2]}</li>
-          </>
+          [item1, item2, item3, item4]
         )
         break;
       case (total >= 500):
         setBonus(
-          <>
-            <li>{bonusItems[0]}</li>
-            <li>{bonusItems[1]}</li>
-            <li>{bonusItems[2]}</li>
-          </>
+          [item1, item2, item3]
         )
-
         break;
       case (total >= 300):
         setBonus(
-          <>
-            <li>{bonusItems[0]}</li>
-            <li>{bonusItems[1]}</li>
-          </>
+          [item1, item2]
         )
         break;
       case (total >= 100):
-        setBonus(<li>{bonusItems[0]}</li>)
+        setBonus([item1])
         break
       default: 
-        null
+        setBonus([])
     }
   }
   

@@ -1,8 +1,14 @@
+body {
+  font-family: fantasy;
+}
+
 header {
   background: rgb(195, 247, 235);
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
+  border-radius: 4px;
 }
 main {
   display: flex;
@@ -42,8 +48,9 @@ aside > div {
 }
 
 .card img {
-  max-width: 70%;
-  margin: auto;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
   box-shadow: 1px 1px 6px grey;
 }
 
@@ -53,7 +60,9 @@ aside > div {
   padding: 0.3em;
   margin: 1em 0em;
   text-align: center;
-  border: 1px solid gray;
+  border: 2px solid gray;
+  background-color: lightblue;
+  border-radius: 4px;
 }
 
 h4 {
@@ -65,4 +74,11 @@ h5 {
 
 p {
   font-size: 0.75em;
+}
+
+.card button {
+  margin-top: 10px;
+  background-color: aquamarine;
+  border-radius: 4px;
+  font-family: fantasy;
 }

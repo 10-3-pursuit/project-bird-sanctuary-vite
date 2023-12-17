@@ -18,7 +18,9 @@ const Cart = ({discount, total, cartItems, bonus, handleRemove}) => {
       </ol>
       <p>Your donations have qualified you for the following items:</p>
       <ul>
-      {bonus}
+        {bonus.map((item, index)=> (
+          <li key={index}>{item}</li>
+        ))}
       </ul>
     </div>
   );
