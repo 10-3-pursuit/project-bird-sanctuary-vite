@@ -5,6 +5,7 @@ import Cards from "./components/Cards.jsx"
 import Cart from "./components/Cart.jsx"
 import Checkout from './components/Checkout.jsx';
 import './index.css'
+import './App.css'
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
