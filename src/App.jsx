@@ -2,6 +2,7 @@ import birdData from "./data/birds";
 import Cards from "./components/Cards";
 import Cart from "./components/Cart";
 import { useState } from "react";
+import bonusItems from "./data/bonusItems";
 
 const birds = birdData;
 
@@ -12,7 +13,26 @@ function App() {
 
   const [total, setTotal] = useState(0);
 
-  const [discountedTotal, setDiscountedTotal] = useState();
+  const [bonus, setBonus] = useState([]);
+
+  function checkForBonus() {
+
+    const bonusList = [...bonusItems]
+
+    if (total >= 100 && total < 300) {
+      setBonus(bonusList.splice(0,1));
+    } 
+    else if (total >= 300 && total < 500) {
+      setBonus(bonusList.splice(0,2));
+    }
+    else if(total >=500 && total < 1000 ) {
+      setBonus(bonusList.splice(0,3))
+    }
+    else if(total >= 1000 ){
+      setBonus(bonusList.splice(0,4))
+    }
+  }
+  
 
   function addToCart(birdId){
     const selectedBird = birds.find((bird) => bird.id === birdId);
@@ -21,6 +41,7 @@ function App() {
       setCartContent(updatedCartContent);
       const updatedTotal = total + selectedBird.amount;
       setTotal(updatedTotal);
+      checkForBonus();
     }
     else {
       alert('Bird Already Chosen. Try a Different Bird!')
@@ -31,7 +52,6 @@ function App() {
     const selectedBird = cartContent.find((bird) => (bird.id === birdId))
     const filteredCart = cartContent.filter((bird) => bird.id !== birdId);
     setCartContent(filteredCart);
-    // console.log(selectedBird);
     const updatedTotal = total - selectedBird.amount;
     setTotal(updatedTotal);
   }
@@ -44,7 +64,7 @@ function App() {
       </header>
       <main>
         <aside>
-          <Cart birds = {birds} cartContent = {cartContent} total = {total} removeBird = {removeBird}/>
+          <Cart birds = {birds} cartContent = {cartContent} total = {total} removeBird = {removeBird} bonusItems = {bonusItems} checkForBonus = {checkForBonus} bonus = {bonus} />
         </aside>
         < Cards birds = {birds} addToCart = {addToCart}/>
       </main>
