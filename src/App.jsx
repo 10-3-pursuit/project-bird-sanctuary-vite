@@ -76,12 +76,13 @@ const resetCart = () => {
 };
   
 return (
-    <div className="cart">
-      <header>
-        <h1>Bird Sanctuary</h1>
-        <h2>Donate to adopt a bird</h2>
-      </header>
-      <main>
+  <div className="cart">
+    <header className="header">
+      <h1>Bird Sanctuary</h1>
+      <h2>Donate to adopt a bird</h2>
+    </header>
+    <main className="main">
+      <div className="cart">
         <Cart
           cartItems={cartItems}
           handleRemoveFromCart={handleRemoveFromCart}
@@ -90,11 +91,13 @@ return (
           bonusItems={bonusItemsToShow}
         />
         <Checkout clearCart={resetCart} cartlength={cartItems.length} />
+      </div>
+      <div className="birds">
         <Cards birds={birddata} handleAddToCart={handleAddToCart} />
-        <aside></aside>
-      </main>
-    </div>
-  );
+      </div>
+    </main>
+  </div>
+);
 }
 
 export default App;
