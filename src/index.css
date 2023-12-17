@@ -2,15 +2,14 @@ html {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  /* background-color: antiquewhite; */
-  background: linear-gradient(45deg, rgb(218, 174, 118) 30%, rgba(168, 243, 220, 0.584) 70%);
-  margin: 0px auto;
-  text-align: center;
-  max-width: 100%;
+  text-align: center; 
 }
 
-body {
+html, body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(45deg, rgb(218, 174, 118) 40%, rgba(168, 243, 220, 0.526) 60%);
+  /* max-width: 170vh; */
+  margin: auto;
 }
 
 header {
@@ -18,6 +17,7 @@ header {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  border: 2px double gray;
   padding: 1em;
   box-shadow: 1px 1px 3px gray;
   margin-bottom: 0.75em;
@@ -34,8 +34,7 @@ main {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
-  padding-left: 3%;
+  margin: auto;
 }
 
 aside {
@@ -55,13 +54,16 @@ aside > div {
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   width: 70%;
+  box-sizing: content-box;
 }
 
 .card {
   width: 40%;
   padding: 0.5em 3em;
   margin: 1em;
-  border: 1px solid gray;
+  /* border: 1px dotted rgb(0, 0, 0); */
+  /* border: 1px solid gray; */
+  border: 2px double gray;
   box-shadow: 1px 1px 3px dimgray;
   display: flex;
   flex-direction: column;
@@ -84,7 +86,8 @@ aside > div {
   padding: 0.3em;
   margin: 1em 0;
   text-align: center;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
+  border: 2px double gray;
   background: url(assets/dogwood.jpeg);
   background-size: cover;
   background-attachment: fixed;
