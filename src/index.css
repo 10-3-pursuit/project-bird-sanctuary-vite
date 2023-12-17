@@ -1,8 +1,14 @@
+body{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 header {
   background: rgb(195, 247, 235);
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
+  color: black;
 }
 main {
   display: flex;
@@ -30,15 +36,15 @@ aside > div {
 }
 
 .card {
-  width: 20%;
+  width: 15%;
   padding: 0.5em 3em;
   margin: 1em;
   border-radius: 4px;
-  box-shadow: 3px 3px 8px dimgray;
+  box-shadow: 3px 3px 8px rgb(93, 77, 106);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(229, 250, 245);
+  background: rgb(176, 238, 247);
 }
 
 .card img {
@@ -53,9 +59,19 @@ aside > div {
   padding: 0.3em;
   margin: 1em 0em;
   text-align: center;
-  border: 1px solid gray;
+  border: 1px solid rgb(88, 185, 255);
+  border-radius: 6px;
+  background-color: rgb(216, 255, 239);
+  background: rgb(241, 249, 201);
+  box-shadow: 1px 1px 6px gray;
 }
 
+
+.checkout input{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
 
 h4 {
   font-size: 1.5em;
@@ -66,4 +82,9 @@ h5 {
 
 p {
   font-size: 0.75em;
+}
+
+@media (max-width: 1405px){
+
+
 }

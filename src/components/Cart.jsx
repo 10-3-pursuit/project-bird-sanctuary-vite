@@ -34,7 +34,7 @@ const Cart = ({cart, handleRemoveBird }) => {
     <div className="cart">
       <h2>Cart</h2>
       <h3>Total: ${finalTotal}</h3>
-      <h5>Discount: {discount === 0 ? 0 : 10}%</h5>
+      <h5>Discount: {discount === 0 ? 0 : 10}%  (${discount})</h5>
       <ol>
         {cart.map((bird) => (
           <li key={bird.id}>
