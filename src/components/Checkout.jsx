@@ -1,6 +1,11 @@
 import { useState } from 'react'
 //import App from "../App.jsx"
 
+
+/*---- N O T E ----
+Should add conditional to check if cart is empty before submitting form
+*/
+
 function Checkout({resetCart}){ // prop is called resetCart (resetCart is gonna be fx that will reset the cart after clicking submit)
     // make callback that handles submit
     // Step 8a: make an onChange handler fx for form inputs (to use for onChange value in the input element)
