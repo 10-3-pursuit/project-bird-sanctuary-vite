@@ -80,10 +80,22 @@ const displayedBonusItems = getBonusItemsToDisplay();
 // Step 6a: Usestates for this function must be created so input gets tracked
 function Checkout({resetCart}){ // prop is called resetCart (resetCart is gonna be fx that will reset the cart after clicking submit)
 // make callback that handles submit
+// Step 8a: make an onChange handler fx for form inputs (to use for onChange value in the input element)
+// Step 8b: add onChange handler to input elements
+const handleInputChange = (event) => {
+  setFormData ({...formData, [event.target.name]: event.target.value})
+}
+
 const handleSubmit = (event) => {
-// prevent default for submit button
+// prevent default for submit button (stops from resetting page bc that's the default)
 event.preventDefault();
-alert ('You have successfully adopted birds. Thank you!');
+alert ('You have successfully adopted birds. Thank you! Woot!');
+setFormData({
+  firstName: '',
+  lastName: '',
+  email: '',
+  zipCode: ''
+});
 resetCart(); // call back fx for resetting form
 }
 // Step 8: Create Use states for form since that needs to be tracked / updated
@@ -96,34 +108,31 @@ const [formData, setFormData] = useState({
   email: '',
   zipCode: ''
 });
-// Step 8a: make an onChange handler fx for form inputs (to use for onChange value in the input element)
-const handleInputChange = (event) => {
-  setFormData ({...formData, [event.target.name]: event.target.value})
-}
+
+
 return (
   <section className='checkout'>
     <h2>Check Out</h2>
   <form onSubmit={handleSubmit}>
-      <label htmlFor="First-Name"/>
+      <label htmlFor="firstName"/>
       First Name
-      <input id="First-Name" type="text"/>
-      <label htmlFor="Last-Name"/>
+      <input onChange={handleInputChange} value= {formData.firstName} id="firstName" name="firstName" type="text"/>
+      <label  htmlFor="lastName"/>
       Last Name
-      <input id="Last-Name" type="text"/>
-      <label htmlFor="Last-Name"/>
+      <input onChange={handleInputChange} value= {formData.lastName} id="lastName" name="lastName" type="text"/>
+      <label htmlFor="email"/>
       E-mail
-      <input id="Last-Name" type="email"/>
+      <input onChange={handleInputChange} value= {formData.email} id="email" name="email" type="email"/>
+      <label htmlFor="zipcode"/>
       Zip Code
-      <input id="Last-Name" type="number"/>
+      <input onChange={handleInputChange} value= {formData.zipCode} id="zipCode" name="zipCode" type="number"/>
     <button type='submit'>Submit</button>
   </form>
   </section>
   )
 }
 
-const resetCart = () => { // to use in Checkout fx (the form)
-  setCartItems([]);
-};
+
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -138,6 +147,12 @@ function App() {
 
   const handleRemoveFromCart = (id) => {
     setCartItems(cartItems.filter(item => item.id !== id));
+  };
+  // moved it into App component so it can have access to setCartItems
+  /* ----- Notes: -----
+  React, hooks like useState can only be used within the body of a function component, and their returned state and setter functions are only accessible within the same component where they're declared (or passed down as props to child components)*/
+  const resetCart = () => { // to use in Checkout fx (the form)
+    setCartItems([]); // might have to change this to an object Step 8 maybe it doesn't matter
   };
 
   // Steps 5a - 5c to add to handleCart
