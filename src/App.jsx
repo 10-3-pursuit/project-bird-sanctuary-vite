@@ -12,8 +12,14 @@ function App() {
 
   function addToCart (singleBird) {
     const cartedBird = birds.find((bird) => bird.id === singleBird)
+
+    if (shoppingCart.find((item) => item.id === cartedBird.id)) {
+      alert("Bird Already Chosen")
+      return
+    }
     const newCart = [...shoppingCart, cartedBird]
       setShoppingCart(newCart)
+    
     
     if (singleBird) {
       setTotal((oldTotal) => oldTotal += cartedBird.amount)
@@ -27,7 +33,9 @@ function App() {
     const newTotal = updatedCart.reduce((total, bird) => total + bird.amount, 0);
     setTotal(newTotal);
   }
-  
+  const discount = shoppingCart.length >= 3 ? total * 0.1 : 0;
+  const handleDiscount = total - discount;
+
   return (
     <div>
       <header>
@@ -36,7 +44,7 @@ function App() {
       </header>
       <main>
         <aside>
-          <Cart shoppingCart={shoppingCart} removeFromCart={removeFromCart} total={total}/>
+          <Cart shoppingCart={shoppingCart} removeFromCart={removeFromCart} handleDiscount={handleDiscount} discount={discount}/>
           <Checkout />
         </aside>
         <Cards birds={birds} addToCart={addToCart}/>

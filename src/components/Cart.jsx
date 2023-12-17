@@ -1,18 +1,22 @@
-const Cart = ({shoppingCart, removeFromCart, total}) => {
+const Cart = ({shoppingCart, removeFromCart, handleDiscount, discount}) => {
+  
+  const discountText = discount > 0 ? "10%" : "0%";
+
   return (
     <div className="cart">
-      <h2>Cart Component</h2>
+      <h2>Cart</h2>
+        <h5>Discount: {discountText}</h5>
+        <h4>Total: ${handleDiscount}</h4>
       <ol>
       {shoppingCart.map((item) => {
         return (
           <li key={item.id}>
-            <h4>{item.name}: ${item.amount}</h4>
+            <span>{item.name}: ${item.amount}</span>
             <button onClick={()=>removeFromCart(item.id)}>Remove</button>
           </li>
         )
       })}
       </ol>
-      <h5>Total: ${total}</h5>
     </div>
   );
 };
