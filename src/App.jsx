@@ -27,8 +27,14 @@ function App() {
     }
   }
 
-
-
+  function removeBird(birdId) {
+    const selectedBird = cartContent.find((bird) => (bird.id === birdId))
+    const filteredCart = cartContent.filter((bird) => bird.id !== birdId);
+    setCartContent(filteredCart);
+    // console.log(selectedBird);
+    const updatedTotal = total - selectedBird.amount;
+    setTotal(updatedTotal);
+  }
 
   return (
     <div>
@@ -38,7 +44,7 @@ function App() {
       </header>
       <main>
         <aside>
-          <Cart birds = {birds} cartContent = {cartContent} total = {total}/>
+          <Cart birds = {birds} cartContent = {cartContent} total = {total} removeBird = {removeBird}/>
         </aside>
         < Cards birds = {birds} addToCart = {addToCart}/>
       </main>

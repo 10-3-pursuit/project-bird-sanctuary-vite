@@ -6,7 +6,7 @@ const Cart = (props) => {
       <h4>Total: ${props.cartContent.length < 3 ? props.total : props.total * 0.9} </h4>
       <ol>
         {(props.cartContent.length > 0) && props.cartContent.map((bird) => (
-          <li key={bird.id}>{bird.name}</li>
+          <li key={bird.id}>{bird.name} <button onClick={()=> props.removeBird(bird.id)}>Remove</button></li>
         ))}
       </ol>
     </div>
