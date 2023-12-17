@@ -8,15 +8,18 @@ import './index.css'
 import './App.css'
 
 function App() {
+  /* ----- Notes about useState -----
+  When setCartItems is called with the new array, it updates the state of cartItems. This update triggers a re-render of the component, ensuring that the UI reflects the current state of the shopping cart. */
+
   const [cartItems, setCartItems] = useState([]);
   
-
   const handleAddToCart = (bird) => {
-    if (cartItems.find(item => item.id === bird.id)) {
-      alert('Bird Already Chosen');
+    if (cartItems.find(item => item.id === bird.id)) { // takes bird as a parameter, an object representing a bird item that a user might want to add to their cart. find method to search cartItems for an item with an id that matches the id of the bird to be added.
+      alert('Bird Already Chosen'); // doesn't add it to cart if bird is already added (id is used bc unique identifier)
       return;
     }
-    setCartItems([...cartItems, bird]);
+    setCartItems([...cartItems, bird]); // The spread operator ... is used to create a new array with all current items in cartItems plus the new bird item at the end. New array is then set as the new state for cartItems using the setCartItems function. 
+
   };
 
   const handleRemoveFromCart = (id) => {
@@ -30,9 +33,9 @@ function App() {
   };
 
   // Steps 5a - 5c to add to handleCart
-  const totalCostProp = cartItems.reduce((acc, item) => acc + item.amount, 0);
-  const discountRateProp = cartItems.length >= 3 ? 10 : 0;
-  const discountedTotal = discountRateProp ? totalCostProp * (1 - discountRateProp / 100) : totalCostProp; // discountedTotal will be the "data" passed onto totalCostProp
+  const totalCostProp = cartItems.reduce((acc, item) => acc + item.amount, 0); // gets sum
+  const discountRateProp = cartItems.length >= 3 ? 10 : 0; //if 3 or more birds in cart apply discount
+  const discountedTotal = discountRateProp ? totalCostProp * (1 - discountRateProp / 100) : totalCostProp; /* discountedTotal will be the "data" passed onto totalCostProp. This multiplies the original total cost by the remaining percentage of the price. It effectively applies the discount to the total cost. 1 - discountRateProp / 100: This calculates the percentage of the price that remains after the discount. For a 20% discount, this would be 1 - 0.20, which equals 0.80, meaning 80% of the price remains*/
 
   return (
     <>

@@ -4,6 +4,9 @@ function Cart ({ cartItems, removeFromCartProp, totalCostProp, discountRateProp,
     // Step 7a: create callback fx to generate bonus items 
     const getBonusItemsToDisplay = () => {
       // making it a switch statement will probably make code longer bc gotta create statements that will be true for each case to put inside switch ()
+
+      /* ----- Note about useStates -----
+      The totalCostProp already uses useState associated with cartItems so no need to make another useState for bonusItems */
       if (totalCostProp >= 1000) {
         return bonusItems;
       } else if (totalCostProp < 1000 && totalCostProp >= 500) {
