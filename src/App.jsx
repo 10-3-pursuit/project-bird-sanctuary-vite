@@ -1,3 +1,7 @@
+import React from "react";
+import Cards from "./components/Cards";
+import Checkout from "./components/Checkout";
+
 function App() {
   return (
     <div>
@@ -6,7 +10,10 @@ function App() {
         <h2>Donate to adopt a bird</h2>
       </header>
       <main>
-        <aside></aside>
+        <aside>
+          <Checkout />
+        </aside>
+        <Cards/>
       </main>
     </div>
   );
