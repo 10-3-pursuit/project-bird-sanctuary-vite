@@ -1,15 +1,17 @@
-import { useState } from "react";
-
 const Cards = ({ birdsData, addToCart }) => {
   return (
     <div className="birds">
-      <div>
+      <div className="cards">
         <ul>
           {birdsData.map((bird) => (
             <li className="card" key={bird.id} style={{ listStyle: "none" }}>
-              <p> {bird.name}</p>
+              <p>
+                <strong>{bird.name}</strong>
+              </p>
 
-              <p>Price: ${bird.amount}</p>
+              <p>
+                <strong>Price: ${bird.amount}</strong>
+              </p>
               <img src={bird.img} alt={bird.name} />
               <button
                 className="rainbow-button"
