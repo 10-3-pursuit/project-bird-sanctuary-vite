@@ -1,12 +1,3 @@
-// const Cart = () => {
-//   return (
-//     <div className="cart">
-//       <h2>Cart Component</h2>
-//     </div>
-//   );
-// };
-
-// export default Cart;
 function Cart ({ cartItems, removeFromCartProp, totalCostProp, discountRateProp, bonusItems }) {
     // add removeFromCartProp fx parameter, and parameters that are variables that hold totalCost and discountRate. All this variable stuff will be in App function and used inside this function
     // Step 7: Added bonusItems to be used as prop on App.jsx, but before using it as a prop create conditional (wrap it as a function)
@@ -43,7 +34,8 @@ function Cart ({ cartItems, removeFromCartProp, totalCostProp, discountRateProp,
           {displayedBonusItems.length > 0 && (
             <div>
               <h3>Bonus Items</h3>
-              <ul className="bonuses">
+              <ul>
+                {/* add conditional to check if array is not empty*/}
                 {displayedBonusItems.map((bonus, index) => (
                   <li key={index}>{bonus}</li>
                 ))}
