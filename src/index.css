@@ -118,4 +118,5 @@ button:hover {
   background-repeat: no-repeat;
   color: black;
   font-weight: 900;
+  filter: brightness(150%);
 }
