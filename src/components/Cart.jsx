@@ -13,13 +13,13 @@ function Cart ({ cartItems, removeFromCartProp, totalCostProp, discountRateProp,
     // Step 7a: create callback fx to generate bonus items 
     const getBonusItemsToDisplay = () => {
       // making it a switch statement will probably make code longer bc gotta create statements that will be true for each case to put inside switch ()
-      if (totalCostProp > 1000) {
+      if (totalCostProp >= 1000) {
         return bonusItems;
-      } else if (totalCostProp >= 500) {
+      } else if (totalCostProp < 1000 && totalCostProp >= 500) {
         return bonusItems.slice(0, 3);
-      } else if (totalCostProp >= 300) {
+      } else if (totalCostProp < 500 && totalCostProp >= 300) {
         return bonusItems.slice(0, 2);
-      } else if (totalCostProp >= 100) {
+      } else if (totalCostProp < 300 && totalCostProp >= 100) {
         return [bonusItems[0]];
       } else {
         return [];
