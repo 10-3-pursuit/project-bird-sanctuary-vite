@@ -77,7 +77,7 @@ function App() {
       <main>
         <aside>
           <Cart bonus={bonus} cartItems={cartItems} total={total} discount={discount} handleRemove={handleRemove} />
-          <Checkout setTotal={setTotal} setDiscount={setDiscount} setCartItems={setCartItems} />
+          <Checkout setBonus={setBonus} setTotal={setTotal} setDiscount={setDiscount} setCartItems={setCartItems} />
         </aside>
         <Cards handleAddToCart={handleAddToCart}/>
       </main>

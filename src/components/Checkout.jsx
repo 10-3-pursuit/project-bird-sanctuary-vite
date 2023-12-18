@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Checkout = ({setCartItems, setTotal, setDiscount}) => {
+const Checkout = ({setCartItems, setTotal, setDiscount, setBonus}) => {
   const [form, setForm] = useState(
     {
       firstName: '',
@@ -11,6 +11,7 @@ const Checkout = ({setCartItems, setTotal, setDiscount}) => {
   )
 
   const reset = () => {
+    setBonus([])
     setTotal(0)
     setDiscount(0)
     setCartItems([])

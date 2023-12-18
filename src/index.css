@@ -1,5 +1,10 @@
 body {
   font-family: fantasy;
+  background: url('https://img.freepik.com/premium-photo/beautiful-sky-colorful-gentle-light-day-background-sunny-fluffy-clouds-with-magical-violet-purple-color-cloud-picturesque_31965-198873.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702598400&semt=ais');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 header {
@@ -81,4 +86,14 @@ p {
   background-color: aquamarine;
   border-radius: 4px;
   font-family: fantasy;
+}
+
+.checkout input {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 5px;
+}
+
+.checkout button {
+  margin-top: 5px;
 }
