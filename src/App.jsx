@@ -36,10 +36,10 @@ function App() {
       </header>
       <main>
         <div>
-          <Cart />
+          <Cart cart={cart} remove={remove} amount={amount}/>
           <Checkout />
         </div>
-        <aside><Cards /></aside>
+        <aside><Cards birds={birds} addToCart={addToCart}/></aside>
       </main>
     </div>
   );
