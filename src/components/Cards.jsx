@@ -1,6 +1,10 @@
 
 
 const Cards = ({ birds, addToCart}) => {
+
+  const handleAdopt = (bird => {
+    addToCart(bird)
+  })
   return (
     <div className="birds">
       {birds.map(bird => (
