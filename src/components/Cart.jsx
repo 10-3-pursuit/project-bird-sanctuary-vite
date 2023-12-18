@@ -4,9 +4,14 @@ const Cart = ({ cart, setCart }) => {
     const filteredCart = cart.filter((item) => item.id !== id);
     setCart([...filteredCart]);
   }
+  const calculateTotal = () => {
+    return cart.reduce((sum, item) => sum + item.amount, 0);
+  }
+
   return (
     <div className="cart">
       <h2>Cart</h2>
+      <span>Total: ${calculateTotal()}</span>
       <ol>
         {cart.map((item) => {
           return (
