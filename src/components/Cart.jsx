@@ -10,7 +10,7 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
 
 
   
-  // Call the function that calculates the total cost
+  // Call the function that calculates the total cost and when CartItems os effected component seems to refresh
   useEffect(() => {
     calculateTotalCost(); 
   }, [cartItems]); 
@@ -22,8 +22,6 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
   };
 
   const calculateTotalCost = () => {
-    // it will calculate total cost and apply discounts based on cartItems
-    //  it will update totalCost and discount accordingly
     let total = 0;
     cartItems.forEach((bird) => {
       total += bird.amount;

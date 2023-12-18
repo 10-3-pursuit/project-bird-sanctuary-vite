@@ -13,16 +13,16 @@ This project is a Bird Sanctuary web application that allows users to adopt bird
 2. Install dependencies:
 
 - cd into project directory 
-- npm install
+-  use npm install
 
 ## Intructions on geting started after installation.
-Start the development server by useing:
+Start the local server by useing:
 
 - npm run dev
 
 - Open your browser and navigate to the host that apears in the terminal click it with command and left mouse click. on the "local" host that apears to open it
 
-- This command will start the development server and launch the application on your local machine. 
+- This command will start the server and launch the application on your local machine. 
 
 ## Features
 - **Bird Adoption:**  Users can browse through a selection of birds and adopt them.

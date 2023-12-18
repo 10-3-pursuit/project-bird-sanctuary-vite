@@ -1,7 +1,6 @@
 
 const Cards = ({birds, handleAdopt}) => {
 
-
   return (
     <div className="birds">
       {birds.map((bird) => (
