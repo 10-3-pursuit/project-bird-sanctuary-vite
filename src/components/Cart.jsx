@@ -1,4 +1,5 @@
-
+import { useState } from "react";
+import bonusItems from '../data/bonusItems'
 
 const Cart = ({cart, remove, amount}) => {
   return (
