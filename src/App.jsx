@@ -1,3 +1,5 @@
+import Cards from './components/Cards'
+
 function App() {
   return (
     <div>
@@ -6,6 +8,7 @@ function App() {
         <h2>Donate to adopt a bird</h2>
       </header>
       <main>
+        <Cards />
         <aside></aside>
       </main>
     </div>
