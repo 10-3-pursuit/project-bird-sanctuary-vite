@@ -43,10 +43,10 @@ const Cart = ({cart, remove, amount}) => {
     <div className="cart">
       <h2>Cart</h2>
       <ol>
-        {cart.map((bird, index) => {
+        {cart.map((bird, index) => (
           
           <li key={index} className="cart-li">{bird.name} | Adoption fee: {bird.amount} <button onClick={() => remove(bird)}>Delete</button></li>
-        })}
+        ))}
       </ol>
       <h5>Discount: {cart.length >= 3 ? `10` : `0`}% </h5>
       <h4>Total: {amount}</h4>
