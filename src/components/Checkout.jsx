@@ -1,8 +1,36 @@
+import React from "react";
+import { useState } from "react";
+
+//const [formData, setFormData] = useState()
 const Checkout = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+alert("You have successfully adopted birds. Thank you!")
+//resetForm();
+setFormData({
+  firstName: "",
+  lastName: "",
+  email: "",
+  zipcode: ""
+});
+
+const [formData, setFormData] = useState({
+  firstName: "",
+  lastName: "",
+  email: "",
+  zipCode: ""
+})
+
+
+
+  }
+
+
+  
   return (
     <section className="checkout">
       <h2>Checkout</h2>
-      <form onSubmit={Checkout}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="first-name">First Name</label>
         <input  id="first-name" type="text"></input>
         <br></br>

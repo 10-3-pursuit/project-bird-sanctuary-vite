@@ -50,10 +50,7 @@ const birdDataList = birdData.map((bird) =>  (
   </tbody>
 ));
 
-// const [newUser, setNewUser] = useState({
-//   firstName:" ",
-//   lastName:" ",
-// })
+
 
 
   return (
