@@ -47,6 +47,7 @@ function App() {
   const resetCart = () => {
     setYourBirds([])
     setTotal(0)
+    setDiscount(0)
   }
 
   return (

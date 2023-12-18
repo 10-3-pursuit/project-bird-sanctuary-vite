@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Checkout = ({resetCart}) => {
+export default function Checkout({resetCart}) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -78,5 +78,3 @@ const Checkout = ({resetCart}) => {
     </div>
   );
 };
-
-export default Checkout;
