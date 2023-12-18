@@ -3,14 +3,14 @@ import Header from "./components/Header";
 import Checkout from "./components/Checkout";
 import Cart from "./components/Cart";
 import Cards from "./components/Cards";
-import "./App.css"
+import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
 
   const clearCart = () => {
     setCart([]);
-  }
+  };
 
   return (
     <div>
@@ -20,7 +20,7 @@ function App() {
           <Cart cart={cart} setCart={setCart} />
           <Checkout cartLength={cart.length} clearCart={clearCart} />
         </div>
-        <Cards cart={cart} setCart={setCart}/>
+        <Cards cart={cart} setCart={setCart} />
       </main>
     </div>
   );
