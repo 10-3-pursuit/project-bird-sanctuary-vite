@@ -1,7 +1,6 @@
 const Cards = ({birds, addToCart}) => {
   return (
     <div className="birds">
-      <div className="cards">
         {birds.map(bird=> (
           <div key={bird.id} className="card">
             <h4>{bird.name}</h4>
@@ -11,7 +10,6 @@ const Cards = ({birds, addToCart}) => {
           </div>
           )
         )}
-      </div>
     </div>
   );
 };

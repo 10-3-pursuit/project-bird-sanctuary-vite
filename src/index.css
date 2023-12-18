@@ -42,9 +42,11 @@ aside > div {
 }
 
 .card img {
-  max-width: 70%;
+  /* max-width: 70%; */
   margin: auto;
   box-shadow: 1px 1px 6px grey;
+  width: 100px;
+  height: 100px;
 }
 
 .cart,
