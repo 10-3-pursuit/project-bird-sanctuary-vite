@@ -2,6 +2,7 @@ import { useState } from "react";
 import birdData from "./data/birds"
 import Cards from "./components/Cards";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 
 
