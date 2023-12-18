@@ -32,7 +32,7 @@ function Cart ({ cartItems, removeFromCartProp, totalCostProp, discountRateProp,
                 {item.name} - ${item.amount.toFixed(2)}
                 <br></br>
                 {/* delete button */}
-                <button onClick={() => removeFromCartProp(item.id)}>❌</button>
+                <button onClick={() => removeFromCartProp(item.id)}>❎</button>
               </li>
             ))}
           </ol>

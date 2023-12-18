@@ -120,7 +120,7 @@ button:hover {
   background-repeat: no-repeat;
   color: black;
   font-weight: 900;
-  filter: brightness(150%);
+  filter:sepia(50%)
 }
 
 /* Media Query for Mobile Devices */
