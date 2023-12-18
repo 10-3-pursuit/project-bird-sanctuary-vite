@@ -28,14 +28,18 @@ function App() {
     setAmount(prevAmount => prevAmount - bird.amount)
   }
 
-  
+
   return (
     <div>
       <header>
         <h1>Bird Sanctuary</h1>
       </header>
       <main>
-        <aside></aside>
+        <div>
+          <Cart />
+          <Checkout />
+        </div>
+        <aside><Cards /></aside>
       </main>
     </div>
   );
