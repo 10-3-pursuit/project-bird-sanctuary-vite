@@ -60,6 +60,11 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
     return bonuses.map((bonus, index) => <li key={index}>{bonus}</li>);
   };
 
+  const displayDiscount = (discount) => {
+    const formattedDiscount = discount === 0.1 ? '10%' : '0%';
+    
+    return formattedDiscount;
+  };
 
 
   return (
@@ -70,11 +75,11 @@ const Cart = ({cartItems, setCartItems,addToCart}) => {
         {cartItems.map((item) => (
           <li key={item.id}>
             {item.name} - Amount: {item.amount}
-            <button onClick={() => removeFromCart(item.id)}>Remove</button>
+            <br /><button onClick={() => removeFromCart(item.id)}>Remove</button>
           </li>
         ))}
       </ol>
-      <h5>Discount: {discount}%</h5>
+      <h5>Discount: {displayDiscount(discount)}</h5>
       <h4>Total Cost: ${totalCost}</h4>
       <h3>Bonus Items in Cart:</h3>
       <ul>{displayBonusItems()}</ul>   

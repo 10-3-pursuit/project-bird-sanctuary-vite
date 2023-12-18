@@ -44,41 +44,41 @@ const Checkout = ({ setCartItems, CartItems }) => {
       <h2>Checkout Component</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          First Name:
+          First Name: <br />
           <input
             type="text"
             name="firstName"
             value={formData.firstName}
             onChange={handleInputChange}
           />
-        </label>
+        </label><br />
         <label>
-          Last Name:
+          Last Name: <br />
           <input
             type="text"
             name="lastName"
             value={formData.lastName}
             onChange={handleInputChange}
           />
-        </label>
+        </label><br />
         <label>
-          Email:
+          Email: <br />
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
           />
-        </label>
+        </label><br />
         <label>
-          Zip Code:
+          Zip Code: <br />
           <input
             type="text"
             name="zipcode"
             value={formData.zipcode}
             onChange={handleInputChange}
           />
-        </label>
+        </label><br />
         <button type="submit">Submit</button>
       </form>
       
