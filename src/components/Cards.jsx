@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
+
 import birdData from "../data/birds.js";
 
-const Cards = () => {
+const Cards = ({addCart}) => {
 
   return (
     <div className="birds">
@@ -11,7 +12,7 @@ const Cards = () => {
             <h2>{bird.name}</h2>
             <h5>Price: ${bird.amount}</h5>
             <img src={bird.img} alt={bird.name} />
-            {/* <button onClick={}>ADOPT</button> */}
+            <button onClick={()=>addCart(bird.id)}>ADOPT</button>
           </div>
         ))}
       </div>
