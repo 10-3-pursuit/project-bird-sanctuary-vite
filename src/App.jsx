@@ -15,38 +15,55 @@ function App() {
 
   const [bonus, setBonus] = useState([]);
 
-  function checkForBonus() {
+  function checkForBonus(total) {
 
     const bonusList = [...bonusItems]
 
     if (total >= 100 && total < 300) {
-      setBonus(bonusList.splice(0,1));
+      setBonus(bonusList.slice(0,1));
     } 
     else if (total >= 300 && total < 500) {
-      setBonus(bonusList.splice(0,2));
+      setBonus(bonusList.slice(0,2));
     }
     else if(total >=500 && total < 1000 ) {
-      setBonus(bonusList.splice(0,3))
+      setBonus(bonusList.slice(0,3))
     }
     else if(total >= 1000 ){
-      setBonus(bonusList.splice(0,4))
+      setBonus(bonusList.slice(0,4))
     }
+    console.log(bonus);
   }
   
 
-  function addToCart(birdId){
+  // function addToCart(birdId){
+  //   const selectedBird = birds.find((bird) => bird.id === birdId);
+  //   if(selectedBird && !cartContent.some((bird) => bird.id === selectedBird.id)){
+  //     const updatedCartContent = [...cartContent, selectedBird];
+  //     setCartContent(updatedCartContent);
+  //     const updatedTotal = total + selectedBird.amount;
+  //     setTotal(updatedTotal);
+  //     checkForBonus(total);
+  //   }
+  //   else {
+  //     alert('Bird Already Chosen. Try a Different Bird!')
+  //   }
+  // }
+  function addToCart(birdId) {
     const selectedBird = birds.find((bird) => bird.id === birdId);
-    if(selectedBird && !cartContent.some((bird) => bird.id === selectedBird.id)){
+    if (selectedBird && !cartContent.some((bird) => bird.id === selectedBird.id)) {
       const updatedCartContent = [...cartContent, selectedBird];
       setCartContent(updatedCartContent);
-      const updatedTotal = total + selectedBird.amount;
-      setTotal(updatedTotal);
-      checkForBonus();
-    }
-    else {
-      alert('Bird Already Chosen. Try a Different Bird!')
+  
+      setTotal((prevTotal) => {
+        const updatedTotal = prevTotal + selectedBird.amount;
+        checkForBonus(prevTotal);
+        return updatedTotal;
+      });
+    } else {
+      alert('Bird Already Chosen. Try a Different Bird!');
     }
   }
+  
 
   function removeBird(birdId) {
     const selectedBird = cartContent.find((bird) => (bird.id === birdId))
