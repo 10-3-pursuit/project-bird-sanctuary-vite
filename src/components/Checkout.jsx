@@ -1,42 +1,80 @@
-const Checkout = () => {
+import { useState } from "react"
+
+const Checkout = ({resetCart}) => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zip: "",
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert("You have successfully adopted birds. Thank you!")
+    resetCart();
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      zip: "",
+    })
+  }
+
   return (
     <div className="checkout">
       <h2>Checkout</h2>
-      <form /*onSubmit={handleSubmit}*/>
-    <label htmlFor="name">First Name:</label>
-    <input
-      type="text"
-      id="name"
-      // onChange={handleTextChange}
-      // value={newEvent.name}
-    />
-
-    <label htmlFor="organizer">Last Name:</label>
-    <input
-      type="text"
-      id="organizer"
-      // onChange={handleTextChange}
-      // value={newEvent.organizer}
-    />
-
-    <label htmlFor="organizer">Email:</label>
-    <input
-      type="text"
-      id="organizer"
-      // onChange={handleTextChange}
-      // value={newEvent.organizer}
-    />
-
-    <label htmlFor="eventImage">Zip Code:</label>
-    <input
-      type="text"
-      id="eventImage"
-      // onChange={handleTextChange}
-      // value={newEvent.eventImage}
-    />
-    <br />
-    <input type="submit" />
-  </form>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">
+          <h5>First Name</h5>
+          <input 
+            onChange={handleChange}
+            value= {formData.firstName}
+            type="text" 
+            name="firstName" 
+            id="firstName"  
+          />
+        </label>
+        <label htmlFor="lastName">
+          <h5>Last Name</h5>
+          <input 
+            onChange={handleChange}
+            value={formData.lastName}
+            type="text" 
+            name="lastName" 
+            id="lastName" 
+          />
+        </label>
+        <label htmlFor="email">
+          <h5>Email</h5>
+          <input
+            onChange={handleChange}
+            value={formData.email}
+            type="text" 
+            name="email" 
+            id="email"
+          />
+        </label>
+        <label htmlFor="zip">
+          <h5>Zip</h5>
+          <input 
+            onChange={handleChange}
+            value={formData.zip}
+            type="text" 
+            name="zip" 
+            id="zip"  
+          />
+        </label>
+        <div>
+        <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 };
