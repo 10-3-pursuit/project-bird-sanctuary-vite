@@ -1,10 +1,10 @@
 <h1 align="center">Bird Adoption App</h1>
 
 <p align="center">
-  <img src="./assets/owls.jpeg"/>
+  <img src="./assets/owls.jpeg" alt="Orphaned-Western-Screech-Owls"/>
 </p>
 
-###### Featured Birds: Orphaned Western Screech Owls
+<h6 align="center">Featured Birds: Orphaned Western Screech Owls</h6>
 
 Welcome to the Bird Adoption App! This application allows you to browse through a variety of birds, add them to your cart, and proceed with the adoption process. Below is a guide on how to use the app.
 
@@ -14,10 +14,10 @@ Welcome to the Bird Adoption App! This application allows you to browse through 
 
 ## Exploring Birds
 <p align="center">
-  <img src="./assets/raven.jpeg"/>
+  <img src="./assets/raven.jpeg" alt="raven"/>
 </p>
 
-###### Featured Bird: Raven
+<h6 align="center">Featured Bird: Raven</h6>
 
 - **View Birds**: On the main page, you'll see a list of birds, each displayed on its own card.
 - **Bird Details**: Each card shows the bird's name, an image, and its adoption price.
