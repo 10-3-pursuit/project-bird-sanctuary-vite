@@ -42,6 +42,12 @@ function App() {
     setCartList(deleteBird);
   };
 
+  //function to clear the cart
+
+  const clearCart = () => {
+    setCartList([]);
+  };
+
   return (
     <div>
       {/* Render Header, Cart, Checkout, and Cards components */}
@@ -54,7 +60,7 @@ function App() {
             birdsData={birdData}
             bonusData={bonusData}
           />
-          <Checkout />
+          <Checkout clearCart={clearCart} />
         </aside>
         <Cards addToCart={addToCart} birdsData={birdData} />
       </main>
