@@ -1,7 +1,35 @@
-const Cart = () => {
+const Cart = (props) => {
   return (
     <div className="cart">
-      <h2>Cart Component</h2>
+      <h2>Cart</h2>
+      <h4>Discount: {props.cartContent.length >= 3 ? "10%" : "0%"}</h4>
+      <h4>
+        Total: ${props.cartContent.length < 3 ? props.total : props.total * 0.9}{" "}
+      </h4>
+      <ol>
+        {props.cartContent.length > 0 &&
+          props.cartContent.map((bird) => (
+            <li key={bird.id}>
+              {bird.name}{" "}
+              <button
+                className="remove-button"
+                onClick={() => props.removeBird(bird.id)}
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+      </ol>
+      {props.bonus.length > 0 && (
+        <>
+          <p>You qualify for the following items:</p>
+          <ul>
+            {props.bonus.map((bonusItem, index) => (
+              <li key={index}>{bonusItem}</li>
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 };
