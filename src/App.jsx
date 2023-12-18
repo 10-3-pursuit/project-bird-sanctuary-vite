@@ -11,7 +11,18 @@ function App() {
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(cart.reduce((acc, curr) => acc + curr.amount,0))
 
+  const addToCart = (bird) => {
+    const isBirdInCart = cart.some(item => item.id === bird.id);
 
+    if (!isBirdInCart) {
+      setCart([...cart, bird])
+      setAmount(prevAmount => prevAmount + bird.amount)
+    } else {
+      alert(`${bird.name} already chosen`)
+    }
+  }
+
+  
   return (
     <div>
       <header>
