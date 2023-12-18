@@ -1,7 +1,6 @@
 import React from 'react';
-import BirdInfo from '../data/birds';
 
-export default function Cards({addToCart}) {
+export default function Cards({addToCart, BirdInfo}) {
   return (
     <div className="birds">
         {BirdInfo.map((bird, index) => (
@@ -9,7 +8,7 @@ export default function Cards({addToCart}) {
             <h4>{bird.name}</h4>
             <h5>Price :${bird.amount}</h5>
             <img src={bird.img} alt={bird.name} />
-            <button onClick={() => addToCart(bird.name)}>Adopt</button>
+            <button className="adopt-button" onClick={() => addToCart(bird.name)}>Adopt</button>
           </li>
         ))}
     </div>

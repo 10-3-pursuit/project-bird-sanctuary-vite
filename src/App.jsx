@@ -60,7 +60,7 @@ function App() {
           <Cart removeFromCart={removeFromCart} yourBirds={yourBirds} total={total} discount={discount}/>
           <Checkout resetCart={resetCart}/>
         </aside>
-        <Cards addToCart={addToCart}/>
+        <Cards addToCart={addToCart} BirdInfo={BirdInfo}/>
       </main>
     </div>
   );

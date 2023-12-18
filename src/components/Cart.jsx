@@ -20,7 +20,7 @@ export default function Cart({yourBirds, total, discount, removeFromCart}) {
 
   const qualify = () => {
     if (bonusList().length > 0) {
-      return <span>Your donations have qualified you for the following items:</span>;
+      return <span className="your-donations">Your donations have qualified you for the following items:</span>;
     } else {
       return null;
     }
@@ -33,16 +33,16 @@ export default function Cart({yourBirds, total, discount, removeFromCart}) {
       <h5>Discount: {discount}%</h5>
       <ol>
       {yourBirds.map((bird, index) => (
-          <li key={index}>
+          <li className="bird-li" key={index}>
             <span>{bird.name}: ${bird.amount}</span>
-            <button onClick={()=>removeFromCart(bird.name)}>Delete</button>
+            <button className="remove-button" onClick={()=>removeFromCart(bird.name)}>Delete</button>
           </li>
         ))}
       </ol>
       <ul>
         {qualify()}
         {bonusList().map((item, index) => (
-          <li key={index}>{item}</li>
+          <li className="bonus-li" key={index}>{item}</li>
         ))}
       </ul>
     </div>
