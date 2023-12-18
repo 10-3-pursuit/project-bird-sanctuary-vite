@@ -3,7 +3,10 @@ header {
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
+  color: #3300ff;
 }
+
 main {
   display: flex;
   justify-content: space-between;
@@ -37,7 +40,7 @@ aside > div {
 
 .card {
   width: 20%;
-  height: 300px;
+  height: 350px;
   padding: 0.5em 3em;
   margin: 1em;
   border-radius: 4px;
@@ -46,11 +49,14 @@ aside > div {
   flex-direction: column;
   justify-content: center;
   background: rgb(244, 112, 196);
+  color: #3300ff;
+  text-align: center;
 }
 
 .card img {
   max-width: 70%;
   margin: auto;
+  text-align: center;
   box-shadow: 1px 1px 6px grey;
 }
 
@@ -78,8 +84,9 @@ button {
   color: #3300ff;
   background: lightpink;
   border: none;
-  margin: 0 20px 20px 20px;
+  /* margin: 0 20px 20px 20px; */
   border-radius: 2px;
   width: 80px;
   height: 30px;
+  margin: 0 auto;
 }

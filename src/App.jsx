@@ -8,6 +8,12 @@ import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    zipcode: '',
+  });
   const [total, setTotal] = useState(0);
   
   const addBirdToCart = (bird) => { 
@@ -24,6 +30,23 @@ function App() {
     }, newBird.amount);
     setTotal(newTotal)
   }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   setFormData({
+  //     firstName: '',
+  //     lastName: '',
+  //     email: '',
+  //     zipcode: '',
+  //   });
+  // };
+
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
 
   const birdData = data.map(bird => {
     return <div key={bird.id} className="card"> 
@@ -39,13 +62,13 @@ function App() {
   return (
     <div>
       <header>
-        <h1>Bird Sanctuary</h1>
-        <h2>Donate to adopt a bird</h2>
+        <h1>🕊️ BIRD🦩SANCTUARY 🦜</h1>
+        <h2>donate to adopt a bird! 🦚</h2>
       </header>
       <main>
         <aside>
-          <Cart total={total} cart={cart}/>
-          <Checkout/>
+          <Cart total={total} cart={cart} setCart={setCart}/>
+          <Checkout formData={formData} setFormData={setFormData}/>
         </aside>
       
         <div className="bird-container">

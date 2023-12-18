@@ -1,8 +1,10 @@
-const Cart = ({cart, total}) => {
+const Cart = ({cart, total, setCart}) => {
 
-  const deleteCartItem = (bird) => {
-    console.log('deleting', bird.name)
-  }
+  const deleteCartItem = (id => {
+    // console.log('deleting', bird.name)
+    const newList = cart.filter((item) => item.id !==id);
+    setCart(newList)
+  })
 
   const valueArr = cart.map(function(item){return item.id});
   const isDuplicate = valueArr.some(function(item, index){
@@ -10,15 +12,16 @@ const Cart = ({cart, total}) => {
   });
 
   const cartBirds = cart.map(item => {
-    if(isDuplicate) {
-      return alert(`Bird Already Chosen`)
-    } else {
-      return <li key={item.id}>
+    // if(isDuplicate) {
+    //   return alert(`Bird Already Chosen`)
+    // } else {
+      return (
+        <li key={item.id}>
       {item.name}, {item.amount}
-      <button onClick={() => deleteCartItem(item)}>Delete</button>
+      <button onClick={() => deleteCartItem(item.id)}>Delete</button>
       </li>
-    }
-  })
+      ) 
+    })
 
   return (
     <div className="cart">
