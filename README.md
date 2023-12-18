@@ -9,5 +9,3 @@ A bird sanctuary donation app.
 1. Fork and clone the repo.
 2. Run `npm install` to set up project dependencies.
 3. Use `npm run dev` to launch the development environment.
-
-## 
