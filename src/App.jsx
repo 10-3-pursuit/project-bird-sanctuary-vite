@@ -22,6 +22,12 @@ function App() {
     }
   }
 
+  const remove = (bird) => {
+    const filteredCart = cart.filter(item => item.id !== bird.id)
+    setCart(filteredCart)
+    setAmount(prevAmount => prevAmount - bird.amount)
+  }
+
   
   return (
     <div>
