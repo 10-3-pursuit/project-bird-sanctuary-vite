@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Checkout = () => {
+const Checkout = ({ clearCart }) => {
   // State and functions for handling form inputs and submission
 
   // State for the donator's information input (form)
@@ -34,23 +34,19 @@ const Checkout = () => {
     alert("You have successfully adopted birds. Thank you!");
 
     // Reset cart and perform additional actions
-    resetCart();
-  };
-
-  // Function to reset the cart or perform additional actions
-  const resetCart = () => {
-    // For demonstration purposes log a message
-    // console.log("Cart has been reset.");
+    clearCart();
   };
 
   return (
     <div className="checkout">
       {/* Displaying a checkout form for collecting donor's information */}
 
-      <h2>Checkout</h2>
+      <h2 style={{ backgroundColor: "white" }}>Checkout</h2>
       <form onSubmit={handleSubmit}>
         {/* First name */}
-        <label htmlFor="firstName">First name:</label>
+        <label style={{ backgroundColor: "white" }} htmlFor="firstName">
+          First name:
+        </label>
         <input
           onChange={handleChange}
           type="text"
@@ -61,7 +57,9 @@ const Checkout = () => {
         <br />
         <br />
         {/* Last name */}
-        <label htmlFor="lastName">Last name:</label>
+        <label style={{ backgroundColor: "white" }} htmlFor="lastName">
+          Last name:
+        </label>
         <input
           onChange={handleChange}
           type="text"
@@ -72,7 +70,9 @@ const Checkout = () => {
         <br />
         <br />
         {/* Email */}
-        <label htmlFor="email">Email:</label>
+        <label style={{ backgroundColor: "white" }} htmlFor="email">
+          Email:
+        </label>
         <input
           onChange={handleChange}
           type="email"
@@ -83,7 +83,9 @@ const Checkout = () => {
         <br />
         <br />
         {/* Zip code */}
-        <label htmlFor="zipcode">Zip Code:</label>
+        <label style={{ backgroundColor: "white" }} htmlFor="zipcode">
+          Zip Code:
+        </label>
         <input
           onChange={handleChange}
           type="text"
