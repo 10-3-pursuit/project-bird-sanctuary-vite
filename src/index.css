@@ -3,6 +3,7 @@ header {
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
 }
 main {
   display: flex;
@@ -21,6 +22,7 @@ aside {
 aside > div {
   min-height: 40vh;
 }
+
 .birds {
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +60,8 @@ aside > div {
   padding: 0.3em;
   margin: 1em 0em;
   text-align: center;
-  border: 1px solid gray;
+  border: 3px solid gray;
+  border-radius: 8px;
 }
 
 h4 {
@@ -70,4 +73,45 @@ h5 {
 
 p {
   font-size: 0.75em;
+}
+
+.label-input {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding-bottom: 20px;
+}
+
+input {
+  padding: 7px;
+  border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  padding: 15px;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: white;
+  font-weight: bold;
+  border: 3px solid black;
+}
+
+.remove-button {
+  padding: 8px;
+}
+
+.remove-button:hover {
+  background: red;
+}
+
+li {
+  font-size: 15px;
+  padding-bottom: 15px;
+}
+
+p {
+  font-size: 15px;
 }
