@@ -21,7 +21,7 @@ const Checkout = ({formData, setFormData}) => {
   return (
     <div className="checkout">
       <h2>Checkout</h2>
-      <form className="bird-form" onSubmit={(event) => handleSubmit(event)}>
+      <form className="bird-form" onSubmit={handleSubmit}>
         <p>
           <label htmlFor="firstName">First Name: </label><br/>
           <input name="firstName" value={formData.firstName} onChange={handleChange}/>
@@ -39,7 +39,7 @@ const Checkout = ({formData, setFormData}) => {
           <input name="zipcode" value={formData.zipcode} onChange={handleChange}/>
         </p>
         <p>
-          <input type="button" value="Submit"/>
+          <input type="submit" value="Submit"/>
         </p>
       </form>
     </div>

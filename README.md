@@ -3,13 +3,13 @@
 Love you some birds? Welcome to my Bird Sanctuary Donation App! In this ReactJS project, my aim is to create an interactive, functional and engaging web application for the user to donate to the bird sanctuary. The app incorporates various functionalities based on our user stories and guidelines provided. Hopefully also, a seamless UX for bird adoption.
 
                               *Table of Contents*         
-Features           ~                ~~                              serutaeF
-  Installation           ~     ~              ~~                noitallatsnI
-          Usage                                    ~~        egasU
-              Components           ~~                  stnenopmoC
-                    Bonus Items          ~~     smetI sunoB
-                          Contributing   nitubirtnoC
-                                License esneciL
+Features           ~                ~~                             
+  Installation           ~     ~              ~~                
+          Usage                                    ~~        
+              Components           ~~                  
+                    Bonus Items          ~~     
+                          Contributing   
+                                  License 
 
 
 # Features
