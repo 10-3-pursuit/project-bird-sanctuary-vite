@@ -20,13 +20,11 @@ const Checkout = ({ setCartItems, CartItems }) => {
 
   const resetCart = () => {
     setCartItems([]);
-    // Reset other cart-related state if needed (total cost, discounts)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // to handle form submission
-    // Reset the cart when a successful submission
+  
     alert('You have successfully adopted birds. Thank you!');
     resetCart(); 
     setFormData({
