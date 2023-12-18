@@ -19,7 +19,7 @@ const Cart = ({cart,removeFromCart,total,discount,bonus}) => {
       })}
       </ol>
       <ul>
-       {bonus.length > 0 &&<p>Your donations have qualified you for the following items:</p>}
+       {bonus.length > 0 && <p>Your donations have qualified you for the following items:</p>}
         {bonus.map(bonusItem=> <li key={bonusItem}>
           <p>{bonusItem}</p>
         </li>)}
