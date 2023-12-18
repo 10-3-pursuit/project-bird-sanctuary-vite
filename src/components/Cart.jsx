@@ -33,13 +33,13 @@ const Cart = ({cart, handleRemoveBird }) => {
   return (
     <div className="cart">
       <h2>Cart</h2>
+      <h5>Discount: {discount === 0 ? 0 : 10}%  <span className="discount">-${discount}</span></h5>
       <h3>Total: ${finalTotal}</h3>
-      <h5>Discount: {discount === 0 ? 0 : 10}%  (${discount})</h5>
       <ol>
         {cart.map((bird) => (
-          <li key={bird.id}>
+          <li className="cart-list-item" key={bird.id}>
             {bird.name}: ${bird.amount}
-            <button onClick={()=>handleRemoveBird(bird)}>Delete</button>
+            <button className="delete-button" onClick={()=>handleRemoveBird(bird)}>Delete</button>
           </li>
         ))}
       </ol>

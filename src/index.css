@@ -27,6 +27,22 @@ aside {
 aside > div {
   min-height: 40vh;
 }
+
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.75em;
+}
+
+li {
+  font-size: 14px;
+}
+
 .birds {
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +74,6 @@ aside > div {
   width: 100%;
   padding: 0.3em;
   margin: 1em 0em;
-  text-align: center;
   border: 1px solid rgb(88, 185, 255);
   border-radius: 6px;
   background-color: rgb(216, 255, 239);
@@ -66,25 +81,98 @@ aside > div {
   box-shadow: 1px 1px 6px gray;
 }
 
+.cart h2{
+  text-align: center;
+}
 
-.checkout input{
-  display: block;
-  margin: 0 auto;
+.cart h5, h3, p{
+  margin-left: 10px;
+}
+ .cart h3 {
+  font-weight: bold;
+  color: darkblue
+ }
+.cart-list-item {
   margin-bottom: 10px;
 }
 
-h4 {
-  font-size: 1.5em;
-}
-h5 {
-  font-size: 1em;
+.checkout input{
+  display: block;
+  margin: 0 auto; 
+  margin-bottom: 10px;
 }
 
-p {
-  font-size: 0.75em;
+.checkout h2{
+  text-align: center;
+}
+
+.cart p, ul{
+  color: rgb(0, 0, 98);
+}
+
+.discount{
+  color: red;
+}
+
+.delete-button{
+  padding: 1px 2px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s; 
+  font-size: 10px;
+  color: red;
+  background-color: rgb(241, 249, 201);
+}
+.delete-button:hover{
+  background-color: rgb(251, 127, 127);
+  color: white;
+}
+.adopt-button{
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: darkgreen;
+}
+
+.adopt-button:hover{
+  color: black;
+  background-color: lightgreen;
 }
 
 @media (max-width: 1405px){
+  .card {
+    width: 15%;
+  }
+  aside{
+    width: 25%;
+  }
+}
 
+@media (max-width: 1197px){
+  .card {
+    width: 25%;
+  }
+  .birds{
+    margin-left: 15px;
+  }
+  aside{
+    width: 45%;
+  }
+}
 
+@media (max-width: 975px){
+  .card {
+    width: 20%;
+  }
+  aside{
+    width: 55%;
+  }
+}
+
+@media (max-width: 888px){
+  .card {
+    width: 150px;
+  }
+  aside{
+    width: 80%;
+  }
 }
