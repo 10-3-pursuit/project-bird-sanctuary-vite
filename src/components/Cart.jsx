@@ -1,28 +1,7 @@
 import { useState } from "react";
 import bonusItems from "../data/bonusItems";
 
-// const bonus = bonusItems;
-
 const Cart = (props) => {
-
-
-  // function checkForBonus(){
-  //   if(props.cartContent.length === 1 && (props.total >= 100 && props.total < 300)){
-  //     return <li>{bonusItems[0]}</li>
-  //   }
-  //   else if(props.cartContent.length === 2 && (props.total >= 300 && props.total < 500)){
-  //     console.log(props.cartContent)
-  //     return (
-  //       <>
-  //       <li>{props.bonusItems[0]}</li>
-  //       <li>{props.bonusItems[1]}</li>
-  //       </>
-  //     )
-  //   }
-  // }
-
-
-
 
   return (
     <div className="cart">
