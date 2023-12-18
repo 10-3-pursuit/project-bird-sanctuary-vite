@@ -1,8 +1,19 @@
+body {
+  font-family: fantasy;
+  background: url('https://img.freepik.com/premium-photo/beautiful-sky-colorful-gentle-light-day-background-sunny-fluffy-clouds-with-magical-violet-purple-color-cloud-picturesque_31965-198873.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702598400&semt=ais');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 header {
   background: rgb(195, 247, 235);
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
+  border-radius: 4px;
 }
 main {
   display: flex;
@@ -42,8 +53,9 @@ aside > div {
 }
 
 .card img {
-  max-width: 70%;
-  margin: auto;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
   box-shadow: 1px 1px 6px grey;
 }
 
@@ -53,7 +65,9 @@ aside > div {
   padding: 0.3em;
   margin: 1em 0em;
   text-align: center;
-  border: 1px solid gray;
+  border: 2px solid gray;
+  background-color: lightblue;
+  border-radius: 4px;
 }
 
 h4 {
@@ -65,4 +79,37 @@ h5 {
 
 p {
   font-size: 0.75em;
+}
+
+.card button {
+  margin-top: 10px;
+  background-color: aquamarine;
+  border-radius: 4px;
+  font-family: fantasy;
+}
+
+.card button:hover {
+  background-color: cadetblue;
+}
+
+.checkout input {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 5px;
+}
+
+.checkout button {
+  margin-top: 5px;
+}
+
+.checkout button:hover {
+  background-color: lightgreen;
+}
+
+ol button {
+  margin-left: 5px;
+}
+
+ol button:hover {
+  background-color: lightcoral;
 }
