@@ -25,8 +25,16 @@ aside > div {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  width: 70%;
+  width: 80%;
   justify-content: space-between;
+}
+
+.cards{
+  width: 100%
+}
+
+.submit{
+  margin: 10px
 }
 
 .card {

@@ -1,34 +1,26 @@
 import { useState } from "react";
 import birdData from "../data/birds";
 
-const Cart = ({cart}) => {
+const Cart = ({cart, cartRemove, total, discount, bonus}) => {
   
   
-  function addTotal(){
-    
-  }
-
-  function discount(){
-
-  }
-
-  function cartRemove(birdId){
-    const removeBird = cart.find((bird) => bird.id === birdId);
-    const keepBirds = cart.filter((bird) => bird.id !== birdId);
-  }
-
   return (
     <div className="cart">
       <h2>Cart Component</h2>
+      <h4>Total:${total} </h4>
+      <h5>Discount:{discount ? 10 : 0}% </h5>
      <ol>
       {cart.map((bird) => 
-      <li key={bird.id}>{bird.name}: ${bird.amount} <button onClick={()=> cartRemove(bird.id)}>Delete</button></li>
+      <li key={bird.id}>{bird.name}: ${bird.amount}
+      <button onClick={()=> cartRemove(bird.id)}>Delete</button></li>
       )}
     </ol>
-      {/* Total Cart */}
-      {/* Cart discount 10% if items adopt > 3  */}
-      {/* Add to cart */}
-      {/* Remove from cart */}
+    <p>Your donations have qualified you for the following items:</p>
+      <ul>
+      {bonus.map((bonusItem) => 
+        <li>{bonusItem}</li>
+      )}
+      </ul>
     </div>
 
   );

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Checkout = () => {
+const Checkout = ({reset}) => {
 
   const[user, setUser] = useState({
     firstName:"",
@@ -70,7 +70,9 @@ const Checkout = () => {
           value={user.zipCode}
           />
         </label>
+        <div className= "submit">
         <button onClick={submit}>SUBMIT</button>
+        </div>
       </form>
     </div>
   );
