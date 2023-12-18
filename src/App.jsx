@@ -65,11 +65,9 @@ function App() {
       <main>
         <aside>
           <Cart
-            birds={birds}
             cartContent={cartContent}
             total={total}
             removeBird={removeBird}
-            bonusItems={bonusItems}
             checkForBonus={checkForBonus}
             bonus={bonus}
           />

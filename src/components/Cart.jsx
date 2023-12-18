@@ -1,6 +1,3 @@
-import { useState } from "react";
-import bonusItems from "../data/bonusItems";
-
 const Cart = (props) => {
   return (
     <div className="cart">
