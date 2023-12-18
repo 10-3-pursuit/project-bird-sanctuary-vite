@@ -1,10 +1,19 @@
-const Cards = () => {
+const Cards = ({birds, addToCart}) => {
+
+
   return (
     <div className="birds">
-      <div className="cards">
-        <h1>Card Component</h1>
+        {birds.map(bird=>{
+          return (
+          <div key={bird.id} className="card">
+            <h4>{bird.name}</h4>
+            <span>Price: ${bird.amount}</span>
+            <img src={bird.img} alt={bird.name}></img>
+            <button onClick={()=>addToCart(bird.id)}>Adopt</button>
+          </div>
+          )
+        })}
       </div>
-    </div>
   );
 };
 

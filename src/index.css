@@ -25,8 +25,8 @@ aside > div {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  width: 70%;
-  justify-content: space-between;
+  width: 80%;
+  justify-content:space-between;
 }
 
 .card {
@@ -65,4 +65,25 @@ h5 {
 
 p {
   font-size: 0.75em;
+}
+
+li span{
+  margin-right: 5px;
+}
+
+.cart p{
+  font-weight: bold;
+}
+
+.total,
+.discount{
+  font-size: 18px;
+}
+
+form{
+  margin-bottom: 10px;
+}
+
+form button{
+  margin-top: 10px;
 }
