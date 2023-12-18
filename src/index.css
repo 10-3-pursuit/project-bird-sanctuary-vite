@@ -4,6 +4,12 @@ header {
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
 }
+header h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
 main {
   display: flex;
   justify-content: space-between;
@@ -22,38 +28,74 @@ aside > div {
   min-height: 40vh;
 }
 .birds {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   text-align: center;
-  width: 70%;
-  justify-content: space-between;
+  width: 100%;
+  margin: 0 -500px;
 }
-
+.birds button {
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
 .card {
-  width: 20%;
-  padding: 0.5em 3em;
-  margin: 1em;
+  width: 40%;
+  padding: 2em 5em;
+  margin: 1em 6px;
   border-radius: 4px;
   box-shadow: 3px 3px 8px dimgray;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  cursor: default;
   background: rgb(229, 250, 245);
 }
-
+.card:hover {
+  background-color: rgb(141, 204, 141);
+  transition: background-color 0.3s ease-in-out;
+}
 .card img {
-  max-width: 70%;
-  margin: auto;
+  height: 100px;
+  width: 100px;
+  margin-left: -2px;
   box-shadow: 1px 1px 6px grey;
+}
+.cart-li {
+  border-radius: 6px;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+.cart-li:hover {
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .cart,
 .checkout {
-  width: 100%;
-  padding: 0.3em;
+  max-width: 100%;
+  padding: 0.5em;
   margin: 1em 0em;
   text-align: center;
   border: 1px solid gray;
+}
+.checkout input {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.checkout label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 3px;
 }
 
 h4 {
