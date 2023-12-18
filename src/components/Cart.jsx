@@ -12,12 +12,17 @@ const Cart = ({cart}) => {
 
   }
 
+  function cartRemove(birdId){
+    const removeBird = cart.find((bird) => bird.id === birdId);
+    const keepBirds = cart.filter((bird) => bird.id !== birdId);
+  }
+
   return (
     <div className="cart">
       <h2>Cart Component</h2>
      <ol>
       {cart.map((bird) => 
-      <li key={bird.id}>{bird.name}: ${bird.amount}</li>
+      <li key={bird.id}>{bird.name}: ${bird.amount} <button onClick={()=> cartRemove(bird.id)}>Delete</button></li>
       )}
     </ol>
       {/* Total Cart */}

@@ -16,6 +16,13 @@ function App() {
       setCart([...cart, theBird]);
     }
   }
+
+  function cartRemove(birdId){
+    const removeBird = cart.find((bird) => bird.id === birdId);
+    const keepBirds = cart.filter((bird) => bird.id !== birdId);
+    setCart[keepBirds];
+  }
+
   function reset(){
 
   }
@@ -29,7 +36,7 @@ function App() {
       <main>
          <Cards addCart={addCart}/>
         <aside>
-          <Cart cart={cart}/>
+          <Cart cart={cart} cartRemove={cartRemove}/>
           <Checkout />
         </aside>
       </main>
