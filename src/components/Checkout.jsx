@@ -35,7 +35,7 @@ const Checkout = ({setCartItems, setTotal, setDiscount, setBonus}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert(`You have adopted birds. Thank you ${form.firstName}`)
+    alert(`You have adopted birds. Thank you ${form.firstName}!`)
     reset()
   }
 

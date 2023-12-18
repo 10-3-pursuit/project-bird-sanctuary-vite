@@ -88,6 +88,10 @@ p {
   font-family: fantasy;
 }
 
+.card button:hover {
+  background-color: cadetblue;
+}
+
 .checkout input {
   display: block;
   margin: 0 auto;
@@ -96,4 +100,16 @@ p {
 
 .checkout button {
   margin-top: 5px;
+}
+
+.checkout button:hover {
+  background-color: lightgreen;
+}
+
+ol button {
+  margin-left: 5px;
+}
+
+ol button:hover {
+  background-color: lightcoral;
 }
