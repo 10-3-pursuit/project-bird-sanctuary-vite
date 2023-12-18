@@ -1,16 +1,24 @@
-const Cart = ({ cart }) => {
+const Cart = ({ cart, setCart }) => {
+  const removeItem = (id) => {
+    console.log(id);
+    const filteredCart = cart.filter((item) => item.id !== id);
+    setCart([...filteredCart]);
+  }
   return (
-    <ol className="cart">
-      {/* <h2>Cart Component</h2> */}
-      {cart.map((item) => {
-        return (
-          <li key={item.id}>
-            <span>{item.name}</span>
-            <span> ${item.amount}</span>
-          </li>
-        )
-      })}
-    </ol>
+    <div className="cart">
+      <h2>Cart</h2>
+      <ol>
+        {cart.map((item) => {
+          return (
+            <li key={item.id}>
+              <span>{item.name}</span>
+              <span> ${item.amount}</span>
+              <span onClick={() => removeItem(item.id)}> 🗑️</span>
+            </li>
+          )
+        })}
+      </ol>
+    </div>
   );
 };
 

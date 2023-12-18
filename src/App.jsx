@@ -12,7 +12,7 @@ function App() {
       </header>
       <main>
         <aside>
-          <Cart cart={cart} />
+          <Cart cart={cart} setCart={setCart} />
         </aside>
         <Cards cart={cart} setCart={setCart} />
       </main>
