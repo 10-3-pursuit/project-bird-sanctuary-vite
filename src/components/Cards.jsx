@@ -1,9 +1,15 @@
-const Cards = () => {
+import birdData from "../data/birds";
+import Card from "./Card";
+
+
+const Cards = ({addToCart} ) => {
+  
+  
+
   return (
     <div className="birds">
-      <div className="cards">
-        <h1>Card Component</h1>
-      </div>
+     
+       {birdData.map((bird) => <Card key= {bird.id} bird = {bird} addToCart={addToCart}/>)}
     </div>
   );
 };
