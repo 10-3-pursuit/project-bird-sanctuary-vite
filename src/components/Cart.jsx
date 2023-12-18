@@ -34,20 +34,21 @@ const Cart = ({ cartList, handleDelete, bonusData }) => {
   };
 
   const showBonusItems = bonusItem();
-  // console.log(cartList);
 
   return (
     <div className="cart">
       {/* Displaying cart items, discounts, total, and bonus items */}
-      <h2>Cart</h2>
+      <h2 style={{ backgroundColor: "white" }}>Cart</h2>
       <h5>Discount:{discount === 0 ? 0 : 10}%</h5>
       <h4>Total: ${discountedAmount}</h4>
       <ol>
         {cartList.map((bird) => (
           <li key={bird.id}>
-            {bird.name}: ${bird.amount}
+            <strong style={{ backgroundColor: "white" }}>
+              {bird.name}: ${bird.amount}
+            </strong>
             <button
-              className="rainbow-button"
+              className="rainbow-button delete-button"
               onClick={() => handleDelete(bird.id)}
             >
               Delete
@@ -60,7 +61,7 @@ const Cart = ({ cartList, handleDelete, bonusData }) => {
         {showBonusItems.length > 0 &&
           showBonusItems.map((bonus, index) => (
             <li key={index}>
-              <span>{bonus}</span>
+              <span style={{ backgroundColor: "white" }}>{bonus}</span>
             </li>
           ))}
       </ul>
