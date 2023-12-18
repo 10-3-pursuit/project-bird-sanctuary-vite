@@ -1,4 +1,6 @@
-const Cards = () => {
+
+
+const Cards = ({ birds, addToCart}) => {
   return (
     <div className="birds">
       <div className="cards">
