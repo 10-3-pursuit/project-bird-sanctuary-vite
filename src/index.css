@@ -28,6 +28,10 @@ header h1 {
   color: antiquewhite;
   font-size: 300%;
 }
+h4,h5 {
+  background: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
+}
 
 main {
   display: flex;
