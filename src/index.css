@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Bungee+Spice&family=Lato:wght@700&family=Oswald&family=Outfit&family=Roboto:wght@400;500&family=Ubuntu&family=Vina+Sans&display=swap");
+
+* {
+  font-family: "Ubuntu", "Roboto", "Oswald";
+}
+
 header {
   background: rgb(195, 247, 235);
   padding: 1em;
@@ -96,7 +102,9 @@ button {
 button:hover {
   background-color: white;
   font-weight: bold;
+  font-size: 20px;
   border: 3px solid black;
+  transition: 0.3s;
 }
 
 .remove-button {
