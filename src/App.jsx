@@ -48,16 +48,13 @@ function App() {
     }else{
       const updatedCart = [...cart,birdAdded]
       setCart(updatedCart)
-      setTotal(total + birdAdded.amount)
       handleDiscount(updatedCart)
     }
   }
 
   function removeFromCart(itemID){
     const filteredArr = cart.filter(item=> item.id !== itemID)
-    const itemRemoved = cart.find(item=> item.id === itemID)
     setCart(filteredArr)
-    setTotal(total - itemRemoved.amount)
     handleDiscount(filteredArr)
   }
 
