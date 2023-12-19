@@ -1,88 +1,95 @@
-# Bird Sanctuary ReactJS Project
+# Bird Sanctuary App
 
-## Project Objective
+## Overview
 
-Create a bird sanctuary donation app using React, incorporating specific functionalities based on the user stories provided. The project aims to challenge your ReactJS skills, with each feature contributing to the total score of 9. A minimum of 6.5 points is required to pass, with partial credit possible. See the [Project Rubrik](RUBRIK.md) for specific qualifications.
+This React application, named "Bird Sanctuary," provides a platform for users to adopt exotic birds by making donations. The application features a selection of birds displayed on cards, a shopping cart to track selected birds, a checkout process for users to provide their information, and a discount system based on the total donation amount.
 
-## [Click to watch BIRD SANCTUARY DEMO VIDEO](https://drive.google.com/file/d/1DT8Rt842Dz_sRN9V_beWQrqKamnvrP7s/view?usp=sharing)
+## File Structure
 
-The following demo has been styled for clarity. You are not required to style this app like this.
+- **App.js**: The main component that orchestrates the application's structure and logic.
+- **Cards.js**: Displays a list of exotic birds in card format, each with an "Adopt" button to add the bird to the shopping cart.
+- **Cart.js**: Manages the shopping cart, displaying selected birds, total price, applied discounts, and bonus items based on the total donation amount.
+- **Checkout.js**: Handles user information input for the adoption process, triggers checkout, and resets the cart.
 
-![Bird Sanctuary](./assets/bird-sanctuary.gif)
+## Usage
 
-## Initial Setup
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Run the application with `npm start`.
 
-1. **Fork the Repo**: Create a copy of this project's repository in your GitHub account.
-2. **Clone the Fork**: Download your forked repository to your computer.
-3. **Navigate to Directory**: Use command line to `cd` into the project folder.
-4. **Install Dependencies**: Run `npm install` to set up project dependencies.
-5. **Start Development Server**: Use `npm run dev` to launch the development environment.
-6. **Regular Commits**: Remember to regularly save your work with `git add`, `git commit`, and `git push`.
+## Components
 
-## Project Completion and Submission
+### 1. App Component (App.js)
 
-- **Implement Features**: Build out the project following the provided user stories.
-- **Push Changes**: Regularly upload your work to GitHub.
-- **Pull Request**: Create a pull request for your changes on GitHub.
-- **Submit on Canvas**: Provide the link to your pull request for project submission.
+- **State:**
 
-## User Stories and Features
+  - `exoticBird`: Tracks selected birds in the cart.
+  - `totalPrice`: Tracks the total price of selected birds.
+  - `discount`: Tracks the discount percentage.
 
-Implement the following features, each worth 1 point, for a total of 7 points.
+- **Functions:**
+  - `addToCart(ele)`: Adds a selected bird to the cart.
+  - `handleCheckout(infoData)`: Handles the checkout process and logs the provided user information.
+  - `handleResetCart()`: Resets the cart, including selected birds, total price, and discount.
 
-1. Sections with birds displaying name, image, amount, and an adopt button.
-1. Functionality to add birds to the shopping cart.
-1. Display of total cost of birds in the cart.
-1. A 10% discount for having 3 or more birds in the cart.
-1. Bonus items for increasing cart totals.
-1. A form to checkout the cart, which resets the cart upon submission.
-1. Ability to delete a bird from the cart.
+### 2. Cards Component (Cards.js)
 
-## Specific Component Requirements
+- **Props:**
 
-### Cards Component
+  - `exoticBird`: Array of exotic birds.
+  - `addToCart`: Function to add a bird to the cart.
 
-- [ ] Use data from `src/data/birds.js` passed as props.
+- **Function:**
+  - Displays a list of exotic birds in card format with an "Adopt" button.
 
-- [ ] Display bird name, image, and price for each bird from the array.
-- [ ] Include an 'Adopt' button with text `Adopt`.
-- [ ] Assign the class name `card` to each bird card.
+### 3. Cart Component (Cart.js)
 
-### Cart Component
+- **Props:**
 
-- [ ] Has the class name `cart`.
-- [ ] Add birds to the cart, displaying each bird's name, amount, and a delete button as list items in an ordered list (`<ol>`).
-- [ ] Show the total cost as an `<h4>` element within the cart.
-- [ ] Update total and list when additional birds are added.
-- [ ] Alert 'Bird Already Chosen' if the same bird is selected twice.
-- [ ] Apply a 10% discount for 3 or more birds in the cart.
-- [ ] Display discount as an `h5` tag. (e.g Discount: 0% or Discount: 10%)
-- [ ] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
+  - `exoticBird`: Array of selected birds in the cart.
+  - `setExoticBird`: Function to update the selected birds in the cart.
+  - `totalPrice`: Total price of selected birds.
+  - `setTotalPrice`: Function to update the total price.
+  - `discount`: Discount percentage.
+  - `setDiscount`: Function to update the discount percentage.
 
-#### Bonus Items in Cart
+- **Functions:**
 
-- [ ] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
+  - `handleDelete(bird)`: Deletes a selected bird from the cart.
+  - `calculateBonuses(exoticBird)`: Calculates bonus items based on the total donation amount.
+  - `calculateTotalPriceNoDiscount()`: Calculates the total price after applying the discount.
 
-- Bonus item thresholds:
-  - [ ] 1 bonus (first array item) for a total between $100 and $300.
-  - [ ] 2 bonuses (first and second array items) for a total between $300 and $500.
-  - [ ] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
-  - [ ] 4 bonuses (all array items) for a total over $1000.
+- **Rendering:**
+  - Displays the selected birds in a list with delete buttons.
+  - Shows the total price, applied discount, and selected bonus items if any.
 
-### Checkout Component
+### 4. Checkout Component (Checkout.js)
 
-- [ ] Has the class name `checkout`.
-- [ ] Handle form completion and submission.
-- [ ] Use `<label>` elements and proper attributes
-- [ ] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
-- [ ] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
+- **Props:**
 
-## Additional Guidance
+  - `onCheckout`: Function to handle the checkout process.
+  - `onResetCart`: Function to reset the cart.
 
-- Plan your component structure and state management carefully.
-- Think about the interaction between components, especially regarding state and props.
-- Test each feature against the user stories to ensure compliance with the requirements.
+- **State:**
 
-Focus on fulfilling these detailed requirements to successfully complete your Bird Sanctuary ReactJS project.
+  - `infoData`: Manages user information input (first name, last name, email, zip code).
 
-Good Luck!
+- **Functions:**
+
+  - `handleInputChange(e)`: Handles changes in the form input fields.
+  - `handleSubmit(e)`: Handles form submission, triggers checkout, shows a success alert, and resets the cart.
+
+- **Rendering:**
+  - Displays a form for users to input their information.
+  - Includes input fields for first name, last name, email, and zip code.
+  - Provides a "Checkout" button to submit the form.
+
+## Dependencies
+
+- **React**: A JavaScript library for building user interfaces.
+- **React Hooks (useState)**: Enables the use of state and other React features without writing a class.
+- **CSS (index.css)**: Stylesheet for basic styling.
+
+## Note
+
+This is a simple application, and further improvements and features can be added based on specific requirements and user feedback.
