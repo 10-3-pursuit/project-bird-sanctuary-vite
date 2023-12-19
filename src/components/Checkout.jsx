@@ -2,7 +2,15 @@ import React from "react";
 import { useState } from "react";
 
 //const [formData, setFormData] = useState()
-const Checkout = () => {
+const Checkout = ({clearCart}) => {
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zipCode: ""
+  })
+
   const handleSubmit = (e) => {
     e.preventDefault()
 alert("You have successfully adopted birds. Thank you!")
@@ -11,38 +19,36 @@ setFormData({
   firstName: "",
   lastName: "",
   email: "",
-  zipcode: ""
-});
-
-const [formData, setFormData] = useState({
-  firstName: "",
-  lastName: "",
-  email: "",
   zipCode: ""
-})
+});
+clearCart()
+ }
+function changeHandler(e) {
+  setFormData({...formData, [e.target.name]:e.target.value});
 
+  console.log(e.target.value)
+} 
 
-
-  }
-
-
+// function handleSubmit() {
+//   e.preventDefault();
+// };
   
   return (
     <section className="checkout">
       <h2>Checkout</h2>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <label htmlFor="first-name">First Name</label>
-        <input  id="first-name" type="text"></input>
+      <form onSubmit= {handleSubmit}>
+        <label htmlFor="firstName">First Name</label>
+        <input  id="firstName" type="text"name="firstName" value={formData.firstName} onChange={changeHandler}/>
         <br></br>
-        <label htmlFor="last-name">Last Name</label>
-        <input  id="last-name" type="text"></input>
+        <label htmlFor="lastName">Last Name</label>
+        <input  id="lastName" type="text"name="lastName" value={formData.lastName} onChange={changeHandler}/>
         <br></br>
-        <label htmlFor="Email">Email</label>
-        <input  id="email" type="text"></input>
+        <label htmlFor="email">Email</label>
+        <input  id="email" type="text"name="email" value={formData.email} onChange={changeHandler}/>
         <br></br>
 
         <label htmlFor="zip-code">Zip Code</label>
-        <input  id="zip-code" type="text"></input>
+        <input  id="zip-code" type="text"name="zipCode" value={formData.zipCode} onChange={changeHandler}/>
         <br></br>
         <button type="submit">Submit</button>
       </form>

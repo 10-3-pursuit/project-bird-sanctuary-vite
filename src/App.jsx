@@ -25,11 +25,19 @@ if (cartContent.find(({id}) => id === bird.id) ){
 };
 }
 
-const removeBird = (bird) => {
- const newCartContent = cartContent.filter(({id}) => id === bird.id)
-  setCartContent(newCartContent); 
+const removeBird = (id) => {
+const updatedCartContent= cartContent.filter((bird) => bird.id !== id);
+setCartContent(updatedCartContent)
 
-  }
+//made a new variable to be able to deduct the price of the deleted bird
+const deletedBird = cartContent.find((bird) => bird.id === id);
+setBirdPrice(birdPrice - deletedBird.amount);
+};
+
+
+//  const newCartContent = cartContent.filter(({id}) => id === bird.id)
+//   setCartContent(newCartContent); 
+
 
 
 const birdDataList = birdData.map((bird) =>  (
@@ -50,7 +58,9 @@ const birdDataList = birdData.map((bird) =>  (
   </tbody>
 ));
 
-
+const clearCart = () => {
+  setCartContent([]);
+}
 
 
   return (
@@ -62,8 +72,12 @@ const birdDataList = birdData.map((bird) =>  (
       <main>
         <aside>
           <Cart cartContent= {cartContent}
-          birdPrice= {birdPrice}/>
-          <Checkout/>
+          birdPrice= {birdPrice}
+          removeBird={removeBird}
+          
+          
+          />
+          <Checkout clearCart= {clearCart}/>
         </aside>
         <Cards addBird= {addBird}/>
 
