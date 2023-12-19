@@ -23,7 +23,7 @@ function App() {
 
     if (birdToAdd) {
       setTotal((prevTotal) => prevTotal + birdToAdd.amount)
-      updatedYourBirds = [birdToAdd, ...yourBirds]
+      updatedYourBirds = [...yourBirds, birdToAdd]
       setYourBirds(updatedYourBirds)
     }
   
