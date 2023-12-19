@@ -16,6 +16,7 @@ const Checkout = ({ clearCart }) => {
     // Update the specific input's value in the donatorsInfo state
     // [e.target.name]: e.target.value => this is so that the page knows what to update
     setDonatorsInfo({ ...donatorsInfo, [e.target.name]: e.target.value });
+    console.log(e.target.value);
   };
 
   // Function to handle form submission
