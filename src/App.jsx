@@ -90,7 +90,7 @@ const updateTotalAndDiscount = (updatedCart) => {
 const resetCart = () => {
   // Clear the cart by setting it to an empty array
   setCartItems([]);
-  setBonusItems
+  setBonusItems([]);
 
   // Reset total cost and discount to their initial values (0)
   setCheckoutTotal(0);
