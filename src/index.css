@@ -1,8 +1,13 @@
+html {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 header {
-  background: rgb(195, 247, 235);
+  background: rgb(247, 205, 195);
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
 }
 main {
   display: flex;
@@ -38,13 +43,48 @@ aside > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(229, 250, 245);
+  background: rgb(250, 230, 229);
 }
 
 .card img {
   max-width: 70%;
-  margin: auto;
+  height: 150px;
+  margin: 0 auto;
   box-shadow: 1px 1px 6px grey;
+}
+
+.adopt-button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.remove-button {
+  margin-left: 15px;
+}
+
+.submit-button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.bird-li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bonus-li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 50px;
+  padding-left: 0;
+}
+
+.your-donations {
+  color: red;
 }
 
 .cart,
