@@ -43,6 +43,16 @@ li {
   font-size: 14px;
 }
 
+input{
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 5px;;
+}
+
+form{
+  margin-left: 25%;
+}
+
 .birds {
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +91,6 @@ li {
   box-shadow: 1px 1px 6px gray;
 }
 
-
 .cart h2{
   text-align: center;
 }
@@ -95,15 +104,6 @@ li {
  }
 .cart-list-item {
   margin-bottom: 10px;
-}
-
-.checkout label, input{
-  display: block;
-  margin-bottom: 10px;
-}
-
-form{
-  margin-left: 25%;
 }
 
 .checkout h2{
