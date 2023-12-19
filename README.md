@@ -9,8 +9,7 @@
 Welcome to the Bird Adoption App! This application allows you to browse through a variety of birds, add them to your cart, and proceed with the adoption process. Below is a guide on how to use the app.
 
 ## Getting Started
-
-- **Launch the App**: Open the application to start exploring the available birds for adoption.
+- **Launch the App**: Open the application by navigating to https://regal-hamster-41f1a9.netlify.app/ and start exploring the available birds for adoption.
 
 ## Exploring Birds
 <p align="center">
