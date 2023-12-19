@@ -5,7 +5,7 @@ The Bird Sanctuary web app lets users explore and adopt various bird species. Th
 >[Bird Sanctuary Live Site](https://app.netlify.com/sites/scintillating-haupia-8ff537/overview)
 
 ## Setup Instructions
-1. Clone the [repository](https://github.com/AnitaOwen/project-bird-sanctuary-vite).
+1. Clone the [repository](https://github.com/AnitaOwen/project-bird-sanctuary-vite) and navigate to the project directory.
 2. Run `npm install` to set up project dependencies.
 3. Use `npm run dev` to launch the development environment.
 
