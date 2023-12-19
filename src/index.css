@@ -3,6 +3,7 @@ header {
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
 }
 main {
   display: flex;
@@ -42,9 +43,11 @@ aside > div {
 }
 
 .card img {
-  max-width: 70%;
+  /* max-width: 70%; */
   margin: auto;
   box-shadow: 1px 1px 6px grey;
+  width: 100px;
+  height: 100px;
 }
 
 .cart,
@@ -65,4 +68,26 @@ h5 {
 
 p {
   font-size: 0.75em;
+}
+
+header {
+  background: #558b2f; 
+}
+
+aside {
+  background: #a5d6a7;
+}
+
+.card {
+  background: #efebe9; 
+  border-color: #a1887f; 
+}
+
+button {
+  background: #6d4c41; 
+  color: white;
+}
+
+button:hover {
+  background: #8d6e63; 
 }
