@@ -1,12 +1,26 @@
+import { useState } from "react";
+import Header from "./components/Header";
+import Checkout from "./components/Checkout";
+import Cart from "./components/Cart";
+import Cards from "./components/Cards";
+import "./App.css";
+
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <div>
-      <header>
-        <h1>Bird Sanctuary</h1>
-        <h2>Donate to adopt a bird</h2>
-      </header>
+      <Header />
       <main>
-        <aside></aside>
+        <div className="container">
+          <Cart cart={cart} setCart={setCart} />
+          <Checkout cartLength={cart.length} clearCart={clearCart} />
+        </div>
+        <Cards cart={cart} setCart={setCart} />
       </main>
     </div>
   );
