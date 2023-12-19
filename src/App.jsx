@@ -19,6 +19,7 @@ function App() {
   
   const resetCart = () => {
     setCart([]);
+    setTotal(0);
   }
 
   const addBirdToCart = (bird) => { 

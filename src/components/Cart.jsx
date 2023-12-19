@@ -1,15 +1,20 @@
 import { useState } from "react";
 const Cart = ({cart, setCart, total}) => {
   
-  const deleteCartItem = (id => {
+  const deleteCartItem = (id) => {
     // console.log('deleting', bird.name)
-    const newList = cart.filter((item) => item.id !==id);
-    setCart(newList)
-  })
+    const newList = cart.filter((item) => item.id !== id);
+    if(isDuplicate) {
+      alert(`Bird Already Chosen`);
+    return;
+    }
+    setCart([...cart, newList]);
+  };
+
 
   const valueArr = cart.map(function(item){return item.id});
   const isDuplicate = valueArr.some(function(item, index){
-    // cart.some(otherItem => otherItem.id === item.id);
+    cart.some(otherItem => otherItem.id === item.id);
     return valueArr.indexOf(item) != index;
   });
   // const addBirdToCart = (bird) => { 
