@@ -2,7 +2,7 @@ import bonusItems from "../data/bonusItems"
 
 export default function Cart({yourBirds, total, discount, removeFromCart}) {
 
-  const discountTotal = total * 0.9
+  const discountTotal = total * (discount > 0 ? 0.9 : 1)
 
   const bonusList = () => {
     if (discountTotal >= 100 && discountTotal < 300) {
