@@ -102,7 +102,7 @@ aside > div {
 }
 
 p, ol, ul {
-  font-size: 0.75em;
+  font-size: 1em;
   background-color: rgba(0, 0, 0, 0.5);
   color: antiquewhite;
 }
@@ -136,7 +136,7 @@ button:hover {
     
   }
   p, ol, li, form, input, button {
-    font-size: 25px;
+    font-size: 20px;
   }
   h2,h3,h4,h5 {
     font-size: 2em;
