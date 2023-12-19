@@ -90,6 +90,7 @@ const updateTotalAndDiscount = (updatedCart) => {
 const resetCart = () => {
   // Clear the cart by setting it to an empty array
   setCartItems([]);
+  setBonusItems
 
   // Reset total cost and discount to their initial values (0)
   setCheckoutTotal(0);
@@ -111,7 +112,7 @@ return (
           discountTotal={discountTotal}
           bonusItems={bonusItemsToShow}
         />
-        <Checkout clearCart={resetCart} cartlength={cartItems.length} />
+        <Checkout resetCart={resetCart} cartlength={cartItems.length} />
       </aside>
       <Cards birds={birddata} handleAddToCart={handleAddToCart} />
     </main>

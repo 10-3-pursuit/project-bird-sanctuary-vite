@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 //CHECKOUT COMPONENT
-const Checkout = () => {
+const Checkout = ({resetCart}) => {
   // State to hold user details (first name, last name, email, zip code)
   const [userDetails, setUserDetails] = useState({
     firstName: "",
@@ -19,22 +19,28 @@ const Checkout = () => {
     });
   };
 
-  // Function to handle form submission
-  const handleSubmit = (event) => {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+// Function to handle form submission
+const handleSubmit = (event) => {
+  // Prevent the default form submission behavior
+  event.preventDefault();
 
-    // Display an alert indicating a successful adoption
-    alert("You have successfully adopted birds. Thank you!");
+  // Display an alert indicating a successful adoption
+  alert("You have successfully adopted birds. Thank you!");
 
-    // Reset user details to empty values after submission
-    setUserDetails({
-      firstName: "",
-      lastName: "",
-      email: "",
-      zip: "",
-    });
-  };
+  // Reset user details to empty values after submission
+  setUserDetails({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zip: "",
+  });
+
+  // Call the resetCart function passed as a prop to reset the cart
+  resetCart();
+};
+
+  
+  
 
 return (
   <div className="checkout">

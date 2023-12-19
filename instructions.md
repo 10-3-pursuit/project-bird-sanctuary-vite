@@ -42,40 +42,40 @@ Implement the following features, each worth 1 point, for a total of 7 points.
 
 ### Cards Component
 
-- [ ] Use data from `src/data/birds.js` passed as props.
+- [x] Use data from `src/data/birds.js` passed as props.
 
-- [ ] Display bird name, image, and price for each bird from the array.
-- [ ] Include an 'Adopt' button with text `Adopt`.
-- [ ] Assign the class name `card` to each bird card.
+- [x] Display bird name, image, and price for each bird from the array.
+- [x] Include an 'Adopt' button with text `Adopt`.
+- [x] Assign the class name `card` to each bird card.
 
 ### Cart Component
 
-- [ ] Has the class name `cart`.
-- [ ] Add birds to the cart, displaying each bird's name, amount, and a delete button as list items in an ordered list (`<ol>`).
-- [ ] Show the total cost as an `<h4>` element within the cart.
-- [ ] Update total and list when additional birds are added.
-- [ ] Alert 'Bird Already Chosen' if the same bird is selected twice.
-- [ ] Apply a 10% discount for 3 or more birds in the cart.
-- [ ] Display discount as an `h5` tag. (e.g Discount: 0% or Discount: 10%)
-- [ ] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
+- [x] Has the class name `cart`.
+- [x] Add birds to the cart, displaying each bird's name, amount, and a delete button as list items in an ordered list (`<ol>`).
+- [x] Show the total cost as an `<h4>` element within the cart.
+- [x] Update total and list when additional birds are added.
+- [x] Alert 'Bird Already Chosen' if the same bird is selected twice.
+- [x] Apply a 10% discount for 3 or more birds in the cart.
+- [x] Display discount as an `h5` tag. (e.g Discount: 0% or Discount: 10%)
+- [x] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
 
 #### Bonus Items in Cart
 
-- [ ] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
+- [x] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
 
 - Bonus item thresholds:
-  - [ ] 1 bonus (first array item) for a total between $100 and $300.
-  - [ ] 2 bonuses (first and second array items) for a total between $300 and $500.
-  - [ ] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
-  - [ ] 4 bonuses (all array items) for a total over $1000.
+  - [x] 1 bonus (first array item) for a total between $100 and $300.
+  - [x] 2 bonuses (first and second array items) for a total between $300 and $500.
+  - [x] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
+  - [x] 4 bonuses (all array items) for a total over $1000.
 
 ### Checkout Component
 
-- [ ] Has the class name `checkout`.
-- [ ] Handle form completion and submission.
-- [ ] Use `<label>` elements and proper attributes
-- [ ] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
-- [ ] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
+- [x] Has the class name `checkout`.
+- [x] Handle form completion and submission.
+- [x] Use `<label>` elements and proper attributes
+- [x] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
+- [x] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
 
 ## Additional Guidance
 
