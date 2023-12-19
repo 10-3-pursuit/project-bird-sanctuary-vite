@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  background: url(assets/dogwood.jpeg);
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -75,7 +75,7 @@ aside > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url(assets/dogwood.jpeg);
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -94,7 +94,7 @@ aside > div {
   margin: 1em 0;
   text-align: center;
   border: 2px double gray;
-  background: url(assets/dogwood.jpeg);
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -118,7 +118,7 @@ button {
 }
 
 button:hover {
-  background: url(assets/dogwood.jpeg);
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
