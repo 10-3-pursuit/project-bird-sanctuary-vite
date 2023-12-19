@@ -23,11 +23,10 @@ The Bird Sanctuary application is an interactive web platform designed for bird 
 
 ## Getting Started
 To run the Bird Sanctuary application:
-1. Ensure you have Node.js and npm installed.
-2. Clone the repository and navigate to the project directory.
-3. Install dependencies using `npm install`.
-4. Run the application using `npm start`.
-5. Access the application at `localhost` in your web browser.
+1. Clone the repository and navigate to the project directory.
+2. Install dependencies using `npm install`.
+3. Run the application using `npm run dev`.
+4. Access the application at `localhost` in your web browser.
 
 To access the live site, navigate to https://velvety-torrone-e1cf2e.netlify.app/
 
