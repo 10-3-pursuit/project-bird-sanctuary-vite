@@ -1,13 +1,16 @@
-const Checkout = ({formData, setFormData}) => {
+const Checkout = ({formData, setFormData, resetCart}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    alert("You have successfully adopted birds. Thank you.")
     setFormData({
       firstName: '',
       lastName: '',
       email: '',
       zipcode: '',
     });
+
+  resetCart()
   };
 
   const handleChange = (event) => {

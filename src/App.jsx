@@ -17,6 +17,10 @@ function App() {
   });
   const [total, setTotal] = useState(0);
   
+  const resetCart = () => {
+    setCart([]);
+  }
+
   const addBirdToCart = (bird) => { 
     console.log('clicked', bird);
     const newBird = {
@@ -68,8 +72,9 @@ function App() {
       </header>
       <main>
         <aside>
-          <Cart total={total} cart={cart} setCart={setCart}/>
-          <Checkout formData={formData} setFormData={setFormData}/>
+          <Cart cart={cart} setCart={setCart} total={total} />
+          <Checkout formData={formData} setFormData={setFormData} resetCart={resetCart}/>
+
         </aside>
       
         <div className="bird-container">
