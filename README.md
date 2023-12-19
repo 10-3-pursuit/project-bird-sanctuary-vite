@@ -1,88 +1,47 @@
-# Bird Sanctuary ReactJS Project
+<h1 align="center">Bird Adoption App</h1>
 
-## Project Objective
+<p align="center">
+  <img src="./assets/owls.jpeg" alt="Orphaned-Western-Screech-Owls"/>
+</p>
 
-Create a bird sanctuary donation app using React, incorporating specific functionalities based on the user stories provided. The project aims to challenge your ReactJS skills, with each feature contributing to the total score of 9. A minimum of 6.5 points is required to pass, with partial credit possible. See the [Project Rubrik](RUBRIK.md) for specific qualifications.
+<h6 align="center">Featured Birds: Orphaned Western Screech Owls</h6>
 
-## [Click to watch BIRD SANCTUARY DEMO VIDEO](https://drive.google.com/file/d/1DT8Rt842Dz_sRN9V_beWQrqKamnvrP7s/view?usp=sharing)
+Welcome to the Bird Adoption App! This application allows you to browse through a variety of birds, add them to your cart, and proceed with the adoption process. Below is a guide on how to use the app.
 
-The following demo has been styled for clarity. You are not required to style this app like this.
+## Getting Started
+- **Launch the App**: Open the application by navigating to https://regal-hamster-41f1a9.netlify.app/ and start exploring the available birds for adoption.
 
-![Bird Sanctuary](./assets/bird-sanctuary.gif)
+## Exploring Birds
+<p align="center">
+  <img src="./assets/raven.jpeg" alt="raven"/>
+</p>
 
-## Initial Setup
+<h6 align="center">Featured Bird: Raven</h6>
 
-1. **Fork the Repo**: Create a copy of this project's repository in your GitHub account.
-2. **Clone the Fork**: Download your forked repository to your computer.
-3. **Navigate to Directory**: Use command line to `cd` into the project folder.
-4. **Install Dependencies**: Run `npm install` to set up project dependencies.
-5. **Start Development Server**: Use `npm run dev` to launch the development environment.
-6. **Regular Commits**: Remember to regularly save your work with `git add`, `git commit`, and `git push`.
+- **View Birds**: On the main page, you'll see a list of birds, each displayed on its own card.
+- **Bird Details**: Each card shows the bird's name, an image, and its adoption price.
+- **Adopt a Bird**: If you find a bird you like, click on the `Adopt` button to add it to your cart.
 
-## Project Completion and Submission
+## Managing Your Cart
 
-- **Implement Features**: Build out the project following the provided user stories.
-- **Push Changes**: Regularly upload your work to GitHub.
-- **Pull Request**: Create a pull request for your changes on GitHub.
-- **Submit on Canvas**: Provide the link to your pull request for project submission.
+- **View Cart**: Your cart is visible on the same page, usually on the side or at the top.
+- **Cart Details**: In the cart, you will see the names and quantities of the birds you've chosen, along with the total cost.
+- **Remove Birds**: If you change your mind, you can remove a bird from the cart.
+- **Discounts**: If you have three or more birds in your cart, a 10% discount is automatically applied to your total cost.
 
-## User Stories and Features
+## Bonus Items
 
-Implement the following features, each worth 1 point, for a total of 7 points.
+- **Earn Bonuses**: Depending on the total cost of your cart, you can earn bonus items.
+- **Bonus Thresholds**: Bonus items are awarded at different cost thresholds: $100, $300, $500, and $1000.
 
-1. Sections with birds displaying name, image, amount, and an adopt button.
-1. Functionality to add birds to the shopping cart.
-1. Display of total cost of birds in the cart.
-1. A 10% discount for having 3 or more birds in the cart.
-1. Bonus items for increasing cart totals.
-1. A form to checkout the cart, which resets the cart upon submission.
-1. Ability to delete a bird from the cart.
+## Checking Out
 
-## Specific Component Requirements
+- **Proceed to Checkout**: Once you're ready to adopt, navigate to the checkout section.
+- **Fill Out the Form**: Complete the form with your details.
+- **Submit**: Submit your adoption request.
+- **Confirmation**: After submitting, you will receive a confirmation message thanking you for the adoption.
+- **Reset Cart**: Upon completing the checkout process, your cart will be reset, and you can start again if you wish.
 
-### Cards Component
+## Thank You
 
-- [ ] Use data from `src/data/birds.js` passed as props.
-
-- [ ] Display bird name, image, and price for each bird from the array.
-- [ ] Include an 'Adopt' button with text `Adopt`.
-- [ ] Assign the class name `card` to each bird card.
-
-### Cart Component
-
-- [ ] Has the class name `cart`.
-- [ ] Add birds to the cart, displaying each bird's name, amount, and a delete button as list items in an ordered list (`<ol>`).
-- [ ] Show the total cost as an `<h4>` element within the cart.
-- [ ] Update total and list when additional birds are added.
-- [ ] Alert 'Bird Already Chosen' if the same bird is selected twice.
-- [ ] Apply a 10% discount for 3 or more birds in the cart.
-- [ ] Display discount as an `h5` tag. (e.g Discount: 0% or Discount: 10%)
-- [ ] Allow deletion of birds from the cart, adjusting the total, discount, and bonus items accordingly.
-
-#### Bonus Items in Cart
-
-- [ ] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
-
-- Bonus item thresholds:
-  - [ ] 1 bonus (first array item) for a total between $100 and $300.
-  - [ ] 2 bonuses (first and second array items) for a total between $300 and $500.
-  - [ ] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
-  - [ ] 4 bonuses (all array items) for a total over $1000.
-
-### Checkout Component
-
-- [ ] Has the class name `checkout`.
-- [ ] Handle form completion and submission.
-- [ ] Use `<label>` elements and proper attributes
-- [ ] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
-- [ ] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
-
-## Additional Guidance
-
-- Plan your component structure and state management carefully.
-- Think about the interaction between components, especially regarding state and props.
-- Test each feature against the user stories to ensure compliance with the requirements.
-
-Focus on fulfilling these detailed requirements to successfully complete your Bird Sanctuary ReactJS project.
-
-Good Luck!
+Thank you for choosing to adopt a bird through our app. Your support helps us continue our mission to find loving homes for these beautiful creatures. If you have any questions or feedback, please don't hesitate to contact us. Happy bird adopting!

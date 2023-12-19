@@ -1,15 +1,49 @@
-header {
-  background: rgb(195, 247, 235);
-  padding: 1em;
-  box-shadow: 1px 1px 6px gray;
-  margin-bottom: 0.75em;
+html {
+  text-align: center; 
+  margin: auto;
 }
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(45deg, rgb(218, 174, 118) 40%, rgba(168, 243, 220, 0.526) 60%);
+  margin: auto;
+}
+
+header {
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  border: 2px double gray;
+  padding: 1em;
+  margin: auto;
+  box-shadow: 1px 1px 3px gray;
+  margin-bottom: 0.75em;
+  box-sizing: border-box;
+  
+}
+
+header h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
+  font-size: 300%;
+}
+h4,h5 {
+  background: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
+}
+
 main {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   margin: auto;
+  box-sizing: border-box;
 }
+ section {
+  margin: 0px;
+  box-sizing: border-box;
+ }
 
 aside {
   width: 25%;
@@ -17,52 +51,133 @@ aside {
   flex-wrap: wrap;
   align-items: stretch;
   height: 100vh;
+  padding-left: 2%;
 }
+
 aside > div {
   min-height: 40vh;
 }
+
 .birds {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  width: 70%;
-  justify-content: space-between;
+  max-width: 70%;
+  box-sizing:border-box;
 }
 
 .card {
-  width: 20%;
+  max-width: 100%;
   padding: 0.5em 3em;
   margin: 1em;
-  border-radius: 4px;
-  box-shadow: 3px 3px 8px dimgray;
+  border: 2px double gray;
+  box-shadow: 1px 1px 3px dimgray;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(229, 250, 245);
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .card img {
-  max-width: 70%;
+  width: 100%;
   margin: auto;
-  box-shadow: 1px 1px 6px grey;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
-.cart,
-.checkout {
+.cart, .checkout {
   width: 100%;
   padding: 0.3em;
-  margin: 1em 0em;
+  margin: 1em 0;
   text-align: center;
-  border: 1px solid gray;
+  border: 2px double gray;
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 3px dimgray;
 }
 
-h4 {
-  font-size: 1.5em;
-}
-h5 {
-  font-size: 1em;
+p, ol, ul {
+  font-size: 16px;
+  font-weight: 900;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
 }
 
-p {
-  font-size: 0.75em;
+ul, ol {
+  text-align: center;
+  padding-right: 30px;
+}
+
+button {
+  background: rgba(0, 0, 0, 0.5);
+  color: antiquewhite;
+}
+
+button:hover {
+  background: url(https://www.bbg.org/img/uploads/lightbox/_lightbox_retina/batonrouge_BB_39173396602.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: 900;
+  filter:sepia(50%)
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 750px) {
+  html, body {
+    text-align: center; 
+    display: grid;
+    grid-template-columns: 1fr;
+    
+  }
+  p, ol, li, form, input, button {
+    font-size: 20px;
+  }
+  h2,h3,h4,h5 {
+    font-size: 2em;
+  }
+
+  header h1 {
+      font-size: 5em;
+  }
+
+  aside {
+      width: auto;
+      padding-left: 0%;
+  }
+  .birds {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+  }
+  .card {
+    max-width: 100%;
+  }
+  .card img {
+    max-width: 40%;
+  }
+  main {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+
+  section {
+      margin: 0px auto;
+      width: 100%;
+      height: auto;
+  }
+  aside > div {
+    min-height: none;
+    margin-bottom: 10%;
+  }
 }
