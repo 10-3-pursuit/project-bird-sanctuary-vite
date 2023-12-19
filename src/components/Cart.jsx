@@ -1,4 +1,4 @@
-import { v1 as generateUniqueId } from "uuid";
+// import { v1 as generateUniqueId } from "uuid";
 import bonusItems from "../data/bonusItems";
 
 const Cart = ({ cart, setCart }) => {
@@ -53,7 +53,7 @@ const Cart = ({ cart, setCart }) => {
             <h5>Your donations has qualified you for the following items:</h5>
             <ul>
                 {bonuses.map((bonus) => (
-                    <li key={generateUniqueId()}>{bonus}</li>
+                    <li key={bonus.id}>{bonus.name}</li>
                 ))}
             </ul>
         </div>
