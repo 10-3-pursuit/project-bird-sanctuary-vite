@@ -1,6 +1,7 @@
 import data from "./data/birds";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
+import bonusItems from "./data/bonusItems";
 import { useState } from "react";
 // first to make sure my bird data is all set in my inspect through the console
 // console.log(data);

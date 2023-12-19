@@ -8,20 +8,17 @@ const Cart = ({cart, total, setCart}) => {
 
   const valueArr = cart.map(function(item){return item.id});
   const isDuplicate = valueArr.some(function(item, index){
+    cart.some(otherItem => otherItem.id === item.id);
     return valueArr.indexOf(item) != index;
   });
+  
 
-  const cartBirds = cart.map(item => {
-    // if(isDuplicate) {
-    //   return alert(`Bird Already Chosen`)
-    // } else {
-      return (
-        <li key={item.id}>
-      {item.name}, {item.amount}
-      <button onClick={() => deleteCartItem(item.id)}>Delete</button>
-      </li>
-      ) 
-    })
+  const cartBirds = cart.map(item => (
+    <li key={item.id}>
+    {item.name}, {item.amount}
+    <button onClick={() => deleteCartItem(item.id)}>Delete</button>
+    </li>
+  ));
 
   return (
     <div className="cart">
@@ -36,8 +33,7 @@ const Cart = ({cart, total, setCart}) => {
         <h5>Discount: 0%</h5>
         <h4>Total Amount: {total}</h4>
         </>
-      )}
-     
+      )};
       <ol>{cartBirds}</ol>
     </div>
   );
