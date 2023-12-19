@@ -33,13 +33,13 @@ function App() {
   }
 
   function removeFromCart(singleBird) {
-    const updatedCart = yourBirds.filter((bird) => bird.name !== singleBird)
-    setYourBirds(updatedCart)
+    const updatedBirdsCart = yourBirds.filter((bird) => bird.name !== singleBird)
+    setYourBirds(updatedBirdsCart)
     
-    const newTotal = updatedCart.reduce((total, bird) => total + bird.amount, 0)
+    const newTotal = updatedBirdsCart.reduce((total, bird) => total + bird.amount, 0)
     setTotal(newTotal)
 
-    if (updatedCart.length < 3) {
+    if (updatedBirdsCart.length < 3) {
       setDiscount(0)
     }
   }

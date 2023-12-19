@@ -72,7 +72,7 @@ export default function Checkout({resetCart}) {
           />
         </label>
         <div>
-        <button type="submit">Submit</button>
+        <button className="submit-button" type="submit">Submit</button>
         </div>
       </form>
     </div>
