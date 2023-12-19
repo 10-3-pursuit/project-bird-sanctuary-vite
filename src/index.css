@@ -3,6 +3,7 @@ header {
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
 }
 main {
   display: flex;
