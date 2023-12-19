@@ -16,13 +16,15 @@ const Cart = ({ cart, handleDelete, totalCost }) => {
             </li>
           ))}
       </ol>
-      <h5>Discount: {totalCost.discount}%</h5>
-      <h4>Total Cost: ${totalCost.discountedAmount}</h4>
+      <h5>Discount: {discount}%</h5>
+      {message && <p>{message}</p>}
+      <h4>Total Cost: ${discountedAmount}</h4>
     </div>
   );
 };
 
 export default Cart;
+
 
 
 

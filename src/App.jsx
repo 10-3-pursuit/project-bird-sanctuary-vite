@@ -1,6 +1,7 @@
 import Cards from "./components/Cards";
 import "./App.css";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -14,20 +15,50 @@ function App() {
   });
 
   const addToCart = (bird) => {
-  
     if (cart.some((cartBird) => cartBird.id === bird.id)) {
-  
-      setTotalCost({ ...totalCost, message: 'Bird Already Chosen' });
+      setTotalCost((prevTotalCost) => ({
+        ...prevTotalCost,
+        message: 'Bird Already Chosen'
+      }));
       return;
     }
-  
+
     setCart([...cart, bird]);
-    setTotalCost({ ...totalCost, message: '' });
+
+    setTotalCost((prevTotalCost) => ({
+      ...prevTotalCost,
+      message: ''
+    }));
   };
 
   const handleDelete = (bird) => {
     const filteredCart = cart.filter((item) => item.id !== bird.id);
     setCart(filteredCart);
+  };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    email: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleCheckout = () => {
+    setCart([]);
+    setTotalCost({
+      discountedAmt: 0,
+      discount: 0,
+      discountedAmount: 0,
+      chosenBirdId: null,
+      message: '',
+    });
+    alert('You have successfully adopted birds. Thank you!');
   };
 
   useEffect(() => {
@@ -63,6 +94,7 @@ function App() {
       <main>
         <aside>
           <Cart cart={cart} handleDelete={handleDelete} totalCost={totalCost} />
+          <Checkout handleCheckout={handleCheckout} />
         </aside>
         <Cards addToCart={addToCart} />
       </main>
@@ -71,5 +103,7 @@ function App() {
 }
 
 export default App;
+
+
 
 
