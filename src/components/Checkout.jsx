@@ -37,7 +37,7 @@ const Checkout = ({ setCart }) => {
             id="firstName"
             type="text"
             required />
-        </label>
+        </label> <br />
         <label htmlFor="lastName">
           Last Name
           <input
@@ -46,7 +46,7 @@ const Checkout = ({ setCart }) => {
             id="lastName"
             type="text"
             required />
-        </label>
+        </label> <br />
         <label htmlFor="email">
           Email
           <input
@@ -55,7 +55,7 @@ const Checkout = ({ setCart }) => {
             id="email"
             type="email"
             required />
-        </label>
+        </label> <br />
         <label htmlFor="zip">
           Zip Code
           <input
@@ -64,7 +64,7 @@ const Checkout = ({ setCart }) => {
             id="zip"
             type="text"
             required />
-        </label>
+        </label> <br /><br />
         <button>Submit</button>
       </form>
     </div>
