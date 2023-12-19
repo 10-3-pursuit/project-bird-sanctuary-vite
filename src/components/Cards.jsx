@@ -15,7 +15,7 @@ const Cards = ({ cart, setCart }) => {
             <div className='card' key={bird.id}>
               <h2>{bird.name}</h2>
               <span>Price: ${bird.amount}</span>
-              <img src={bird.img} />
+              <img src={bird.img} alt={`image of a ${bird.name}`} />
               <button onClick={() => addToCart(bird)}>Adopt</button>
             </div>
           )
