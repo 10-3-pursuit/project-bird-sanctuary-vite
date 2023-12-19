@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Checkout = ({ setCart }) => {
+const Checkout = ({ cart, setCart }) => {
   const [userInfo, setUserInfo] = useState({
     firstName: "",
     lastName: "",
@@ -15,14 +15,17 @@ const Checkout = ({ setCart }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("You have successfully adopted birds. Thank you!")
-    setUserInfo({
-      firstName: "",
-      lastName: "",
-      email: "",
-      zip: ""
-    });
-    setCart([])
+    if (cart.length > 0) {
+      alert("You have successfully adopted birds. Thank you!")
+      setUserInfo({
+        firstName: "",
+        lastName: "",
+        email: "",
+        zip: ""
+      });
+      setCart([])
+    } else
+      alert('Please adopt a bird to checkout.')
   }
 
   return (
