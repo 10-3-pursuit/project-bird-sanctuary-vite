@@ -1,5 +1,16 @@
+import { useState } from "react";
+
 const Checkout = () => {
+  const [userInfo, setUserInfo] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zip: ""
+  });
+
   function handleChange(event) {
+    console.log(event.target.value)
+    setUserInfo({ ...userInfo, [event.target.id]: event.target.value })
   }
 
   return (
@@ -10,6 +21,8 @@ const Checkout = () => {
           First Name
           <input
             onChange={handleChange}
+            value={userInfo.firstName}
+            id="firstName"
             type="text"
             required />
         </label>
@@ -17,6 +30,8 @@ const Checkout = () => {
           Last Name
           <input
             onChange={handleChange}
+            value={userInfo.lastName}
+            id="lastName"
             type="text"
             required />
         </label>
@@ -24,6 +39,8 @@ const Checkout = () => {
           Email
           <input
             onChange={handleChange}
+            value={userInfo.email}
+            id="email"
             type="email"
             required />
         </label>
@@ -31,6 +48,8 @@ const Checkout = () => {
           Zip Code
           <input
             onChange={handleChange}
+            value={userInfo.zip}
+            id="zip"
             type="text"
             required />
         </label>
