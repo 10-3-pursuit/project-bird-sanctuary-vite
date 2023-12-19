@@ -30,4 +30,4 @@ The **Bird Sanctuary Donation App** was created using React. With this App, you 
 - Enter your information for **Checkout**. Click `Submit` to donate and adopt birds.
 
 ## Link
-[MY LIVE SITE URL]([MY LIVE SITE URL](https://cerulean-cactus-616e3f.netlify.app/))
+[Bird Sanctuary App](https://cerulean-cactus-616e3f.netlify.app/)
