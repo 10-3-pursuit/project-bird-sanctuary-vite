@@ -2,6 +2,7 @@
 
 ## Description
 The Bird Sanctuary web app lets users explore and adopt various bird species. The application incorporates features such as discounts for multiple adoptions, bonus items based on the total cost, and a smooth checkout process.
+[Bird Sanctuary Live Site](https://app.netlify.com/sites/scintillating-haupia-8ff537/overview)
 
 ## Setup Instructions
 1. Clone the [repository](https://github.com/AnitaOwen/project-bird-sanctuary-vite).
