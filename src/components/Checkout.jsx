@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Checkout = () => {
+const Checkout = ({ setCart }) => {
   const [userInfo, setUserInfo] = useState({
     firstName: "",
     lastName: "",
@@ -13,10 +13,22 @@ const Checkout = () => {
     setUserInfo({ ...userInfo, [event.target.id]: event.target.value })
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("You have successfully adopted birds. Thank you!")
+    setUserInfo({
+      firstName: "",
+      lastName: "",
+      email: "",
+      zip: ""
+    });
+    setCart([])
+  }
+
   return (
     <div className="checkout">
       <h2>Checkout</h2>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">
           First Name
           <input
