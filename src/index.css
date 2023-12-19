@@ -1,8 +1,14 @@
+body{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 header {
   background: rgb(195, 247, 235);
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+  text-align: center;
+  color: black;
 }
 main {
   display: flex;
@@ -21,6 +27,32 @@ aside {
 aside > div {
   min-height: 40vh;
 }
+
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.75em;
+}
+
+li {
+  font-size: 14px;
+}
+
+input{
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 5px;;
+}
+
+form{
+  margin-left: 25%;
+}
+
 .birds {
   display: flex;
   flex-wrap: wrap;
@@ -30,15 +62,15 @@ aside > div {
 }
 
 .card {
-  width: 20%;
+  width: 15%;
   padding: 0.5em 3em;
   margin: 1em;
   border-radius: 4px;
-  box-shadow: 3px 3px 8px dimgray;
+  box-shadow: 3px 3px 8px rgb(93, 77, 106);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(229, 250, 245);
+  background: rgb(176, 238, 247);
 }
 
 .card img {
@@ -52,17 +84,110 @@ aside > div {
   width: 100%;
   padding: 0.3em;
   margin: 1em 0em;
+  border: 1px solid rgb(88, 185, 255);
+  border-radius: 6px;
+  background-color: rgb(216, 255, 239);
+  background: rgb(241, 249, 201);
+  box-shadow: 1px 1px 6px gray;
+}
+
+.cart h2{
   text-align: center;
-  border: 1px solid gray;
 }
 
-h4 {
-  font-size: 1.5em;
+.cart h5, h3, p{
+  margin-left: 10px;
 }
-h5 {
-  font-size: 1em;
+ .cart h3 {
+  font-weight: bold;
+  color: darkblue
+ }
+.cart-list-item {
+  margin-bottom: 10px;
 }
 
-p {
-  font-size: 0.75em;
+.checkout h2{
+  text-align: center;
+}
+
+.cart p, ul{
+  color: rgb(0, 0, 98);
+}
+
+.discount{
+  color: red;
+}
+
+.delete-button{
+  padding: 1px 2px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s; 
+  font-size: 10px;
+  color: red;
+  background-color: rgb(241, 249, 201);
+}
+.delete-button:hover{
+  background-color: rgb(251, 127, 127);
+  color: white;
+}
+.adopt-button{
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: darkgreen;
+}
+
+.adopt-button:hover{
+  color: black;
+  background-color: lightgreen;
+}
+
+@media (max-width: 1405px){
+  aside{
+    width: 25%;
+  }
+  .card {
+    width: 15%;
+  }
+}
+
+@media (max-width: 1197px){
+  aside{
+    width: 45%;
+  }
+  .card {
+    width: 25%;
+  }
+  .birds{
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 975px){
+  aside{
+    width: 55%;
+  }
+  .card {
+    width: 20%;
+  }
+}
+
+@media (max-width: 888px){
+  aside{
+    width: 80%;
+  }
+  form{
+    margin-left: 5%;
+  }
+  input {
+    max-width: 80%
+  }
+  .checkout h2{
+    text-align: left;
+    margin-left: 5%;
+  }
+  .card {
+    width: 150px;
+  }
+
 }

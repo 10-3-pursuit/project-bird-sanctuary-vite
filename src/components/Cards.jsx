@@ -1,9 +1,19 @@
-const Cards = () => {
+
+
+
+const Cards = ({ birds, handleAddToCart }) => {
+
+
   return (
     <div className="birds">
-      <div className="cards">
-        <h1>Card Component</h1>
+      {birds.map((bird)=>(
+        <div className="card" key={bird.id}>
+        <h5>{bird.name}</h5>
+        <img src={bird.img} alt={bird.name} />
+        <p>${bird.amount}</p>
+        <button className="adopt-button" onClick={()=>handleAddToCart(bird)}>Adopt</button>
       </div>
+      ))}
     </div>
   );
 };
