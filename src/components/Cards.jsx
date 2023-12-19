@@ -1,9 +1,20 @@
-const Cards = () => {
+
+
+const Cards = ({ birds, addToCart}) => {
+
+  const handleAdopt = (bird => {
+    addToCart(bird)
+  })
   return (
     <div className="birds">
-      <div className="cards">
-        <h1>Card Component</h1>
-      </div>
+      {birds.map(bird => (
+        <div key={bird.id} className="card">
+          <img src={bird.img}></img>
+          <h3>Name: {bird.name}</h3>
+          <h3>Adoption Fee: {bird.amount}</h3>
+          <button onClick={() => handleAdopt(bird)}>Adopt</button>
+        </div>
+      ))}
     </div>
   );
 };
