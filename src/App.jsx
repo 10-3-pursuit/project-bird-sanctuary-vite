@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Cards from './components/Cards'
 import Cart from './components/Cart'
+import Checkout from './components/Checkout';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -13,6 +14,7 @@ function App() {
       <main>
         <aside>
           <Cart cart={cart} setCart={setCart} />
+          <Checkout cart={cart} setCart={setCart} />
         </aside>
         <Cards cart={cart} setCart={setCart} />
       </main>
