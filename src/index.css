@@ -1,8 +1,18 @@
+body {
+  background-color: rgb(51, 133, 51);
+}
 header {
   background: rgb(195, 247, 235);
   padding: 1em;
   box-shadow: 1px 1px 6px gray;
   margin-bottom: 0.75em;
+
+  background-image: url("./Images/sunflower.jpeg");
+  background-size: cover;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  text-align: center;
 }
 main {
   display: flex;
@@ -30,6 +40,18 @@ aside > div {
 }
 
 .card {
+  padding: 0.5em;
+  border-radius: 4px;
+  box-shadow: 3px 3px 8px dimgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 5px solid gray;
+  background: rgb(229, 250, 245);
+  background-image: url("./Images/background-image.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
   width: 20%;
   padding: 0.5em 3em;
   margin: 1em;
@@ -38,7 +60,7 @@ aside > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(229, 250, 245);
+  /* background: rgb(229, 250, 245); */
 }
 
 .card img {
@@ -53,9 +75,17 @@ aside > div {
   padding: 0.3em;
   margin: 1em 0em;
   text-align: center;
-  border: 1px solid gray;
+  border: 5px solid gray;
+  background-image: url("./Images/background-image.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+h4,
+h5,
+p {
+  background-color: white;
+}
 h4 {
   font-size: 1.5em;
 }
@@ -65,4 +95,51 @@ h5 {
 
 p {
   font-size: 0.75em;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.delete-button {
+  margin-left: 10px;
+}
+/* Button.css */
+
+.rainbow-button {
+  /* Define default button styles */
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Rainbow hover effect */
+.rainbow-button:hover {
+  background-image: linear-gradient(
+    45deg,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red,
+    violet
+  );
+  background-size: 400%;
+  animation: rainbow-animation 3s infinite;
+}
+
+/* Animation for the rainbow hover effect */
+@keyframes rainbow-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400%;
+  }
 }
