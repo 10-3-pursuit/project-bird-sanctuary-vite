@@ -16,7 +16,7 @@ aside {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  height: 100vh;
+  height: flex;
 }
 aside > div {
   min-height: 40vh;

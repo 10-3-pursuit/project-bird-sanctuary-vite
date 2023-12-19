@@ -33,12 +33,12 @@ The following demo has been styled for clarity. You are not required to style th
 Implement the following features, each worth 1 point, for a total of 7 points.
 
 1. Sections with birds displaying name, image, amount, and an adopt button.
-1. Functionality to add birds to the shopping cart.
-1. Display of total cost of birds in the cart.
-1. A 10% discount for having 3 or more birds in the cart.
-1. Bonus items for increasing cart totals.
-1. A form to checkout the cart, which resets the cart upon submission.
-1. Ability to delete a bird from the cart.
+2. Functionality to add birds to the shopping cart.
+3. Display of total cost of birds in the cart.
+4. A 10% discount for having 3 or more birds in the cart.
+5. Bonus items for increasing cart totals.
+. A form to checkout the cart, which resets the cart upon submission.
+6. Ability to delete a bird from the cart.
 
 ## Specific Component Requirements
 
@@ -62,21 +62,21 @@ Implement the following features, each worth 1 point, for a total of 7 points.
 
 #### Bonus Items in Cart
 
-- [ ] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
+- [X ] Display bonus items in the cart as list items in a separate unordered list (`<ul>`), based on total cost thresholds. Bonus items are determined from the `src/data/bonusItems.js`.
 
 - Bonus item thresholds:
-  - [ ] 1 bonus (first array item) for a total between $100 and $300.
-  - [ ] 2 bonuses (first and second array items) for a total between $300 and $500.
-  - [ ] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
-  - [ ] 4 bonuses (all array items) for a total over $1000.
+  - [ X] 1 bonus (first array item) for a total between $100 and $300.
+  - [ X] 2 bonuses (first and second array items) for a total between $300 and $500.
+  - [ X] 3 bonuses (first, second, and third array items) for a total between $500 and $1000.
+  - [X ] 4 bonuses (all array items) for a total over $1000.
 
 ### Checkout Component
 
-- [ ] Has the class name `checkout`.
-- [ ] Handle form completion and submission.
-- [ ] Use `<label>` elements and proper attributes
-- [ ] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
-- [ ] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
+- [X ] Has the class name `checkout`.
+- [ X] Handle form completion and submission.
+- [ X] Use `<label>` elements and proper attributes
+- [ X] Alert `You have successfully adopted birds. Thank you!` upon successful submission.
+- [ X] Upon closing the alert box, reset the cart entirely (removing all birds, discounts, and bonus items) and clear the checkout form.
 
 ## Additional Guidance
 
