@@ -81,6 +81,7 @@ li {
   box-shadow: 1px 1px 6px gray;
 }
 
+
 .cart h2{
   text-align: center;
 }
@@ -96,10 +97,13 @@ li {
   margin-bottom: 10px;
 }
 
-.checkout input{
+.checkout label, input{
   display: block;
-  margin: 0 auto; 
   margin-bottom: 10px;
+}
+
+form{
+  margin-left: 25%;
 }
 
 .checkout h2{
@@ -139,40 +143,51 @@ li {
 }
 
 @media (max-width: 1405px){
-  .card {
-    width: 15%;
-  }
   aside{
     width: 25%;
+  }
+  .card {
+    width: 15%;
   }
 }
 
 @media (max-width: 1197px){
+  aside{
+    width: 45%;
+  }
   .card {
     width: 25%;
   }
   .birds{
     margin-left: 15px;
   }
-  aside{
-    width: 45%;
-  }
 }
 
 @media (max-width: 975px){
-  .card {
-    width: 20%;
-  }
   aside{
     width: 55%;
+  }
+  .card {
+    width: 20%;
   }
 }
 
 @media (max-width: 888px){
-  .card {
-    width: 150px;
-  }
   aside{
     width: 80%;
   }
+  form{
+    margin-left: 5%;
+  }
+  input {
+    max-width: 80%
+  }
+  .checkout h2{
+    text-align: left;
+    margin-left: 5%;
+  }
+  .card {
+    width: 150px;
+  }
+
 }

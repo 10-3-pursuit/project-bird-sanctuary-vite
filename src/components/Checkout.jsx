@@ -30,7 +30,7 @@ const Checkout = ({ resetCart }) => {
     <div className="checkout">
       <h2>Checkout</h2>
       <form onSubmit={handleSubmit}>
-      <label htmlFor="firstName" ></label>
+      <label htmlFor="firstName" >First Name:</label>
       <input
         placeholder="First Name"
         type="text"
@@ -40,7 +40,7 @@ const Checkout = ({ resetCart }) => {
         value={newOrder.firstName}
         required 
       />
-      <label htmlFor="lastName"></label>
+      <label htmlFor="lastName">Last Name:</label>
       <input
         placeholder="Last Name"
         type="text"
@@ -50,7 +50,7 @@ const Checkout = ({ resetCart }) => {
         value={newOrder.lastName}
         required 
       />
-      <label htmlFor="email"></label>
+      <label htmlFor="email">Email:</label>
       <input
         placeholder="Email"
         type="email"
@@ -60,7 +60,7 @@ const Checkout = ({ resetCart }) => {
         value={newOrder.email}
         required 
       />
-      <label htmlFor="zip"></label>
+      <label htmlFor="zip">Zip Code:</label>
       <input
         placeholder="Zip Code"
         type="text"
