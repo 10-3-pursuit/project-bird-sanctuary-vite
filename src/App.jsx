@@ -18,8 +18,9 @@ function App() {
       <main>
         <aside>
           {/* need to properly link up css classes later */}
-          <Cards bird={bird}/>
+        
         </aside>
+      <Cards bird={bird}/> 
       </main>
     </div>
   );

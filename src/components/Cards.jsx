@@ -10,18 +10,19 @@ const Cards = ({bird}) => {
   }
 
   return (
-    <div className="birds">
-      <div className="cards">
+    <div className="">
+      <div className="birds">
         {bird.map((birds) => (
           <div key={birds.id} className="card">
           <h2>{birds.name}</h2>
           <h4>$ {birds.amount}</h4>
           <img src={birds.img} alt="image of a bird"/>
+          <br/>
           <button onClick={() => handleAdopt()}>ADOPT</button>
           </div>
         ))} 
       </div>
-    </div>
+    </div> 
   );
 };
 
