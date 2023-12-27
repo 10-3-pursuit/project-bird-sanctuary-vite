@@ -1,13 +1,6 @@
-import { useState } from "react";
+import HandleAdoptAndTotal from "../App";
 
-const Cards = ({bird}) => {
-  //set useState for adopt button to false, onclick will turn true 
-  const [adopt, setAdopt ] = useState(false)
-
-  function handleAdopt() {
-    setAdopt(true)
-    console.log("You clicked adopt button!")
-  }
+const Cards = ({ bird, HandleAdoptAndTotal }) => {
 
   return (
     <div>
@@ -17,9 +10,9 @@ const Cards = ({bird}) => {
             <li key={birds.id} className="card">
             <h2>{birds.name}</h2>
             <h4>$ {birds.amount}</h4>
-            <img src={birds.img} alt="image of a bird"/>
+            <img src={birds.img} alt="image of a bird"/> 
             <br/>
-            <button onClick={() => handleAdopt()}>ADOPT</button>
+            <button onClick={() => HandleAdoptAndTotal(birds.id)}>ADOPT</button>
             </li>
           ))} 
         </ul>
@@ -28,4 +21,4 @@ const Cards = ({bird}) => {
   );
 };
 
-export default Cards;
+export default Cards; 
