@@ -1,4 +1,4 @@
-const Cart = ({ total, adoptionList, RemoveBirdFromCart }) => {
+const Cart = ({ total, adoptionList, RemoveBirdFromCart, discount }) => {
 
   // when the adopt button is clicked Total should be updated to reflect the combined sum of all birds currently being adopted
   // based on how high the total number is this will dictate which bonusItems they qualify for 
@@ -9,7 +9,7 @@ const Cart = ({ total, adoptionList, RemoveBirdFromCart }) => {
     <div className="cart">
       <h2>Cart Component</h2>
       <h5>Total: {total}</h5>
-      <p>Discount:</p>
+      <p>Discount: {discount}</p>
         <ol>
           {/* `${birdie.id}${index}` */}
           {adoptionList.map((birdie) => (
