@@ -16,6 +16,14 @@ function App() {
   const [discount, SetDiscount] = useState("")
   // set useState for bonus to an empty array 
   const [bonus, setBonus] = useState([])
+  // set useState for user info 
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    zp: "",
+    email: "",
+    password: "",
+  });
 
   const bird = birdData; 
 
@@ -100,6 +108,29 @@ function App() {
     // HandleBonus(discountedTotal) 
     
   }
+
+  function handleTextChange(event) {
+    setUser({
+      ...user,
+      [event.target.id]: event.target.value,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("Thanks for adoptiong our birds. Tweet tweet!")
+    resetForm();
+  }
+
+  function resetForm() {
+    setUser({
+      firstName: "",
+      lastName: "",
+      zp: "",
+      email: "",
+      password: "",
+    });
+  }
   
   return (
     <div>
@@ -111,9 +142,9 @@ function App() {
         <aside>
           {/* need to properly link up css classes later */}
           <Cart total={total} adoptionList={adoptionList} RemoveBirdFromCart={RemoveBirdFromCart} discount={discount} bonus={bonus} />
-          <Checkout /> 
+          <Checkout user={user} handleTextChange={handleTextChange} handleSubmit={handleSubmit}/>  
         </aside>
-      <Cards bird={bird} HandleAdoptAndTotal={HandleAdoptAndTotal}/> 
+        <Cards bird={bird} HandleAdoptAndTotal={HandleAdoptAndTotal}/> 
       </main>
     </div>
   );

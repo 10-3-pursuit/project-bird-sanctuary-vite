@@ -1,11 +1,7 @@
-import HandleAdoptAndTotal from "../App";
-
 const Cards = ({ bird, HandleAdoptAndTotal }) => {
 
   return (
-    <div>
-      <div>
-        <ul className="birds">
+        <ol className="birds">
           {bird.map((birds) => (
             <li key={birds.id} className="card">
             <h2>{birds.name}</h2>
@@ -15,9 +11,7 @@ const Cards = ({ bird, HandleAdoptAndTotal }) => {
             <button onClick={() => HandleAdoptAndTotal(birds.id)}>ADOPT</button>
             </li>
           ))} 
-        </ul>
-      </div>
-    </div> 
+        </ol>
   );
 };
 
