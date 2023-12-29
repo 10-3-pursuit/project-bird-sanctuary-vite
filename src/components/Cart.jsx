@@ -1,5 +1,7 @@
 const Cart = ({ total, adoptionList, RemoveBirdFromCart, discount, bonus }) => {
 
+  console.log("Bonus:", bonus); 
+
   return (
     <div className="cart">
       <h2>Cart Component</h2>

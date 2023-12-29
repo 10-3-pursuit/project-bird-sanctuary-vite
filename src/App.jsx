@@ -55,19 +55,25 @@ function App() {
   }
 
   function HandleBonus(total) { 
-    if(total >= 100 || total < 300) {
-      // setBonus([...bonus, bonusItems[0]]);
-      setBonus([...bonusItems.slice(0, 1)]);
-    } else if (total >= 300 || total < 500) {
-      // setBonus([...bonus, bonusItems[1]]);
-      setBonus([...bonusItems.slice(0, 2)]);
-    } else if (total >= 500 || total < 1000) {
-      // setBonus([...bonus, bonusItems[2]]);
-      setBonus([...bonusItems.slice(0, 3)]);
-    } else {
-      // setBonus([...bonus, bonusItems[3]]);
-      setBonus([...bonusItems]);
-    }
+    setBonus((bonus) => {
+
+      let newBonus = []; 
+
+      if(total >= 100 && total < 300) {
+        // setBonus([...bonus, bonusItems[0]]);
+        newBonus = [...bonusItems.slice(0, 1)];
+      } else if (total >= 300 && total < 500) {
+        // setBonus([...bonus, bonusItems[1]]);
+        newBonus = [...bonusItems.slice(0, 2)];
+      } else if (total >= 500 && total < 1000) {
+        // setBonus([...bonus, bonusItems[2]]);
+        newBonus = [...bonusItems.slice(0, 3)];
+      } else {
+        // setBonus([...bonus, bonusItems[3]]);
+       newBonus = [...bonusItems];
+      }
+      return newBonus; 
+    }); 
   }
 
   function HandleAdoptAndTotal(id) {
@@ -82,14 +88,15 @@ function App() {
     
     if (adoptionList.length < 2) {
       SetDiscount(""); 
-      HandleBonus(total); 
+      HandleBonus(total + findBird.amount); 
     } else {  
       setTotal(discountedTotal + total); 
       SetDiscount("10%");
-      HandleBonus(discountedTotal); 
+      HandleBonus(discountedTotal + total); 
     }
 
     AddBirdToCart(findBird); 
+    // console.log(bonus); 
     // HandleBonus(discountedTotal) 
     
   }

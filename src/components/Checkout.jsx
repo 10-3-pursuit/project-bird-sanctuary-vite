@@ -3,8 +3,7 @@ const Checkout = () => {
     <div className="checkout">
       <h2>Checkout Component</h2>
       <form>
-        <label htmlFor="">Hello</label>
-
+      <h5> Test </h5>
       </form>
     </div>
   );
