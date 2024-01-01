@@ -1,3 +1,8 @@
+import birdData from "./data/birds";
+import Cards from "./components/Cards";
+import Checkout from "./components/Checkout";
+import Cart from "./components/Cart";
+
 function App() {
   return (
     <div>
@@ -6,7 +11,11 @@ function App() {
         <h2>Donate to adopt a bird</h2>
       </header>
       <main>
-        <aside></aside>
+        <Cards birdData={birdData} />
+        <aside>
+          <Cart birdData={birdData} />
+          <Checkout birdData={birdData} />
+        </aside>
       </main>
     </div>
   );
